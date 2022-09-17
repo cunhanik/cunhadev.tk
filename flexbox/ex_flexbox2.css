@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px;
+}
+
+.icon {
+  width: 50px;
+  height: 100px;
+}
+
+.logo {
+  width: 200px;
+  height: 100px;
+}
+
+.btns {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  border-color: white;
+  color: white;
+  background-color: transparent;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 15%;
+  transition: 0.5s;
+  font-size: 20px;
+}
+
+.btn:hover {
+  border-color: red;
+}

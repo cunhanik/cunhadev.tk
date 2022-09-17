@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpaceX</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="./spaceX.html"><img src="./logo.png" alt="SpaceX" /></a>_|
+        <a href="./theSpaceShips.html"> The Spaceships</a> |
+        <a href="./hireUs.html">Hire Us</a>
+        <hr />
+      </nav>
+    </header>
+    <section>
+      <div>
+        <h2>Hire Us Now</h2>
+        <p>
+          Leave a message to request me of our services and we will get back to
+          you as soon as possible.
+        </p>
+      </div>
+    </section>
+    <br /><br />
+    <section>
+      <div>
+        <form autocomplete="on">
+          <label for="name">Name: </label>
+          <input type="text" id="name" name="name" />-
+          <label for="email">Email: </label>
+          <input type="email" id="email" name="email" />
+        </form>
+      </div>
+      <br />
+      <br />
+      <div>
+        <label for="spaceship">Spaceship: </label>
+        <select name="spaceship" id="spaceship" name="spaaceship">
+          <option value="Falcon 9">Falcon 9</option>
+          <option value="FALCON HEAVY">FALCON HEAVY</option>
+        </select>
+        |
+        <label for="typeservice">Type of Service: </label>
+        <input
+          type="search"
+          id="typeservice"
+          name="typeservice"
+          list="service"
+        />
+        <datalist id="service">
+          <option value="1 Lorem ipsum dolor sit">
+            Lorem ipsum dolor sit.
+          </option>
+          <option value="2 Lorem ipsum dolor">Lorem, ipsum dolor.</option>
+          <option value="3 Lorem ipsum dolor sit amet">
+            Lorem ipsum dolor sit amet.
+          </option>
+        </datalist>
+      </div>
+      <br />
+      <div>
+        <input type="submit" value="Send Message" />
+      </div>
+    </section>
+  </body>
+</html>

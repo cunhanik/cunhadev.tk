@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS</title>
+    <link rel="stylesheet" href="./css.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geostar&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="voltarhtml">
+      <a href="./hello_world.html">Voltar ao HTML</a>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <h1>CSS</h1>
+      <h3>Linkar o css à pagina html</h3>
+      <p>É na nossa head (do ficheiro html) que linkamos o css com:</p>
+      <p>link rel="stylesheet" href="style.css"</p>
+    </div>
+
+    <hr />
+    <br />
+
+    <div>
+      <h3>Cores no css:</h3>
+      <p>As cores podem ser definidas por:</p>
+      <ul>
+        <li>Nome</li>
+        <li>Valores RGB</li>
+        <li>Valores Hexadecimais</li>
+        <p>
+          Hexadecimal é um sistema numérico que consiste em 16 símbolos
+          diferentes [0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F]
+        </p>
+        <p>exemplo cor vermelha:</p>
+        <p>#RRGGBB -> RR- red | GG - green | BB - blue</p>
+        <p>
+          #FF0000 -> Aqui dizemos que: FF(cor maxima) para o RR(red) | 00(cor
+          minima) para o GG(green) | 00(cor minima) para o BB(blue)
+        </p>
+        <ul></ul>
+        <li>Valores HSL (CSS3)</li>
+        <li>Valores HWB (CSS4)</li>
+      </ul>
+      <div>
+        <a target="_blank" href="https://www.w3schools.com/colors/default.asp"
+          >Para ver mais cores...</a
+        >
+      </div>
+    </div>
+    <hr />
+    <br />
+    <div>
+      <h3>Background</h3>
+      <h4>Background-color:</h4>
+      <p>No nosso ficheiro de css, escrevemos:</p>
+      <p>
+        body{background-color: gray;} para deixarmos a pagina toda com o fundo
+        cinzento
+      </p>
+      <p>
+        h1{background-color: #000000;} para deixarmos o elemento titulo com o
+        fundo preto
+      </p>
+    </div>
+    <div>
+      <h4>Background-image</h4>
+      <p>No nosso ficheiro de css, escrevemos:</p>
+      <p>No body{}:</p>
+      <p>body{</p>
+      <p>background-color:gray;</p>
+      <p>
+        background-image:
+        url("https://i.gyazo.com/13bf1234710856015e0f33c47c2fc700.jpg") #Para a
+        imagem de fundo
+      </p>
+      <p>background-repeat: no-repeat; #Para o nosso fundo não se repetir</p>
+      <p>background-size: cover; #Tamanho do background cover(capa)</p>
+      <p>color: white; #Para as letras ficarem brancas</p>
+      <p>}</p>
+      <a target="_blank" href="https://www.w3schools.com/css/css_background.asp"
+        >Ver mais sobre background...</a
+      >
+    </div>
+    <hr />
+    <br />
+    <div>
+      <h3>Border</h3>
+      <p>No nosso ficheiro de css, escrevemos:</p>
+      <p>na tag h1{</p>
+      <p>border-color: yellow;</p>
+      <p>border-width: 2px;</p>
+      <p>border-style: dashed;</p>
+      <p>}</p>
+      <h4>OU ENTÃO:</h4>
+      <p>border: 2px dashed yellow;</p>
+      <a target="_blank" href="https://www.w3schools.com/css/css_border.asp"
+        >Ver mais sobre border...</a
+      >
+    </div>
+    <hr />
+    <br />
+    <div>
+      <h3>Seletores</h3>
+      <h4>Classes</h4>
+      <h3>HTML: class=nome</h3>
+      <h3>CSS: .nome{}</h3>
+      <h3>Classes servem para muitos elementos</h3>
+      <h2 class="azul">Este titulo vai ser azul</h2>
+      <h2 class="verde">Este titulo vai ser verde</h2>
+      <h2 class="vermelho">Este titulo vai ser vermelho</h2>
+      <p>No css para editarmos estas classes, fazemos:</p>
+      <p>.azul{</p>
+      <p>.verde{</p>
+      <p>.vermelho{</p>
+      <h4>Dentro das classes no css, escrevemos:</h4>
+      <p>color: #0000FF</p>
+      <p>color: #00FF00</p>
+      <p>color: #FF0000</p>
+      <h2 class="big-text">Texto grande</h2>
+      <h2 class="small-text">Texto pequeno</h2>
+      <p>No css fazemos:</p>
+      <p>.big-text{ font-size: 50px;}</p>
+      <p>.small-text{ font-size: 25px;}</p>
+    </div>
+    <br />
+    <div>
+      <h4>ID</h4>
+      <h3>HTML: id=nome</h3>
+      <h3>CSS: #nome{}</h3>
+      <h3>ID's servem para um elemento específico</h3>
+      <h2 id="solid">Este Titulo vai ter borda solid</h2>
+      <h2 id="dashed">Este Titulo vai ter borda dashed</h2>
+      <p>Agora no css, fazemos:</p>
+      <p>#solid{border: 2px solid #0000FF;}</p>
+      <p>#solid{border: 2px dashed #00FF00;}</p>
+    </div>
+    <hr />
+    <br />
+    <div>
+      <h3>Inspetor do Chrome</h3>
+      <p>
+        Abrindo o inspector do chrome, conseguimos ver o codigo html e css de
+        cada elemento!
+      </p>
+      <p>
+        tambem podemos editar o codigo css desse elemento (NO INSPECTOR) para
+        testar e ver como fica na web
+      </p>
+    </div>
+    <hr />
+    <br />
+    <div>
+      <h3>Seletores mais avançados</h3>
+      <h4>Seletor Geral *{}</h4>
+      <p>*{} Este seletor serve para estilizarmos todos os elementos</p>
+      <br />
+      <h4>Seletores de descendência li a{}</h4>
+      <p>
+        li a{} Este seletor serve para estilizarmos todos os elementos a(anchor)
+        que estão dentro de listas
+      </p>
+      <ul>
+        <div>
+          <li><a href="">Primeiro Link</a></li>
+          <li>Sem a(anchor)</li>
+        </div>
+        <div>
+          <li><a href="">Segundo Link</a></li>
+          <li>Sem a(anchor)</li>
+        </div>
+        <li><a href="">Terceiro Link E FILHO</a></li>
+        <li>Sem a(anchor)</li>
+      </ul>
+      <p>Agora no css, escrevemos:</p>
+      <p>li a{</p>
+      <p>color: green</p>
+      <br />
+      <h4>Seletores filhos div > li{}</h4>
+      <p>
+        div>li{} Este seletor serve para estilizarmos todos os elementos li
+        dentro das divs.
+      </p>
+      <p>no css, escrevemos:</p>
+      <p>div > li{</p>
+      <p>color: red</p>
+      <h3>OU SEJA:</h3>
+      <h3>
+        Se a li estiver dentro de uma div, passa para a cor vermelha do seletor
+        filho [tem prioridade sobre o seletor de descendecia, mas so estiliza um
+        de pai para filho]
+      </h3>
+      <h3>
+        Se a li não estiver dentro de nada, passa para a cor verde do seletor de
+        descendência [Não interessa o grau, estiliza na mesma.]
+      </h3>
+      <br />
+      <h4>Seletor adjacente p + h6{}</h4>
+      <p>
+        p + h6{} Este seletor serve para estilizarmos os h6 que venham depois de
+        paragrafos
+      </p>
+      <p>ISTO É UM PARAGRAFO</p>
+      <h6>ESTE É O h6 DEPOIS DO PARAGRAFO</h6>
+      <p>Agora no css, escrevemos:</p>
+      <p>p + h6{</p>
+      <p>border: 4px dashed red;}</p>
+      <br />
+      <h4>Seletor de atributo a[]</h4>
+      <p>
+        a[] Este seletor serve para estilizarmos todos os a(anchor) com atributo
+      </p>
+      <p>a[href="/recibo"]{} Aqui estamos a estilizar o 600€</p>
+      <p>a[href="/semrecibo"]{} Aqui estamos a estilizar o 1200€</p>
+      <p>agora no css, escrevemos:</p>
+      <p>a[href="/recibo"]{</p>
+      <p>color: orangered;</p>
+      <p>a[href="/semrecibo"]{</p>
+      <p>color: yellow;}</p>
+      <ul>
+        <li><a href="/recibo">600€</a></li>
+        <li><a href="/semrecibo">1200€</a></li>
+      </ul>
+      <br />
+      <h4>Pseudo class li:nth-of-type(2)</h4>
+      <p>
+        esta pseudo-class serve para estilizarmos um específico elemento, essa
+        diz-nos que todos os 2 li vão ser estilizados
+      </p>
+      <p>
+        Tambem existe o odd, que faz com que estilizemos os numeros ímpares:
+        Pseudo class li:nth-of-type(odd)
+      </p>
+      <ol>
+        <li>Primeiro elemento da lista</li>
+        <li>Segundo elemento da lista</li>
+        <li>Terceiro elemento da lista</li>
+      </ol>
+      <ol>
+        <li>Primeiro elemento da lista</li>
+        <li>Segundo elemento da lista</li>
+        <li>Terceiro elemento da lista</li>
+      </ol>
+      <br />
+      <a
+        target="_blank"
+        href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Selectors"
+        >Para mais informação...</a
+      >
+      <br />
+      <a
+        target="_blank"
+        href="https://code.tutsplus.com/pt/tutorials/the-30-css-selectors-you-must-memorize--net-16048"
+        >Para mais informação...</a
+      >
+    </div>
+    <hr />
+    <br />
+    <div>
+      <h3>Especificidade</h3>
+      <p>
+        O CSS vai sempre colocar o estilo mais específico. Regra da pontuação
+        (numero da esquerda é o maior, numero da direita é o menor):
+      </p>
+      <p>
+        - Cada elemento/pseudoelemento -> d = +1 (0, 0, 0, 1); Exemplo: h1 {
+        background: blue; }
+      </p>
+      <p>
+        Cada classe/pseudoclasse/atributo -> c = +1 (0, 0, 1, 0); Exemplo: .red
+        { background: red; }
+      </p>
+      <p>
+        - Cada id -> b = +1 (0, 1, 0, 0); Exemplo: id="titulo" / declaração id:
+        #titulo{ background: lightblue; }
+      </p>
+      <p>
+        - Estilo inline(no proprio HTML) -> a = +1 (1, 0, 0, 0); Exemplo:
+        style="background: green;"
+      </p>
+    </div>
+    <hr />
+    <br />
+    <div class="heranca">
+      <h3>Herança</h3>
+      <ul>
+        <li>Um</li>
+        <li>Dois</li>
+        <li>Três</li>
+      </ul>
+      <p>Agora no css, usamos a class herança: .heranca{</p>
+      <p>border: 2px solid green;</p>
+      <p>Isto vai fazer com que a nossa div ganhe uma borda</p>
+      <p>Agora para a nossa ul, ganhar a borda da div pai, fazemos:</p>
+      <p>No css:</p>
+      <p>div ul{</p>
+      <p>border: inherit;</p>
+    </div>
+    <hr />
+    <br />
+    <div class="texto">
+      <h3>Textos e Fontes</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quo
+        quidem eaque odit nobis, nihil explicabo dolorem ratione laboriosam
+        inventore. Dolorum, vel? Odio vero earum ipsum laboriosam quod similique
+        fugiat pariatur quidem repellendus ullam, iusto aperiam assumenda alias
+        laudantium illum totam qui rerum sint, iure laborum asperiores? Fuga,
+        doloribus repellendus.
+      </p>
+      <p>
+        font-family: Arial, Helvetica, sans-serif; #Arial é a principal,
+        Helvetica é a secundaria (caso a Arial não exista), sans-serif é o
+        estilo da font(tem a ver com o espaço das letras)
+      </p>
+      <p>font-size: 20px; #Tamanho da fonte</p>
+      <p>
+        font-weight: 500; #"Peso" da fonte, podemos deixar o texto em negrito
+        com o 600/bold;
+      </p>
+      <p>line-height: 2; #Altura da linha, espaço entre cada linha</p>
+      <p>text-align: center; #Alinha o texto no centro</p>
+      <p>text-decoration: underline; #Sublinha o texto</p>
+      <p>text-decoration: line-through; #Risca o texto</p>
+      <h1>Texto no Centro</h1>
+      <h2>Texto no Centro</h2>
+    </div>
+    <hr />
+    <br />
+    <div class="sem-fonte">
+      <h3>Google Fonts</h3>
+      <p>Entramos no: <a href="https://fonts.google.com/">Google Fonts</a></p>
+      <p>Escrevemos e escolhemos uma Fonte: roboto e geostar</p>
+      <p>importamos estes codigo:</p>
+      <p>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      </p>
+      <p>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Geostar&display=swap"
+          rel="stylesheet"
+        />
+      </p>
+      <p class="font-roboto">Font roboto</p>
+      <p class="font-geo">Font geostar</p>
+      <p>Font sem roboto</p>
+      <p>Adicinoámos esse codigo no HTML, por baixo do link do css</p>
+      <p>No css, escrevemos:</p>
+      <p>font-family: 'Roboto', sans-serif;</p>
+    </div>
+    <hr />
+    <br />
+    <div class="box-model">
+      <h3>Box Model</h3>
+      <p>A estrutura de um Box Model é:</p>
+      <img
+        class="box-model-img"
+        src="https://www.webcodzing.com/uploads/2021/06/box-model.jpg"
+        alt=""
+      />
+      <h5>CONTENT</h5>
+      <p>
+        Vamos dar uma largura (width) de 5% para o nosso h5, assim o elemento só
+        ocupa aquele espaço
+      </p>
+      <p>
+        Vamos adicionar uma margin de 50px auto 20px auto; (Significa que em
+        cima temos 50px, direita auto, baixo 20px, esquerda auto)
+      </p>
+      <p>Vamos agora adicionar uma borda ao nosso h5: border 2px dashed red</p>
+      <p>
+        Agora vamos usar o padding que é o espaço que fica entre o h5 e a borda:
+        10px(cima) 15px(direita) 10px(baixo) 15px(esquerda);
+      </p>
+    </div>
+    <hr />
+    <br />
+    <div>
+      <h1>CSS Moderno + Responsividade</h1>
+    </div>
+    <div class="cssmoderno">
+      <a href="./CSSmoderno.html"
+        >Clica aqui para veres mais sobre CSS Moderno e Responsividade</a
+      >
+    </div>
+    <br />
+    <hr />
+  </body>
+</html>

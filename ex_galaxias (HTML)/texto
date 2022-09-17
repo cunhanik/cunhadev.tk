@@ -1,0 +1,63 @@
+​Andrômeda
+
+Guia das galáxias
+Galáxia de Andromeda
+https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Andromeda_Galaxy_%28with_h-alpha%29.jpg/280px-Andromeda_Galaxy_%28with_h-alpha%29.jpg
+
+
+Descrição
+A galáxia de Andrômeda (Messier 31, NGC 224) é uma galáxia espiral localizada a cerca de 2,54 milhões de anos-luz de distância da Terra, na direção da constelação de Andrômeda.
+
+
+Dados Interessantes
+
+
+  Além da Via Láctea, é a galáxia mais estudada
+  Suas duas galáxias satélite, Messier 32 e Messier 110, são visíveis em binóculos
+  Sua distância em relação à Terra ainda não foi bem definida
+
+
+Outras galáxias: Olho Negro, Grande Nuvem de Magalhães
+
+Olho Negro
+
+​Guia das galáxias
+Olho Negro
+https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Blackeyegalaxy.jpg/280px-Blackeyegalaxy.jpg
+
+
+Descrição
+A galáxia do Olho Negro (Messier 64, NGC 4826) é uma galáxia espiral localizada a aproximadamente dezessete milhões de anos-luz (cerca de 5,2 megaparsecs) de distância na direção da constelação da Cabeleira de Berenice.
+
+
+Dados Interessantes
+
+
+  Os cientistas acreditam na hipótese de que ela seja o resultado da colisão entre duas galáxias.
+  A galáxia espiral foi descoberta por Edward Pigott em 23 de março de 1779
+  Pode ser vista com bons binóculos
+
+
+Outras galáxias: Andromeda, Grande Nuvem de Magalhães
+
+Pequena Nuvem de Magalhães
+
+Guia das galáxias
+Grande Nuvem de Magalhães
+https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Large.mc.arp.750pix.jpg/250px-Large.mc.arp.750pix.jpg
+
+
+Descrição
+Grande Nuvem de Magalhães (comumente abreviada como LMC, do inglês Large Magellanic Cloud) é uma galáxia anã
+  satélite que orbita em torno da Via Láctea.
+
+
+Dados Interessantes
+
+
+  É rica em gases e poeira
+  Foi batizada por Fernão de Magalhães
+  A Grande Nuvem de Magalhães é uma das galáxias mais próximas da Via Láctea
+
+
+Outras galáxias: Andromeda, Olho negro

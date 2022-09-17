@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <link rel="stylesheet" href="./grid.css" />
+  </head>
+  <body>
+    <div class="btn-class">
+      <a id="btn-id" href="../hello_world.html">Voltar para HTML</a>
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" href="../css.html">Voltar para CSS</a>
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" href="../CSSmoderno.html">Voltar para CSS Moderno</a>
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="../flexbox/flexbox.html"
+        >Voltar para flexbox</a
+      >
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="ex_grid1.html">Exercicio 1 Grid</a>
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="ex_grid2.html">Exercicio 2 Grid</a>
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="ex_grid3.html">Exercicio 3 Grid</a>
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="ex_grid4.html">Exercicio 4 Grid</a>
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="ex_grid5.html">Exercicio 5 Grid</a>
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="../ex_flexbox+grid/index.html"
+        >Exercicio flexbox+grid</a
+      >
+    </div>
+    <br />
+    <hr />
+    <div>
+      <h3>Dicas Grid:</h3>
+      <ul>
+        <li>
+          display: grid; || Torna o nosso container grid, preenche todo o
+          tamanho disponivel na tela, seja verticalmente ou horizontalmente, e
+          com isso podemos fazer muitas coisas:
+        </li>
+        <p>TODOS ESTES EXEMPLOS SÃO VISTOS NO Exercicio 1 Grid</p>
+        <ul>
+          <br />
+          <li>grid-template-columns:</li>
+          <ul>
+            <li>
+              grid-template-columns: 15% 60% 25%; || Faz com que seja dividido
+              em 3 colunas por linha com: 1ª coluna 15% da tela, 2ª coluna com
+              60% da tela, 3ª coluna com 25% da tela, todas horizontalmente
+              (largura)
+            </li>
+            <p>Devemos utilizar sempre % ou frame (fr)</p>
+            <p>
+              grid-template-columns: 0.5fr 2.5fr 1fr; = grid-template-columns:
+              15% 60% 25%;
+            </p>
+            <p>
+              grid-template-columns: 1fr 2fr 1fr; = grid-template-columns: 25%
+              50% 25%;
+            </p>
+            <li>
+              grid-template-columns: repeat(3,1fr) || Isto só funciona quando as
+              medidas das colunas são todas iguais, neste caso estámos a dividir
+              o layout em 3 colunas por linha com 1fr cada
+            </li>
+          </ul>
+          <li>gap:</li>
+          <ul>
+            <li>
+              row-gap: 10px || Acrescenta um espaço em linha entre os items que
+              estiverem em coluna (flex-direction: column \ flex-direction:
+              column-reverse)
+            </li>
+            <li>
+              column-gap: 15px || Acrescenta um espaço em coluna entre os items
+              que estiverem em linha (flex-direction: row \ flex-direction:
+              row-reverse)
+            </li>
+            <li>
+              gap: 10px 15px || Acrescenta um espaço de 10px em linha para os
+              items- (flex-direction: column) e 15px em coluna para os items-
+              (flex-direction: row)
+            </li>
+            <li>
+              gap: 20px || Acrescenta um espaço de 20px em linha para os items
+              (flex-direction: column) e 20px em coluna para os items
+              (flex-direction: row)
+            </li>
+          </ul>
+          <li>grid-template-rows</li>
+          <ul>
+            <li>
+              grid-template-rows: 1fr 2fr 1fr; || Faz uma divisão nas linhas: 1ª
+              linha-1fr, 2ª linha-2fr, 3ª linha-1fr, todas verticalmente
+              (altura)
+            </li>
+            <p>
+              Para ver isto melhor, no Exercicio 1 Grid, como temos 6 divs vamos
+              por o grid-template-columns: repeat(2, 1fr) para vermos 2 colunas
+              por cada linha
+            </p>
+            <p>
+              Assim, conseguimos ver que dividimos em 2 colunas por linha
+              (grid-template-columns: repeat(2, 1fr)) e que a 1ª linha tem 1fr,
+              a 2ª linha 2fr e a 3ª linha 1fr
+            </p>
+          </ul>
+          <li>grid-auto-rows</li>
+          <ul>
+            <p>
+              Para ver isto melhor, vamos colocar o grid-template-columns:
+              repeat(3, 1fr) para o layout ter 3 colunas e remover o
+              grid-template-rows
+            </p>
+            <li>
+              grid-auto-rows: 210px || Define automaticamente o tamanho das
+              linhas na vertical, neste caso as linhas ficam com 210px
+              verticalmente (altura)
+            </li>
+            <li>
+              grid-auto-rows: 210px 100px|| Define automaticamente que
+              verticalmente as colunas vão ter 210px mas que a segunda coluna
+              vai ter 100px
+            </li>
+            <li>
+              grid-auto-rows: minmax(210px, 100%) || Define automaticamente a
+              altura de cada linha verticalmente: min-210px é a altura minima
+              que a coluna vai ter , max-100% é o que a coluna vai ocupar(tem
+              que ser sempre maior que o minimo, obviamente), 100% 1fr auto é
+              tudo o mesmo; quando responsivamente a altura chegar a 420px ganha
+              scroll (Tem que ser o dobro de 210px, porque 210px é a altura da
+              1ª linha. 420px é a altura das duas e unicas linhas, porque nós
+              dividimos o layout em 3 colunas, e como temos 6 divs, 3 colunas
+              ficam em cima, 3 colunas ficam em baixo e assim temos 2 linhas)
+            </li>
+          </ul>
+          <li>
+            grid-column || A contagem começa pela linha da borda esquerda do
+            item ate à borda esquerda do outro que coincide com a borda direita
+            desse proprio item:
+          </li>
+          <p>Se tivermos o: grid-template-columns: repeat(3, 1fr);</p>
+          <p>grid-auto-rows: minmax(200px, 240px);</p>
+          <p>
+            Vamos ter 3 colunas, cada uma com 1frame de largura, e 200px de
+            altura min 240px altura maximo
+          </p>
+          <ul>
+            <li>
+              grid-column: 1/3 || Isto faz com que o item ocupe da linha 1 até
+              ao fim da linha 3
+            </li>
+            <li>
+              grid-column: 1/4 | Isto faz com que o item ocupe da linha 1 até ao
+              fim da linha 4
+            </li>
+            <li>
+              grid-column: 2/3 || Isto faz com que o item ocupe da linha 2 até
+              ao fim da linha 3
+            </li>
+            <li>
+              grid-column: 2/4 || Isto faz com que o item ocupe da linha 2 até
+              ao fim da linha 4
+            </li>
+            <li>
+              grid-column: 3/4 || Isto faz com que o item ocupe da linha 3 até
+              ao fim da linha 4
+            </li>
+          </ul>
+          <li>
+            gird-row || A contagem começa pela linha do topo do item ate à
+            bottom do proprio ITEM e sucessivamente bottom dos outros.
+          </li>
+          <ul>
+            <li>
+              grid-row: 1/3 || Isto faz com que o item ocupe da linha 1 até ao
+              fim da linha 3
+            </li>
+            <li>
+              grid-row: 1/4 | Isto faz com que o item ocupe da linha 1 até ao
+              fim da linha 4
+            </li>
+            <li>
+              grid-row: 2/3 || Isto faz com que o item ocupe da linha 2 até ao
+              fim da linha 3
+            </li>
+            <li>
+              grid-row: 2/4 || Isto faz com que o item ocupe da linha 2 até ao
+              fim da linha 4
+            </li>
+            <li>
+              grid-row: 3/4 || Isto faz com que o item ocupe da linha 3 até ao
+              fim da linha 4
+            </li>
+          </ul>
+          <li>
+            grid-template-areas e grid-area || grid-template-areas é o que
+            escrevemos no container e é a montagem visual; grid-area é o que
+            escrevemos no item e é para identificar o item que escrevemos na
+            montagem visual
+          </li>
+          <p>
+            grid-template-areas: "item1 item1 item1"; Aqui dizemos que vamos ter
+            num layout onde existam 3 colunas em linha, o item1 ocupa as 3
+            colunas
+          </p>
+          <p>
+            grid-area: item1; Aqui estámos a identificar a montagem visual que
+            escrevemos em cima, no grid-template-areas: "item1 ite1 item1";
+          </p>
+          <p>VER O EXERCICIO 4</p>
+        </ul>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+.container {
+  min-height: 100vh;
+}
+
+.navbar,
+.footer {
+  background-color: black;
+  min-height: 40px;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+}
+
+.navbar-btns {
+  display: flex;
+}
+
+.navbar-btn {
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px;
+}
+
+.navbar-btn:hover {
+  border-bottom: 1px solid white;
+}
+
+.navbar img,
+.footer img {
+  width: 200px;
+}
+
+.main-title {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 10px;
+}
+
+.main-paragraph {
+  text-align: center;
+}
+
+.main-content {
+  display: grid;
+  padding: 20px;
+  grid-template-columns: 3fr 1fr;
+  flex: 1 0 auto;
+  gap: 15px;
+}
+
+.main-content img {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+}
+.main-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.main-card {
+  width: 280px;
+  cursor: pointer;
+}
+
+.main-card:hover {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.main-card-category {
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-card-description {
+  padding: 10px;
+}
+
+.sidebar-cards {
+  background-color: #484848;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+.sidebar-title {
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+}
+
+.sidebar-card {
+  width: 260px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.sidebar-card:hover {
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.sidebar-category {
+  text-align: center;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 650px) {
+  .main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: 250px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .footer,
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+}

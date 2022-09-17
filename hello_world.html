@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Everything</title>
+  </head>
+  <body>
+    <h1>Titulo</h1>
+    <h2>texto:</h2>
+    <p>
+      Paragrafo, podemos escrever em <strong>negrito</strong>,
+      <em>italico</em> ou fazer um <s>risco</s>
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ipsa,
+      harum, officia ullam nobis tempore consequatur excepturi aliquid, vitae
+      laboriosam reiciendis fugiat. Est necessitatibus non culpa, harum itaque
+      distinctio? Illum? Lorem ipsum dolor sit amet, consectetur adipisicing
+      elit. Provident totam laudantium ex voluptatibus sapiente nemo
+      perspiciatis maxime, nesciunt labore unde cupiditate at temporibus
+      consectetur cumque similique facere nam nisi cum. Lorem ipsum dolor, sit
+      amet consectetur adipisicing elit. Tempore tenetur reiciendis ad repellat
+      tempora ab, accusantium nihil quaerat animi consectetur similique libero
+      hic, at culpa dicta commodi eum fugit cupiditate.lorem Lorem ipsum dolor
+      sit amet consectetur adipisicing elit. Sunt, fugit eveniet nulla debitis
+      deserunt error suscipit ut officiis inventore voluptates est illum
+      reiciendis mollitia aperiam cumque nisi officia, cum minus.
+    </p>
+    <hr />
+    <br />
+    <h2>Listas:</h2>
+    <h3>Não ordenadas (ul)</h3>
+    <ul>
+      <li>a</li>
+      <li>b</li>
+      <li>c</li>
+    </ul>
+    <h3>ordenadas (ol)</h3>
+    <ol>
+      <li>a</li>
+      <li>b</li>
+      <li>c</li>
+    </ol>
+    <h3>listas dentro de outras listas</h3>
+    <ul>
+      <li>a</li>
+      <li>b</li>
+      <li>c</li>
+      <li>
+        <ol>
+          <li>d</li>
+          <li>e</li>
+          <li>f</li>
+        </ol>
+      </li>
+    </ul>
+    <hr />
+    <br />
+    <h2>Div e span</h2>
+    <div>
+      <p>Ocupa o maximo da tela possivel</p>
+    </div>
+    <div>Uma nova div passa para a linha de baixo</div>
+    <span
+      >Ocupa so o que precisa, serve para quando queremos mudar a cor só de uma
+      palavra</span
+    >
+    <p><span style="background-color: green">Exemplo: </span> Ola Mundo</p>
+    <hr />
+    <br />
+    <h2>Navegação e Imagens</h2>
+    <div>
+      <h4>Marte:</h4>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/OSIRIS_Mars_true_color.jpg/420px-OSIRIS_Mars_true_color.jpg"
+        alt="Marte"
+      />
+      <div>
+        <a target="_blank" href="https://pt.wikipedia.org/wiki/Marte_(planeta)"
+          >Ver mais...</a
+        >
+      </div>
+      <div>
+        <h4>Terra:</h4>
+      </div>
+      <div>
+        <p>Sobre o Planeta Terra</p>
+        <a href="terra.html">Click Here</a>
+      </div>
+    </div>
+    <hr />
+    <br />
+    <div>
+      <h2>Tabelas</h2>
+      <table border="1">
+        <caption>
+          Nomes
+        </caption>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Apelido</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cláudio</td>
+            <td>Cunha</td>
+          </tr>
+          <tr>
+            <td>Beatriz</td>
+            <td>Agulheiro</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <table border="1">
+        <caption>
+          Numeros
+        </caption>
+        <thead>
+          <tr>
+            <th>data de nascimento</th>
+            <th>idade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1996</td>
+            <td>26</td>
+          </tr>
+          <tr>
+            <td>2000</td>
+            <td>22</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <hr />
+    <br />
+    <div>
+      <h2>forms</h2>
+      <h4>Pesquisa no google</h4>
+    </div>
+    <div>
+      <form action="https://www.google.com/search" method="get">
+        <label for="q">Aqui: </label>
+        <input
+          type="text"
+          id="q"
+          name="q"
+          placeholder="Escreve qualquer coisa"
+        />
+        <input type="submit" value="Pesquisar" />
+      </form>
+      <h4>Required</h4>
+      <form action="https://www.google.com/search" method="get">
+        <label for="q">Escreve um email: </label>
+        <input
+          type="email"
+          name="q"
+          id="q"
+          placeholder="Escreve um email"
+          required
+        />
+        <input type="submit" value="Verificar email" />
+      </form>
+      <h4>Minimo e maximo</h4>
+      <form action="https://www.google.com/search" method="get">
+        <label for="q">Escreve um numero: </label>
+        <input
+          type="number"
+          name="q"
+          id="q"
+          min="5"
+          max="10"
+          placeholder="Escreve um numero"
+        />
+        <input type="submit" value="Verifiar numero" />
+      </form>
+      <h4>Auto complete</h4>
+      <form action="" autocomplete="on">
+        <label for="first">First Name: </label>
+        <input type="text" name="firts" id="firts" placeholder="First Name" />
+        <label for="last">Last Name: </label>
+        <input type="text" name="last" id="last" placeholder="Last Name" />
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email" autocomplete="off" />
+      </form>
+      <h4>Data List</h4>
+      <label for="browser">Browsers</label>
+      <input list="options" id="browser" />
+      <datalist id="options">
+        <option value="Internet Explorer"></option>
+        <option value="Firefox"></option>
+        <option value="Chrome"></option>
+        <option value="Opera"></option>
+        <option value="Safari"></option>
+      </datalist>
+      <br />
+      <br />
+      <label for="search">CS Players</label>
+      <input type="search" list="cs" id="search" />
+      <datalist id="cs">
+        <option value="1 S1mple">S1mple</option>
+        <option value="2 Niko">Niko</option>
+        <option value="3 Coldzera">Coldzera</option>
+      </datalist>
+      <hr />
+      <br />
+      <h4>Mais inputs:</h4>
+      <label for="firstname">First Name: </label
+      ><input type="text" name="firstname" id="firstname" />
+      <br />
+      <label for="number">Numero: </label>
+      <input type="number" name="number" id="number" />
+      <br />
+      <label for="email">Email: </label>
+      <input type="email" name="email" id="email" />
+      <br />
+      <label for="pw">Password: </label>
+      <input type="password" name="pw" id="pw" />
+      <br />
+      <label for="gender">Genero: </label>
+      <input type="radio" name="gender" value="male" id="gender" checked />Male
+      <input type="radio" name="gender" value="female" id="gender" /> Female
+      <input type="radio" name="gender" value="other" id="gender" /> Other
+      <br />
+      <label for="car">Car: </label>
+      <input type="checkbox" name="car" id="car" /> I have a car
+      <br />
+      <label for="bike">Bike: </label>
+      <input type="checkbox" name="bike" id="bike" /> I have a bike
+      <br />
+      <label for="color">Favorite Color: </label>
+      <input type="color" name="color" id="color" />
+      <br />
+      <label for="date">Date: </label>
+      <input type="date" name="date" id="date" />
+      <br />
+      <label for="file">Select File: </label>
+      <input type="file" name="file" />
+      <br />
+      <label for="search">Search</label>
+      <input type="search" name="search" id="search" />
+      <br />
+      <label for="url">URL: </label>
+      <input type="url" name="url" id="url" />
+      <br />
+      <label for="range">range</label>
+      <input type="range" name="range" id="range" min="1" max="10" />
+      <br />
+      <input type="time" />
+      <input type="submit" />
+    </div>
+    <hr />
+    <br />
+    <div>
+      <h3>Tags de Video e Audio</h3>
+      <h4>Video do nosso PC</h4>
+      <video autoplay width="320" height="240" controls>
+        <source src="videodopc" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <h4>Video do youtube</h4>
+      <iframe
+        src="https://youtu.be/R4kRgIkpTxQ"
+        width="420"
+        height="315"
+        frameborder="0"
+      ></iframe>
+      <h4>Audio</h4>
+      <audio>
+        <!-- Reprodução simples de áudio -->
+        <audio
+          src="https://developer.mozilla.org/@api/deki/files/2926/=AudioTest_(1).ogg"
+          autoplay
+        >
+          O seu navegador não suporta o elemento <code>audio</code>.
+        </audio>
+
+        <!-- Reprodução de áudio com legendas -->
+        <audio src="foo.ogg">
+          <track
+            kind="captions"
+            src="foo.en.vtt"
+            srclang="en"
+            label="English"
+          />
+          <track
+            kind="captions"
+            src="foo.sv.vtt"
+            srclang="sv"
+            label="Svenska"
+          />
+        </audio>
+      </audio>
+    </div>
+    <div>
+      <hr />
+      <br />
+      <h3>HTML Semantico</h3>
+      <ol>
+        <li>header</li>
+        <ul>
+          nav
+        </ul>
+        <li>section</li>
+        <ul>
+          div
+        </ul>
+        <li>aside</li>
+        <ul>
+          Parte Lateral
+        </ul>
+        <li>footer</li>
+      </ol>
+    </div>
+    <div>
+      <img src="https://www.w3schools.com/html/img_sem_elements.gif" alt="" />
+      <ul>
+        <li>article</li>
+        <li>aside</li>
+        <li>details</li>
+        <li>figcaption</li>
+        <li>figure</li>
+        <li>footer</li>
+        <li>header</li>
+        <li>main</li>
+        <li>nav</li>
+        <li>section</li>
+        <li>summary</li>
+        <li>time</li>
+      </ul>
+    </div>
+    <br />
+    <hr />
+    <hr />
+    <hr />
+    <br />
+    <div>
+      <h1>CSS</h1>
+      <a href="./css.html">Carrega Aqui para a parte do CSS</a>
+    </div>
+    <hr />
+    <br />
+  </body>
+</html>

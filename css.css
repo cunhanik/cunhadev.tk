@@ -1,0 +1,147 @@
+.voltarhtml a {
+  border: 2px solid red;
+  color: white;
+  background-color: #000000;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+}
+.voltarhtml {
+  margin: 50px auto 50px auto;
+  width: 10%;
+}
+
+h1 {
+  color: #ff0000;
+  background-color: #000000;
+  border: 2px dashed yellow;
+}
+
+body {
+  background-color: gray;
+  background-image: url("https://i.gyazo.com/13bf1234710856015e0f33c47c2fc700.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.azul {
+  color: #0000ff;
+}
+
+.verde {
+  color: #00ff00;
+}
+
+.vermelho {
+  color: #ff0000;
+}
+
+.big-text {
+  font-size: 50px;
+}
+
+.small-text {
+  font-size: 25px;
+}
+
+#solid {
+  border: 2px solid #0000ff;
+}
+
+#dashed {
+  border: 2px dashed #00ff00;
+}
+
+li a {
+  color: green;
+}
+
+div > li {
+  color: red;
+}
+
+p + h6 {
+  border: 2px dashed red;
+}
+
+a[href="/semrecibo"] {
+  color: yellow;
+}
+
+a[href="/recibo"] {
+  color: orangered;
+}
+
+li:nth-last-of-type(2) {
+  color: red;
+}
+
+.heranca {
+  border: 2px solid green;
+}
+
+div ul {
+  border: inherit;
+}
+
+.texto {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 2;
+}
+
+.texto h1 {
+  text-align: center;
+  text-decoration: underline;
+  color: blue;
+}
+
+.texto h2 {
+  text-align: center;
+  text-decoration: line-through;
+  color: blue;
+}
+
+.font-roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+.font-geo {
+  font-family: "Geostar", cursive;
+}
+
+.sem-fonte {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.box-model h5 {
+  margin: 50px auto 20px auto;
+  border: 2px dashed red;
+  padding: 10px 15px 10px 15px;
+  width: 5%;
+}
+
+.box-model-img {
+  width: 400px;
+}
+
+.cssmoderno a {
+  border: 2px solid red;
+  color: white;
+  background-color: #000000;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.cssmoderno {
+  margin: 50px auto 50px auto;
+  width: 30%;
+  transition: 1s;
+}
+
+a:hover {
+  background-color: blue;
+}

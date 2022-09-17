@@ -1,0 +1,23 @@
+.btn-class {
+  border: 2px solid black;
+  width: 10%;
+  background-color: black;
+  margin-top: 1%;
+}
+
+#btn-id {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-class:hover {
+  background-color: white;
+}
+
+#btn-id:hover {
+  color: black;
+}

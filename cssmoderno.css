@@ -1,0 +1,109 @@
+body {
+  background-color: gray;
+}
+
+.cssantigo a,
+.html a {
+  border: 2px solid red;
+  color: white;
+  background-color: #000000;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.cssantigo,
+.html {
+  margin: 50px 0px 20px 0px;
+  width: 30%;
+  transition: 1s;
+}
+
+.cssantigo a:hover,
+.html a:hover {
+  background-color: blue;
+}
+
+.ex_responsividade {
+  border: 2px solid black;
+  width: 15%;
+  background-color: white;
+  text-align: center;
+}
+
+.ex_responsividade a {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.ex_responsividade:hover {
+  background-color: black;
+}
+
+.ex_responsividade a:hover {
+  color: white;
+}
+
+.flexbox {
+  width: 15%;
+  text-align: center;
+}
+
+.flexbox a {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  padding: 10px;
+  text-decoration: none;
+  border: 2px solid black;
+  background-color: white;
+}
+
+.flexbox a:hover {
+  color: white;
+  background-color: black;
+}
+
+.grid {
+  width: 15%;
+  text-align: center;
+}
+
+.grid a {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  padding: 10px;
+  text-decoration: none;
+  border: 2px solid black;
+  background-color: white;
+}
+
+.grid a:hover {
+  color: white;
+  background-color: black;
+}
+
+.sass a:hover {
+  color: white;
+  background-color: black;
+}
+
+.sass {
+  width: 15%;
+  text-align: center;
+}
+
+.sass a {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  padding: 10px;
+  text-decoration: none;
+  border: 2px solid black;
+  background-color: white;
+}
+
+.sass a:hover {
+  color: white;
+  background-color: black;
+}

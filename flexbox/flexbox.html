@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flexbox</title>
+    <link rel="stylesheet" href="./flexbox.css" />
+  </head>
+  <body>
+    <div class="btn-class">
+      <a id="btn-id" href="../hello_world.html">Voltar para HTML</a>
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" href="../css.html">Voltar para CSS</a>
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" href="../CSSmoderno.html">Voltar para CSS Moderno</a>
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="ex_flexbox1.html"
+        >Exercicio 1 Flexbox</a
+      >
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="ex_flexbox2.html"
+        >Exercicio 2 Flexbox</a
+      >
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="ex_flexbox3.html"
+        >Exercicio 3 Flexbox</a
+      >
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="ex_flexbox4.html"
+        >Exercicio 4 Flexbox</a
+      >
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="../grid/grid.html">Ir para Grid</a>
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="../ex_flexbox+grid/index.html">Exercicio flexbox+grid</a>
+    </div>
+    <br />
+    <hr />
+    <div>
+      <h3>Dicas flexbox:</h3>
+      <ul>
+        <li>
+          display: flex; || Torna o nosso container flex, e com isso podemos
+          fazer muitas coisas:
+          <ul>
+            <br />
+            <li>flex-direction:</li>
+            <ul>
+              <li>
+                flex-direction: column || Coloca os nossos Items em coluna
+              </li>
+              <li>flex-direction: row || Coloca os nossos Items em linha</li>
+              <li>
+                flex-direction: column-reverse || Coloca os nossos items em
+                coluna mas no sentido contrário, de baixo para cima
+              </li>
+              <li>
+                flex-direction: row-reverse || Coloca os nossos items em linha
+                mas no sentido contrário, da direita para a esquerda
+              </li>
+            </ul>
+            <li>gap:</li>
+            <ul>
+              <li>
+                row-gap: 15px || Acrescenta um espaço em linha entre os items
+                que estiverem em coluna (flex-direction: column \
+                flex-direction: column-reverse)
+              </li>
+              <li>
+                column-gap: 15px || Acrescenta um espaço em coluna entre os
+                items que estiverem em linha (flex-direction: row \
+                flex-direction: row-reverse)
+              </li>
+              <li>
+                gap: 0px 15px || Acrescenta um espaço de 0px em linha para os
+                items- (flex-direction: column) e 15px em coluna para os items-
+                (flex-direction: row)
+              </li>
+              <li>
+                gap: 20px || Acrescenta um espaço de 20px em linha para os items
+                (flex-direction: column) e 20px em coluna para os items
+                (flex-direction: row)
+              </li>
+            </ul>
+            <li>Justify-content:</li>
+            <ul>
+              <li>
+                Justify-content: center || Vai centrar os items horizontalmente
+                por default. Se mudarmos o flex-direction: column, ele centra os
+                items verticalmente
+              </li>
+              <li>
+                Justify-content: flex-end \ end || Vai colocar os items no fim
+                da pagina (horizontalmente)
+              </li>
+              <li>
+                Justify-content: flex-start \ start || Vai colocar os items no
+                inicio da pagina (horizontalmente)
+              </li>
+              <li>
+                Justify-content: space-around || Vai colocar os items com o
+                mesmo espaço na esquerda e na direita, consequentemente cria um
+                espaço entre eles
+              </li>
+              <li>
+                Justify-content: space-between || Vai colocar os items com o
+                maximo de espaço entre eles, consequentemente vão ficar
+                encostados nas laterais
+              </li>
+              <li>
+                Justify-content: space-evenly || Vai colocar os items com o
+                mesmo espaço entre eles, consequentemente cria um espaço (igual)
+                nas laterias
+              </li>
+            </ul>
+            <li>Align-items:</li>
+            <ul>
+              <li>
+                Align-items: center || Vai colocar os items ao centro
+                verticalmente. É preciso ter o min-height: 100vh;
+              </li>
+              <li>
+                Align-items: flex-start || Vai colocar os items no inicio
+                verticalmente. É preciso ter o min-height: 100vh;
+              </li>
+              <li>
+                Align-items: flex-end || Vai colocar os items no fim
+                verticalmente. É preciso ter o min-height: 100vh;
+              </li>
+              <li>
+                Align-items: stretch || Vai colocar os items esticados
+                verticalmente. É preciso ter o min-height: 100vh;
+              </li>
+            </ul>
+            <li>flex-wrap:</li>
+            <ul>
+              <li>
+                flex-wrap: nowrap || Em termos de responsividade, o nowrap faz
+                com que os items à medida que estámos a diminuir a tela,
+                diminuam tambem
+              </li>
+              <li>
+                flex-wrap: wrap || Em termos de responsividade, o wrap faz com
+                que os items à medida que estámos a diminuir a tela, passem para
+                a linha de baixo
+              </li>
+              <li>
+                flex-wrap: wrap-reverse || Em termos de responsividade, o wrap
+                faz com que os items à medida que estámos a diminuir a tela,
+                passem para a linha de cima
+              </li>
+            </ul>
+            <li>flex-basics:</li>
+            <ul>
+              <li>
+                flex-basics: 200px || Basicamente é a largura do item (width)
+                para usarmos isto, podemos não usar width ou comentar. Tal como
+                fizemos no Exercicio 3
+              </li>
+            </ul>
+            <li>flex-grow:</li>
+            <ul>
+              <li>flex-grow: 0 || fica tudo normal (valor default)</li>
+              <li>
+                flex-grow: 1 || ocupa todo o espaço disponivel na horizontal
+              </li>
+            </ul>
+            <li>flex-shrink:</li>
+            <ul>
+              <li>
+                flex-shrink: 0 || O item não vai diminuir ao contrario dos
+                outros, conforme formos diminuindo a resolução. Para usarmos
+                isto, podemos não usar flex-wrap: wrap ou comentar. Tal como
+                fizemos no Exercicio 3
+              </li>
+              <li>
+                flex-shrink: 1 || O item vai diminuir igual aos outros, conforme
+                formos diminuindo a resolução. Para usarmos isto, podemos não
+                usar flex-wrap: wrap ou comentar. Tal como fizemos no Exercicio
+                3
+              </li>
+              <li>
+                flex-shrink: 2 || O item diminui mais do que os outros, conforme
+                formos diminuindo a resolução. Para usarmos isto, podemos não
+                usar flex-wrap: wrap ou comentar. Tal como fizemos no Exercicio
+                3
+              </li>
+            </ul>
+            <li>flex:</li>
+            <ul>
+              <li>
+                flex: 1 0 200px || o 1 é o flex-grow, ou seja: Ocupa todo o
+                espaço disponivel. | o 0 é o flex-shrink, ou seja: O item não
+                vai diminuir. | o 200px é o flex-basics, ou seja: O item vai
+                ocupar 200px largura.
+                <p>Para vermos melhor:</p>
+                <p>
+                  No Exercicio 3: tiramos o flex-wrap, usamos o flex-direction:
+                  column no container e mudamos a height: 100px dos items.
+                </p>
+                <p>
+                  Com o flex-basics ou o 3º numero do flex (neste caso 200px),
+                  tambem podemos ver que o item 2 fica responsivo verticalmente.
+                  Se baixarmos o tamanho na vertical, vemos que ele mantem os
+                  200px
+                </p>
+              </li>
+            </ul>
+            <li>order:</li>
+            <ul>
+              <li>order: 1 || O order 1 coloca o item na 1ª posição</li>
+              <li>order: 2 || O order 2 coloca o item na 2ª posição</li>
+              <li>order: 3 || O order 3 coloca o item na 3ª posição</li>
+            </ul>
+            <li>Align-items:</li>
+            <ul>
+              <p>
+                Para testar isto, No Exercicio 3, no .container vamos: Tirar o
+                flex-direction: column ou alterar para row
+              </p>
+              <p>
+                Para testar isto, No Exercicio 3 vamos: alterar a width do .item
+                para 20%
+              </p>
+              <li>
+                Align-self: flex-start || Alinha verticalmente o item para o
+                topo
+              </li>
+              <li>
+                Align-self: flex-end || Alinha verticalmente o item para o
+                bottom
+              </li>
+              <li>
+                Align-self: center || Alinha verticalmente o item para o centro
+              </li>
+            </ul>
+            <li>align-content:</li>
+            <ul>
+              <li>
+                align-content: center; || Alinha verticalmente o item como o
+                align-items, mas reduz o espaço que fica no meio se utilizarmos
+                gap
+              </li>
+              <li>
+                align-content: flex-start; || Alinha verticalmente o item para o
+                topo como o align-items, mas reduz o espaço que fica no meio se
+                utilizarmos gap
+              </li>
+              <li>
+                align-content: flex-end; || Alinha verticalmente o item para o
+                bottom como o align-items, mas reduz o espaço que fica no meio
+                se utilizarmos gap
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
