@@ -89,6 +89,25 @@ body {
   background-color: black;
 }
 
+.ex-flexbox-grid {
+  width: 20%;
+  text-align: center;
+}
+
+.ex-flexbox-grid a {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  padding: 10px;
+  text-decoration: none;
+  border: 2px solid black;
+  background-color: white;
+}
+
+.ex-flexbox-grid a:hover {
+  color: white;
+  background-color: black;
+}
+
 .sass {
   width: 15%;
   text-align: center;
