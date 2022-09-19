@@ -1,0 +1,13 @@
+$btn-color1: #ff4043;
+$btn-color2: #00ff00;
+$btn-width: 150px;
+
+.btn1 {
+  width: $btn-width;
+  background-color: $btn-color1;
+}
+
+.btn2 {
+  width: $btn-width;
+  background-color: $btn-color2;
+}
