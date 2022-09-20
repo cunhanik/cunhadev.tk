@@ -1,0 +1,56 @@
+/* Criar uma função */
+
+@function mudarcor($background-color) {
+  @if (lightness($background-color) > 50) {
+    @return black;
+  } @else {
+    @return white;
+  }
+}
+
+@mixin background-color-mixin($color) {
+  background-color: $color;
+  color: mudarcor($color);
+}
+
+.container {
+  height: 100vh;
+}
+
+.div-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  @include background-color-mixin(black);
+
+  /* Uso de uma função já criada:
+
+  color: mix($color: #000000, $color: #000000, $weight: 0.5) */
+}
+
+.div-btn {
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  height: 20vh;
+  align-items: center;
+}
+
+.btn {
+  height: 30px;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  background-color: black;
+  color: white;
+  border: 2px solid green;
+  text-decoration: none;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: green;
+    border-color: black;
+    color: white;
+  }
+}

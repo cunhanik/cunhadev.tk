@@ -1,0 +1,28 @@
+#page-title {
+  font-size: 30px;
+  font-family: sans-serif;
+}
+
+.btn {
+  background-color: $btn-background;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: 0.5s;
+  width: 60px;
+  text-align: center;
+  margin-bottom: 10px;
+
+  &:hover {
+    background-color: $primary-color;
+  }
+}
+
+@mixin paragraph-style($font-size, $font-family, $color) {
+  font-size: $font-size;
+  font-family: $font-family;
+  color: $color;
+}

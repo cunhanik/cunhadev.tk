@@ -56,6 +56,16 @@
         >EX Herança e Extends</a
       >
     </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="./ex_boas-praticas.html"
+        >EX Boas Praticas</a
+      >
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="./sass-funcoes.html"
+        >EX Boas Praticas</a
+      >
+    </div>
     <br />
     <hr />
     <div>
@@ -420,6 +430,69 @@
             </ul>
           </ul>
           <h3>Carregar no botão "ex_heranca-extends"</h3>
+        </ul>
+        <li>Funções Sass:</li>
+        <ul>
+          <li>
+            São raras de serem criadas porque ou já há a função do que queremos
+            fazer, ou há uma maneira mais facil de fazer a mesma coisa.
+          </li>
+          <ul>
+            <li>Vamos dar o exemplo de como usar uma função já criada:</li>
+            <ul>
+              <li>Função: mix()</li>
+              <ul>
+                <li>
+                  color: mix($color: #000000, $color: #000000, $weight: 0.5)
+                </li>
+              </ul>
+            </ul>
+            <li>Vamos dar o exemplo de como criar uma função:</li>
+            <ul>
+              <li>
+                <p>@function mudarcor($background-color) {</p>
+                <p>@if (lightness($background-color) > 50) {</p>
+                <p>@return black;</p>
+                <p>} @else {</p>
+                <p>@return white;</p>
+                <p>}</p>
+                <p>}</p>
+                <p>Agora temos que usar o mixin:</p>
+                <p>@mixin background-color-mixin($color) {</p>
+                <p>background-color: $color;</p>
+                <p>color: mudarcor($color);</p>
+                <p>}</p>
+                <p>
+                  Depois disto, é so usar o @include com a cor que queremos. Se
+                  o background for escuro, as letras ficam brancas. Se o
+                  background for claro, as letras ficam escuras
+                </p>
+                <p>@include background-color-mixin(white);</p>
+                <p>ou</p>
+                <p>@include background-color-mixin(black);</p>
+              </li>
+            </ul>
+          </ul>
+          <h3>Carregar no botão "sass-funcoes"</h3>
+        </ul>
+        <li>minify: Deixar o site mais rapido.</li>
+        <ul>
+          <li>
+            Basicamente o minify transforma todas as nossas linhas de css NUMA e
+            isso ajuda a que o css processe menos linhas e o site fica mais
+            rapido
+          </li>
+          <ul>
+            <li>Para utilizarmos o minify, temos que:</li>
+            <ul>
+              <p>Na pasta que contem o nosso sass, escrever o seguinte:</p>
+              <p>
+                sass
+                ficheiro-scss.scss:./pasta-criada-para-o-css/ficheiro-css.css
+                --style compressed
+              </p>
+            </ul>
+          </ul>
         </ul>
       </ul>
     </div>

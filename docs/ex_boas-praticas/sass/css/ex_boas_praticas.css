@@ -1,0 +1,35 @@
+#page-title {
+  font-size: 30px;
+  font-family: sans-serif;
+}
+
+.btn {
+  background-color: #05005d;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: 0.5s;
+  width: 60px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.btn:hover {
+  background-color: #ff4043;
+}
+
+#paragraph-sign-up {
+  font-size: 20px;
+  font-family: sans-serif;
+  color: #05005d;
+}
+
+#paragraph-login {
+  font-size: 20px;
+  font-family: sans-serif;
+  color: #ff4043;
+}
+
+/*# sourceMappingURL=ex_boas_praticas.css.map */

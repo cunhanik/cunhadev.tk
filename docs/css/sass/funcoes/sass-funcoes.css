@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* Criar uma função */
+.container {
+  height: 100vh;
+}
+
+.div-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background-color: black;
+  color: white;
+  /* Uso de uma função já criada:
+
+  color: mix($color: #000000, $color: #000000, $weight: 0.5) */
+}
+
+.div-btn {
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  height: 20vh;
+  align-items: center;
+}
+
+.btn {
+  height: 30px;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  background-color: black;
+  color: white;
+  border: 2px solid green;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.btn:hover {
+  background-color: green;
+  border-color: black;
+  color: white;
+}
+
+/*# sourceMappingURL=sass-funcoes.css.map */
