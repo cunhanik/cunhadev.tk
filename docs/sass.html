@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sass</title>
-    <link rel="stylesheet" href="./sass.css" />
+    <link rel="stylesheet" href="./css/sass.css" />
   </head>
   <body>
     <div class="btn-class">
@@ -252,7 +252,7 @@
               Vamos criar um ficheiro de exemplo, usar: variaveis, nesting,
               import e mixin
             </li>
-            <li>Criamos o ficheiro: ex_mixin.html e ex_mixin.scss</li>
+            <li>Criamos o ficheiro: ex_mixin.html e ex_mixin_home.scss</li>
             <ul>
               <li>No ficheiro "ex_mixin.html":</li>
               <ul>
@@ -275,7 +275,7 @@
                   </ul>
                 </ul>
               </ul>
-              <li>No ficheiro "ex_mixin.scss":</li>
+              <li>No ficheiro "ex_mixin_home.scss":</li>
               <ul>
                 <p>
                   Fazemos o mixin, que vai ajudar-nos a poupar linhas de código.
@@ -322,9 +322,7 @@
                 </li>
               </ul>
             </ul>
-            <li>
-              Criamos o ficheiro: ex_mixin_variaveis.scss e ex_mixin_principal
-            </li>
+            <li>Criamos o ficheiro: ex_mixin_variaveis.scss e ex_mixin.scss</li>
             <p>
               No ficheiro "ex_mixin_variaveis.scss", escrevemos as nossas
               variaveis:
@@ -333,9 +331,7 @@
               <li>$primary-color: red;</li>
               <li>$secondary-color: blue;</li>
             </ul>
-            <p>
-              No ficheiro "ex_mixin_principal", escrevemos os nossos imports:
-            </p>
+            <p>No ficheiro "ex_mixin.scss", escrevemos os nossos imports:</p>
             <ul>
               <li>@import "./ex_mixin_variaveis.scss";</li>
               <li>@import "./ex_mixin.scss";</li>
@@ -346,10 +342,10 @@
             IMPORTS):
           </h2>
           <h3>No terminal da pasta onde contem o nosso ficheiro:</h3>
-          <h3>sass --watch ex_mixin_principal.scss:ex_mixin_principal.css</h3>
+          <h3>sass --watch ex_mixin.scss:ex_mixin.css</h3>
           <h3>
             linkar o css da pagina html: link rel="stylesheet"
-            href="./ex_mixin_principal.css" />
+            href="./ex_mixin.css" />
           </h3>
           <h3>Ver Ex mixin</h3>
         </ul>
