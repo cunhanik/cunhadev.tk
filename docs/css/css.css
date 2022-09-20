@@ -145,3 +145,15 @@ div ul {
 a:hover {
   background-color: blue;
 }
+
+.ex{
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.ex_margin{
+  margin-bottom: 20px;
+}
