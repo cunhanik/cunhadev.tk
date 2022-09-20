@@ -1,0 +1,18 @@
+.text-click {
+  color: orange;
+  font-size: 22px;
+}
+
+.btn {
+  padding: 15px;
+  background-color: black;
+  color: orange;
+  border: 1px solid red;
+}
+.btn:hover {
+  background-color: white;
+  color: red;
+  border-color: black;
+}
+
+/*# sourceMappingURL=sass-import.css.map */

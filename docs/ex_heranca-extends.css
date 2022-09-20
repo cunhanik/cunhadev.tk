@@ -1,0 +1,23 @@
+.btn, .btn-green {
+  padding: 15px 10px;
+  border-radius: 25px;
+  width: 125px;
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.btn.btn-red, .btn-red.btn-green {
+  background-color: red;
+  color: white;
+}
+.btn.btn-blue, .btn-blue.btn-green {
+  background-color: blue;
+  color: white;
+}
+
+.btn-green {
+  background-color: green;
+  color: white;
+}
+
+/*# sourceMappingURL=ex_heranca-extends.css.map */

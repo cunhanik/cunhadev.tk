@@ -42,6 +42,20 @@
         >Ir para: SASS VARIAVEIS</a
       >
     </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="./sass-nesting.html">EX Nesting</a>
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="./sass-import.html">EX import</a>
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="./ex_mixin.html">EX mixin</a>
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="./ex_heranca-extends.html"
+        >EX Herança e Extends</a
+      >
+    </div>
     <br />
     <hr />
     <div>
@@ -160,10 +174,256 @@
               Depois quando quisermos usar essa cor e essa width, fazemos: .btn1
               { width: $btn-width; background-color: $btn-color1; }
             </li>
-            <p>Carreguem no botão "Ir para: SASS VARIAVEIS"</p>
           </ul>
           <li>O Sass mostra os erros no terminal</li>
-          <li>Nesting:</li>
+          <h3>Carreguem no botão "Ir para: SASS VARIAVEIS"</h3>
+        </ul>
+        <li>Nesting:</li>
+        <ul>
+          <li>
+            Com o Nesting, o nosso css fica mais organizado! Escrevemos o nome
+            da classe e fazemos tudo dentro dela
+          </li>
+          <h3>Ver Ex Nesting</h3>
+        </ul>
+        <li>Import:</li>
+        <ul>
+          <li>O import funciona da seguinte maneira:</li>
+          <ul>
+            <li>Criamos o ficheiro principal: sass-import.scss</li>
+            <li>Criamos um ficheiro scss de cores: sass-import-colors.scss</li>
+            <li>
+              Criamos um ficheiro de uma pagina que vamos estilizar (ex: pagina
+              Home): sass-import-home.scss
+            </li>
+            <ul>
+              <li>
+                Agora, no ficheiro "sass-import-colors.scss" criamos as
+                variaveis das cores que mais vamos usar no nosso projeto:
+                <p>$primary-color: red;</p>
+                <p>$secondary-color: orange;</p>
+              </li>
+            </ul>
+            <li>
+              No ficheiro "sass-import-home.scss" criamos o estilo do nosso
+              exemplo:
+              <p>.text-click {</p>
+              <p>color: $secondary-color;</p>
+              <p>font-size: 22px;</p>
+              <p>}</p>
+              <p>.btn {</p>
+              <p>padding: 15px;</p>
+              <p>background-color: black;</p>
+              <p>color: $secondary-color;</p>
+              <p>border: 1px solid $primary-color;</p>
+              <p></p>
+              <p>&:hover {</p>
+              <p>background-color: white;</p>
+              <p>color: $primary-color;</p>
+              <p>border-color: black;</p>
+              <p>}</p>
+              <p>}</p>
+            </li>
+            <li>
+              No ficheiro principal "sass-import.scss" importamos tudo o que
+              usamos
+            </li>
+            <ul>
+              <li>
+                //import colors
+                <p>@import "./sass-import-colors.scss";</p>
+              </li>
+              <li>
+                //import home
+                <p>@import "./sass-import-home.scss";</p>
+              </li>
+            </ul>
+            <h3>Feito isto, é so fazer o processamento normal:</h3>
+            <h3>Na consola da pasta onde está inserido o nosso ficheiro:</h3>
+            <h3>sass --watch sass-import.scss:sass-import.css</h3>
+          </ul>
+          <h3>Ver Ex import</h3>
+        </ul>
+        <li>mixin:</li>
+        <ul>
+          <li>Serve para facilitar e resumir o codigo.</li>
+          <ul>
+            <li>
+              Vamos criar um ficheiro de exemplo, usar: variaveis, nesting,
+              import e mixin
+            </li>
+            <li>Criamos o ficheiro: ex_mixin.html e ex_mixin.scss</li>
+            <ul>
+              <li>No ficheiro "ex_mixin.html":</li>
+              <ul>
+                <li>Criamos a nossa pagina html e add:</li>
+                <ul>
+                  <li>
+                    2 divs com classes diferentes, 1 delas com um h1 e um p; A
+                    outra com um botão
+                  </li>
+                  <ul>
+                    <li>div class="txt" div</li>
+                    <ul>
+                      <li>h1 class="title" Se quiseres comprar h1</li>
+                      <li>p class="paragraph" Clica no botão p</li>
+                    </ul>
+                    <li>div class="btn" div</li>
+                    <ul>
+                      <li>button class="btn-style" Click-Here button</li>
+                    </ul>
+                  </ul>
+                </ul>
+              </ul>
+              <li>No ficheiro "ex_mixin.scss":</li>
+              <ul>
+                <p>
+                  Fazemos o mixin, que vai ajudar-nos a poupar linhas de código.
+                </p>
+                <li>
+                  <p>@mixin text($font-size, $font-family, $color) {</p>
+                  <p>font-size: $font-size;</p>
+                  <p>font-family: $font-family;</p>
+                  <p>color: $color;</p>
+                  <p>}</p>
+                  <p>
+                    @mixin btn($font-size, $color, $background-color, $border,
+                    $cursor, $padding-right) {
+                  </p>
+                  <p>font-size: $font-size;</p>
+                  <p>color: $color;</p>
+                  <p>background-color: $background-color;</p>
+                  <p>border: $border;</p>
+                  <p>cursor: $cursor;</p>
+                  <p>padding-right: $padding-right;</p>
+                  <p>}</p>
+                  <p>.txt {</p>
+                  <p>.title {</p>
+                  <p>@include text(24px, Arial, $primary-color);</p>
+                  <p>}</p>
+                  <p>.paragraph {</p>
+                  <p>@include text(18px, Arial, $secondary-color);</p>
+                  <p>}</p>
+                  <p>}</p>
+                  <p>.btn {</p>
+                  <p>.btn-style {</p>
+                  <p>
+                    @include btn(16px, white, black, 1px solid $primary-color,
+                    pointer, 30px);
+                  </p>
+                  <p>&:hover {</p>
+                  <p>
+                    @include btn(16px, black, $secondary-color, 2px solid
+                    darkgrey, pointer, 10px);
+                  </p>
+                  <p>}</p>
+                  <p>}</p>
+                  <p>}</p>
+                </li>
+              </ul>
+            </ul>
+            <li>
+              Criamos o ficheiro: ex_mixin_variaveis.scss e ex_mixin_principal
+            </li>
+            <p>
+              No ficheiro "ex_mixin_variaveis.scss", escrevemos as nossas
+              variaveis:
+            </p>
+            <ul>
+              <li>$primary-color: red;</li>
+              <li>$secondary-color: blue;</li>
+            </ul>
+            <p>
+              No ficheiro "ex_mixin_principal", escrevemos os nossos imports:
+            </p>
+            <ul>
+              <li>@import "./ex_mixin_variaveis.scss";</li>
+              <li>@import "./ex_mixin.scss";</li>
+            </ul>
+          </ul>
+          <h2>
+            Feito isto, agora é so processar o ficheiro principal (QUE CONTEM OS
+            IMPORTS):
+          </h2>
+          <h3>No terminal da pasta onde contem o nosso ficheiro:</h3>
+          <h3>sass --watch ex_mixin_principal.scss:ex_mixin_principal.css</h3>
+          <h3>
+            linkar o css da pagina html: link rel="stylesheet"
+            href="./ex_mixin_principal.css" />
+          </h3>
+          <h3>Ver Ex mixin</h3>
+        </ul>
+        <li>Herança e Extends</li>
+        <ul>
+          <li>Vamos criar 1 ficheiro html e scss:</li>
+          <ul>
+            <li>No ficheiro html: ex_heranca-extends.html:</li>
+            <ul>
+              <li>Criamos 3 butoes:</li>
+              <li>o 1º e 3º com class btn e class da propria cor</li>
+              <li>o 2º só com class da cor</li>
+              <p>button class="btn btn-red">I'M RED button</p>
+              <p>button class="btn-green">I'M GREEN button</p>
+              <p>button class="btn btn-blue">I'M BLUE button</p>
+              <li>Processamos o sass</li>
+              <p>
+                No terminal fazemos: sass --watch
+                ex_heranca-extends.scss:ex_heranca-extends.css
+              </p>
+              <li>Linkamos o css</li>
+              <p>
+                No html linkamos: link rel="stylesheet"
+                href="./ex_heranca-extends.css" />
+              </p>
+            </ul>
+            <li>No ficheiro sass: ex_heranca-extends.scss:</li>
+            <ul>
+              <li><h2>Parte da HERANCA:</h2></li>
+              <ul>
+                <p>Primeiro vamos estilizar a classe btn:</p>
+                <li>
+                  <p>.btn {</p>
+                  <p>padding: 15px 10px;</p>
+                  <p>border-radius: 25px;</p>
+                  <p>width: 125px;</p>
+                  <p>display: block;</p>
+                  <p>margin-bottom: 10px;</p>
+                  <p>cursor: pointer;</p>
+                </li>
+                <p>
+                  Segundo, dentro dessa classe, vamos estilizar a class de cada
+                  botão individual com essa classe btn:
+                </p>
+                <p>
+                  Para fazermos isso, precisamos de usar o
+                  &.nome-da-propria-class
+                </p>
+                <li>
+                  <p>&.btn-red {</p>
+                  <p>background-color: red;</p>
+                  <p>color: white;</p>
+                  <p>}</p>
+                  <p>&.btn-blue {</p>
+                  <p>background-color: blue;</p>
+                  <p>color: white;</p>
+                  <p>}</p>
+                  <p>}</p>
+                </li>
+              </ul>
+              <li><h2>Parte do EXTENDS:</h2></li>
+              <p>Terceiro, e fora da classe, colocamos o nosso 2º botão:</p>
+              <ul>
+                <li>
+                  <p>.btn-green {</p>
+                  <p>@extend .btn;</p>
+                  <p>background-color: green;</p>
+                  <p>color: white;</p>
+                  <p>}</p>
+                </li>
+              </ul>
+            </ul>
+          </ul>
+          <h3>Carregar no botão "ex_heranca-extends"</h3>
         </ul>
       </ul>
     </div>

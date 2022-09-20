@@ -1,0 +1,47 @@
+@mixin text($font-size, $font-family, $color) {
+  font-size: $font-size;
+  font-family: $font-family;
+  color: $color;
+}
+
+@mixin btn(
+  $font-size,
+  $color,
+  $background-color,
+  $border,
+  $cursor,
+  $padding-right
+) {
+  font-size: $font-size;
+  color: $color;
+  background-color: $background-color;
+  border: $border;
+  cursor: $cursor;
+  padding-right: $padding-right;
+}
+
+.txt {
+  .title {
+    @include text(24px, Arial, $primary-color);
+  }
+
+  .paragraph {
+    @include text(18px, Arial, $secondary-color);
+  }
+}
+
+.btn {
+  .btn-style {
+    @include btn(16px, white, black, 1px solid $primary-color, pointer, 30px);
+    &:hover {
+      @include btn(
+        16px,
+        black,
+        $secondary-color,
+        2px solid darkgrey,
+        pointer,
+        10px
+      );
+    }
+  }
+}

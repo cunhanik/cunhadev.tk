@@ -1,0 +1,29 @@
+.txt .title {
+  font-size: 24px;
+  font-family: Arial;
+  color: red;
+}
+.txt .paragraph {
+  font-size: 18px;
+  font-family: Arial;
+  color: blue;
+}
+
+.btn .btn-style {
+  font-size: 16px;
+  color: white;
+  background-color: black;
+  border: 1px solid red;
+  cursor: pointer;
+  padding-right: 30px;
+}
+.btn .btn-style:hover {
+  font-size: 16px;
+  color: black;
+  background-color: blue;
+  border: 2px solid darkgrey;
+  cursor: pointer;
+  padding-right: 10px;
+}
+
+/*# sourceMappingURL=ex_mixin_principal.css.map */

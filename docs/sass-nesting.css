@@ -1,0 +1,21 @@
+.class1 ul {
+  background-color: black;
+}
+.class1 li {
+  background-color: green;
+  padding: 10px;
+}
+
+.btn {
+  color: white;
+  background-color: red;
+  padding: 10px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: blue;
+  color: darkorange;
+}
+
+/*# sourceMappingURL=sass-nesting.css.map */
