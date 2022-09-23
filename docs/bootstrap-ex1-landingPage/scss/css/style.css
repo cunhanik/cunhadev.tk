@@ -27,7 +27,7 @@ body {
 
 .btn-send {
   color: #ff0043;
-  margin: 15px;
+  margin: 10px 0px;
   border: 1px solid #ff0043;
 }
 .btn-send:hover {
