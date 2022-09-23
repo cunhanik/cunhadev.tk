@@ -1,0 +1,13 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+.scrollSpy {
+  background-color: red;
+  height: 473px;
+  position: relative;
+  overflow: auto;
+}
+
+/*# sourceMappingURL=style.css.map */

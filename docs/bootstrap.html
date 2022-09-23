@@ -73,6 +73,41 @@
         >EX Bootstrap + Sass</a
       >
     </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="./bootstrap-ex1-landingPage.html"
+        >EX1 landing Page</a
+      >
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="./bootstrap-icons.html"
+        >Bootstrap Ícons</a
+      >
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="./bootstrap-avisos-alerts.html"
+        >Boostrap Avisos e Alerts</a
+      >
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="./bootstrap-carrossel.html"
+        >Boostrap Carrossel</a
+      >
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="./bootstrap-scroll-spy.html"
+        >Scroll Spy</a
+      >
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="./bootstrap-navbar.html"
+        >Navbar</a
+      >
+    </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="./bootstrap-offcanvas.html"
+        >Off Canvas</a
+      >
+    </div>
     <br />
     <hr />
     <div>
@@ -146,7 +181,7 @@
             gutter || É parecido com o gap, mas o gutter dá um espaço entre o
             paragrafo e a outra coluna.
           </li>
-          <h4>É colocado dentro da class: class="row gx-1"></h4>
+          <h5>É colocado dentro da class: class="row gx-1"></h5>
           <ul>
             <p>Podemos escrever 3 tipos de gutter:</p>
             <li>
@@ -307,7 +342,646 @@
             </ul>
           </ul>
         </ul>
-        <h4>Ver EX Bootstrap + Sass </h4>
+        <h4>Ver EX Bootstrap + Sass e EX1 Landing-Page </h4>
+        <li>Bootstrap Ícons</li>
+        <ul>
+          <li>Podemos instalar o Bootstrap Ícons de 2 maneiras:</li>
+          <ul>
+            <p>https://icons.getbootstrap.com/#install</p>
+            <li>Via link: < link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">;</li>
+            <ul>
+              <li>No html linkamos o bootstrap-icons: < link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"></li>
+              <li>Para ficar mais bonito, vamos fazer a instalação do bootstrap e linkar na pagina html:</li>
+                <ul>
+                  <li>Então no terminal da pasta: npm install bootstrap</li>
+                  <li>No html: < link
+                    rel="stylesheet"
+                    href="./bootstrap-icons/node_modules/bootstrap/dist/css/bootstrap.css "
+                  /></li>
+                  <li>Já podemos utilizar o icon em botões do bootstrap por ex:</li>
+                  <ul>
+                    <li>< button class="btn btn-outline-danger"></li>
+                    <li>< i class="bi bi-instagram"> Instagram</></li>
+                    <li>< /button></li>
+                  </ul>
+                </ul>
+            </ul>
+            <li>via npm: npm i bootstrap-icons</li>
+            <ul>
+              <li>Depois disto, temos que linkar no html o bootstrap-icons.css: < link rel="stylesheet" href="./bootstrap-icons/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+              </li>
+              <ul>
+                <li>Feito isto, já podemos usar os icons: < i class="bi bi-instagram"> Instagram</></li>
+                <li>Para ficar mais bonito, vamos fazer a instalação do bootstrap e linkar na pagina html:</li>
+                <ul>
+                  <li>Então no terminal da pasta: npm install bootstrap</li>
+                  <li>No html: < link
+                    rel="stylesheet"
+                    href="./bootstrap-icons/node_modules/bootstrap/dist/css/bootstrap.css "
+                  /></li>
+                  <li>Já podemos utilizar o icon em botões do bootstrap por ex:</li>
+                  <ul>
+                    <li>< button class="btn btn-outline-danger"></li>
+                    <li>< i class="bi bi-instagram"> Instagram</></li>
+                    <li>< /button></li>
+                  </ul>
+                </ul>
+              </ul>
+            </ul>
+          </ul>
+        </ul>
+        <h4>Ver Bootstrap Ícons</h4>
+        <li>Avisos e Alerts</li>
+        <p>Para isto, precisamos de instalar o bootstrap via link ou npm. Neste exemplo vamos fazer via link</p>
+        <ul>
+          <li>Este primeiro tipo de alert é o mais padrão, que com ele consegues fazer a exibição de uma mensagem, que pode acontecer depois de alguem clicar em algo, para enviar um formulário, por exemplo.</li>
+          <ul>
+            <li>Podemos escrever a class alert alert-success/danger/primary/secondary/warning/info/light/dark</li>
+            <li>< div class="alert alert-success text-center" role="alert">Mensagem de sucesso!</ div></li>
+          </ul>
+          <li>Este segundo tipo de alert é com botão, este já está configurado com o javascript da página, que fizemos a instalação no começo desta pagina. Com ele, clicamos num botão e vai aparecer uma mensagem, Neste código aqui temos o elemento html e o elemento JavaScript, que vamos entender com detalhes mais a frente.</li>
+          <ul>
+            <li>< div id="liveAlertPlaceholder">Carrega para ver a mensagem</ div></li>
+            <li>Criar um script em baixo da pagina com: <!--<script> var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+              var alertTrigger = document.getElementById('liveAlertBtn')
+      
+              function alert(message, type) {
+                  var wrapper = document.createElement('div')
+                  wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+      
+                  alertPlaceholder.append(wrapper)
+              }
+      
+              if (alertTrigger) {
+                  alertTrigger.addEventListener('click', function () {
+                      alert('Bem-vindo a esta parte do site!!', 'success')
+                  })
+              }</script> --></li> 
+          </ul>
+          <li>Este terceiro tipo de alert é com ícones, a diferença são os ícones, que deixam os alerts mais bonitos.</li>
+          <ul>
+            <li>Primeiro abrimos isto: < svg xmlns="http://www.w3.org/2000/svg" style="display: none;"></ svg></li>
+            <li>Para termos o icon de informação com a mensagem: Parte do icon- < symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+              < path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/path>
+          </ symbol> 
+            </li>
+            <li>Para termos o icon de informação com a mensagem: Parte da mensagem- < div class="alert alert-primary d-flex align-items-center mt-3" role="alert">
+              < svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">< use xlink:href="#info-fill"/></ svg>
+              < div>
+                  An example alert with an icon
+              </ div>
+            </li>
+            <li>Para termos o icon de sucesso com a mensagem: Parte do icon- < symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+              < path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+              </ symbol> 
+            </li>
+            <li>
+              Para termos o icon de alerta/perigo/erro com a mensagem: Parte do icon- < symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </ symbol>
+            </li>
+            <li>
+              < div class="alert alert-warning d-flex align-items-center" role="alert">
+                < svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></ svg>
+                < div>
+                    An example warning alert with an icon
+                </ div>
+            </ div>
+            </li>
+          </ul>
+          <li>Este quarto tipo de alert já está configurado para ficar o tempo todo na tela, dessa forma, ele vai desaparecer quando alguem clicar no X, isto é útil para colocar como mensagem numa tela que o utilizador vá entrar.</li>
+          <ul>
+            <li>< div class="alert alert-warning alert-dismissible fade show" role="alert">
+              < strong>Holy guacamole!</ strong> You should check in on some of those fields below.
+              < button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></ button>
+          </ div></li>
+          </ul>
+        </ul>
+        <h4>Ver Boostrap Avisos e Alerts</h4>
+        <li>Boostrap Carrossel</li>
+        <ul>
+          <li>Obviamente que temos que usar instalar o Boostrap, por link ou via npm</li>
+          <li>Carrossel automático: </li>
+          <p>data-bs-interval="1000" || Serve para alterarmos o tempo do carrossel. Neste caso 1000ms=1seg</p>
+          <p>Tem que ser colocado na classe de cada carrossel-item: < div class="carousel-item active" data-bs-interval="1000"></p>
+          <ul>
+            <li>
+              < div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+              < div class="carousel-inner">
+                  < div class="carousel-item active">
+                      < img src="..." class="d-block w-100" alt="...">
+                  </ div>
+                  < div class="carousel-item">
+                      < img src="..." class="d-block w-100" alt="...">
+                  </ div>
+                  < div class="carousel-item">
+                      < img src="..." class="d-block w-100" alt="...">
+                  </ div>
+              </ div>
+              </ div>
+            </li>
+          </ul>
+          <li>Carrossel com controlo:</li>
+          <ul>
+            <li>
+              < div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                < div class="carousel-inner">
+                    < div class="carousel-item active" data-bs-interval="10000">
+                        < img src="..." class="d-block w-100" alt="...">
+                    </ div>
+                    < div class="carousel-item" data-bs-interval="2000">
+                        < img src="..." class="d-block w-100" alt="...">
+                    </ div>
+                    < div class="carousel-item">
+                        < img src="..." class="d-block w-100" alt="...">
+                    </ div>
+                </ div>
+                < button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                    < span class="carousel-control-prev-icon" aria-hidden="true"></ span>
+                    < span class="visually-hidden">Previous</ >
+                </ button>
+                < button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                    < span class="carousel-control-next-icon" aria-hidden="true"></ span>
+                    < span class="visually-hidden">Next </ span>
+                </ button>
+            </ div>
+            </li>
+          </ul>
+          <li>Carrossel automático com controlo:</li>
+          <ul>
+            <li>
+              < div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                < div class="carousel-inner">
+                    < div class="carousel-item active">
+                        < img src="..." class="d-block w-100" alt="...">
+                    </ div>
+                    < div class="carousel-item">
+                        < img src="..." class="d-block w-100" alt="...">
+                    </ div>
+                    < div class="carousel-item">
+                        < img src="..." class="d-block w-100" alt="...">
+                    </ div>
+                </ div>
+                < button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    < span class="carousel-control-prev-icon" aria-hidden="true"></ span>
+                    < span class="visually-hidden">Previous</ span>
+                </ button>
+                < button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    < span class="carousel-control-next-icon" aria-hidden="true"></ span>
+                    < span class="visually-hidden">Next</ span>
+                </ button>
+            </ div>
+            </li>
+          </ul>
+          <li>Carrossel automático com marca & controlo:</li>
+          <ul>
+            <li>
+              < div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                < div class="carousel-indicators">
+                    < button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></ button>
+                    < button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></ button>
+                    < button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></ button>
+                </ div>
+                < div class="carousel-inner">
+                    < div class="carousel-item active">
+                        < img src="..." class="d-block w-100" alt="...">
+                    </ div>
+                    < div class="carousel-item">
+                        < img src="..." class="d-block w-100" alt="...">
+                    </ div>
+                    < div class="carousel-item">
+                        < img src="..." class="d-block w-100" alt="...">
+                    </ div>
+               </ div>
+                < button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    < span class="carousel-control-prev-icon" aria-hidden="true"></ span>
+                    < span class="visually-hidden">Previous</ span>
+                </ button>
+                < button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    < span class="carousel-control-next-icon" aria-hidden="true"></ span>
+                    < span class="visually-hidden">Next</ span>
+                </ button>
+              </ div>
+            </li>
+          </ul>
+        </ul>
+        <h4>Ver Boostrap Carrossel</h4>
+        <li>Scroll Spy</li>
+        <p>overflow: auto; Usamos isto para ter scroll dentro do conteudo</p>
+        <ul>
+          <p>Esta parte é a lateral que contem os items, ligados pelo #id</p>
+          <li>
+            < div class="row pt-5">
+              < div class="col-3 neymar">
+                < nav
+                  id="navbar-example3"
+                  class="navbar navbar-light bg-light flex-column align-items-stretch p-3"
+                >
+                  < a class="navbar-brand" href="#">Navbar</ a>
+                  < nav class="nav nav-pills flex-column">
+                    < a class="nav-link" href="#item-1">Item 1</ a>
+                    < nav class="nav nav-pills flex-column">
+                      < a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</ a>
+                      < a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</ a>
+                    </ nav>
+              </ div>
+            </ div> 
+          </li>
+          <p>Aqui vai ser o conteudo dos items, com o #id de ligação aos anchors(a) em cima</p>
+          <li>
+            < div
+          data-bs-spy="scroll"
+          data-bs-target="#navbar-example3"
+          data-bs-offset="0"
+          tabindex="0"
+          class="col scrollSpy"
+        >
+          < h4 id="item-1">Item 1</ h4>
+          < p>
+            Lorem150
+          </ p>
+          < h5 id="item-1-1">Item 1-1</ h5>
+          < p>
+            Lorem150
+          </ p>
+          < h5 id="item-1-2">Item 1-2</ h5>
+          < p>
+            Lorem150
+          </ p>
+          </li>
+        </ul>
+        <h4>Ver Scroll Spy</h4>
+        <li>Navbar</li>
+        <ul>
+          <li>Primeira Navbar:</li>
+          <ul>
+            <li>
+              Copiar comentario
+              <!--
+                    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+              -->
+            </li>
+          </ul>
+          <li>Segunda Navbar:</li>
+          <ul>
+            <li>
+              Copiar comentario
+              <!--
+                    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+              -->
+            </li>
+          </ul>
+          <li>Terceira Navbar:</li>
+          <ul>
+            <li>
+              Copiar comentario
+              <!--
+                    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar w/ text</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarText"
+            aria-controls="navbarText"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+            </ul>
+            <span class="navbar-text">
+              Navbar text with an inline element
+            </span>
+          </div>
+        </div>
+      </nav>
+    </header>
+              -->
+            </li>
+          </ul>
+        </ul>
+        <h4>Ver Navbar</h4>
+        <li>Off Canvas</li>
+        <ul>
+          <li>1º offcanvas: link que abre offcanvas lateral, com botao dropdown</li>
+          <ul>
+            <li>
+              Ver comentario
+              <!--
+                <div class="container my-5">
+      <a
+        class="btn btn-outline-primary"
+        data-bs-toggle="offcanvas"
+        href="#offcanvasExample"
+        role="button"
+        aria-controls="offcanvasExample"
+      >
+        link com href -> OffCanva lateral
+      </a>
+
+      <div
+        class="offcanvas offcanvas-start"
+        tabindex="-1"
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+            Titulo da lateral
+          </h5>
+          <button
+            type="button"
+            class="btn-close text-reset"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            <strong>texto da lateral ::: </strong>
+            Some text as placeholder. In real life you can have the elements you
+            have chosen. Like, text, images, lists, etc.
+          </div>
+          <div class="dropdown mt-3">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+            >
+              Carrega para ver o Dropdown button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="#">1- Action</a></li>
+              <li><a class="dropdown-item" href="#">2- Another action</a></li>
+              <li>
+                <a class="dropdown-item" href="#">3- Something else here</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+              -->
+            </li>
+          </ul>
+          <li>2º offcanvas: button que abre offcanvas lateral, com botao dropdown</li>
+          <ul>
+            <li>
+              Ver comentario
+              <!--
+                    <div class="container my-5">
+      <button
+        class="btn btn-success"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample"
+      >
+        Button with data-bs-target -> OffCanva lateral
+      </button>
+
+      <div
+        class="offcanvas offcanvas-start"
+        tabindex="-1"
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+          <button
+            type="button"
+            class="btn-close text-reset"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            Some text as placeholder. In real life you can have the elements you
+            have chosen. Like, text, images, lists, etc.
+          </div>
+          <div class="dropdown mt-3">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+            >
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+              -->
+            </li>
+          </ul>
+          <li>3º offcanvas: link que abre offcanvas superior, com botao dropdown</li>
+          <ul>
+            <li>
+              Ver comentario
+              <!--
+                    <div class="container my-5">
+      <a
+        class="btn btn-primary"
+        data-bs-toggle="offcanvas"
+        href="#offcanvasTop"
+        role="button"
+        aria-controls="offcanvasExample"
+      >
+        Link with href -> Toggle top offcanvas
+      </a>
+      <div
+        class="offcanvas offcanvas-top"
+        tabindex="-1"
+        id="offcanvasTop"
+        aria-labelledby="offcanvasTopLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 id="offcanvasTopLabel">Titulo: Offcanvas top</h5>
+          <button
+            type="button"
+            class="btn-close text-reset"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <strong>Texto:::</strong> Some text as placeholder. In real life you
+          can have the elements you have chosen. Like, text, images, lists, etc.
+        </div>
+        <div class="dropdown mt-3">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+            >
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+      </div>
+    </div>
+              -->
+            </li>
+          </ul>
+          <li>4º offcanvas: button que abre offcanvas superior, com botao dropdown</li>
+          <ul>
+            <li>
+              Ver comentario
+              <!--
+                    <div class="container my-5">
+      <button
+        class="btn btn-outline-success"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasTop"
+        aria-controls="offcanvasTop"
+      >
+        Button with data-bs-target -> Toggle top offcanvas
+      </button>
+      <div
+        class="offcanvas offcanvas-top"
+        tabindex="-1"
+        id="offcanvasTop"
+        aria-labelledby="offcanvasTopLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 id="offcanvasTopLabel">Offcanvas top</h5>
+          <button
+            type="button"
+            class="btn-close text-reset"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">...</div>
+      </div>
+    </div>
+              -->
+            </li>
+          </ul>
+        </ul>
+        <h4>Ver Off Canvas</h4>
       </ul>
     </div>
   </body>
