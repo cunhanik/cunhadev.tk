@@ -108,6 +108,11 @@
         >Off Canvas</a
       >
     </div>
+    <div class="btn-class">
+      <a id="btn-id" target="_blank" href="./anim-text.html"
+        >Animação de Texto</a
+      >
+    </div>
     <br />
     <hr />
     <div>
@@ -134,7 +139,7 @@
             <li>
               Instalação JavaScript:
               <h4>
-                Antes de fechar o body, no fim da pagina html: < script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+                Antes de fechar o body, no fim da pagina html: script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
               </h4>
             </li>
             <br />
@@ -402,7 +407,7 @@
           <li>Este segundo tipo de alert é com botão, este já está configurado com o javascript da página, que fizemos a instalação no começo desta pagina. Com ele, clicamos num botão e vai aparecer uma mensagem, Neste código aqui temos o elemento html e o elemento JavaScript, que vamos entender com detalhes mais a frente.</li>
           <ul>
             <li>< div id="liveAlertPlaceholder">Carrega para ver a mensagem</ div></li>
-            <li>Criar um script em baixo da pagina com: <!--<script> var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+            <li>Criar um script em baixo da pagina com: <!--<> var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
               var alertTrigger = document.getElementById('liveAlertBtn')
       
               function alert(message, type) {
@@ -982,6 +987,79 @@
           </ul>
         </ul>
         <h4>Ver Off Canvas</h4>
+        <li>Animação de Texto</li>
+        <ul>
+          <li>
+            Para conseguirmos ter textos animados, precisamos de instalar uma biblioteca:
+          </li>
+          <ul>
+            <li>Parte css: < link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></li>
+            <li>1º Parte js: script src="https://unpkg.com/aos@2.3.1/dist/aos.js"> < /script></li>
+            <li>2º Parte js: script>
+              AOS.init();
+            < /script></li>
+          </ul>
+          <li>Feito isto, é so ir ao link e copiar a animação que queremos: https://michalsnik.github.io/aos/</li>
+          <p>Na div: </p>
+          <ul>
+            <li>data-aos="fade-up"</li>
+            <li>data-aos="fade-down"</li>
+            <li>data-aos="fade-right"</li>
+            <li>data-aos="fade-left"</li>
+            <li>data-aos="fade-up-right"</li>
+            <li>data-aos="fade-up-left"</li>
+            <li>data-aos="fade-down-right"</li>
+            <li>data-aos="fade-down-left"</li>
+            <li>data-aos="flip-left"</li>
+            <li>data-aos="flip-right"</li>
+            <li>data-aos="flip-up"</li>
+            <li>data-aos="flip-down"</li>
+            <li>data-aos="zoom-in"</li>
+            <li>data-aos="zoom-in-up"</li>
+            <li>data-aos="zoom-in-down"</li>
+            <li>data-aos="zoom-in-left"</li>
+            <li>data-aos="zoom-in-right"</li>
+            <li>data-aos="zoom-out"</li>
+            <li>data-aos="zoom-out-up"</li>
+            <li>data-aos="zoom-out-down"</li>
+            <li>data-aos="zoom-out-right"</li>
+            <li>data-aos="zoom-out-left"</li>
+            <p>Animação com duração:</p>
+            <li>data-aos="fade-up"
+              data-aos-duration="3000"</li>
+            <li>data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="1500"</li>
+            <li>data-aos="fade-right"
+              data-aos-offset="300"
+              data-aos-easing="ease-in-sine"</li>
+            <li>data-aos="fade-left"
+              data-aos-anchor="#example-anchor"
+              data-aos-offset="500"
+              data-aos-duration="500"</li>
+            <li>data-aos="fade-zoom-in"
+              data-aos-easing="ease-in-back"
+              data-aos-delay="300"
+              data-aos-offset="0"</li>
+            <li>data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2000"</li>
+            <p>Colocação de ancoras</p>
+            <li>data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"</li>
+            <li>data-aos="fade-up"
+              data-aos-anchor-placement="center-bottom"</li>
+            <li>data-aos="fade-up"
+              data-aos-anchor-placement="bottom-bottom"</li>
+            <li>data-aos="fade-up"
+              data-aos-anchor-placement="top-center"</li>
+            <li>data-aos="fade-up"
+              data-aos-anchor-placement="center-center"</li>
+            <li>data-aos="fade-up"
+              data-aos-anchor-placement="bottom-center"</li>
+          </ul>
+        </ul>
+        <h4>Ver animação de texto</h4>
       </ul>
     </div>
   </body>
