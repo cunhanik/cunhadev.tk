@@ -33,6 +33,17 @@
   border: 2px solid white;
 }
 
+.btnlink {
+  text-decoration: none;
+  color: white;
+  border-bottom: 1px solid white;
+
+  &:hover {
+    color: $link-hover;
+    border-bottom: 1px solid $link-hover;
+  }
+}
+
 .footer {
   background-color: black;
   height: 15vh;

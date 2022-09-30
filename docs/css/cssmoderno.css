@@ -145,3 +145,22 @@ body {
   color: white;
   background-color: black;
 }
+
+.ex_spacex {
+  width: 15%;
+  text-align: center;
+}
+
+.ex_spacex a {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  padding: 10px;
+  text-decoration: none;
+  border: 2px solid black;
+  background-color: white;
+}
+
+.ex_spacex a:hover {
+  color: white;
+  background-color: black;
+}
