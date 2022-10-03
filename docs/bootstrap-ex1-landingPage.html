@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rumo a Marte--</title>
+    <!-- Css bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- Link Css-->
+    <link
+      rel="stylesheet"
+      href="./bootstrap-ex1-landingPage/scss/css/style.css"
+    />
+
+    <!-- FavIcon-->
+    <link
+      rel="shortcut icon"
+      href="./bootstrap-ex1-landingPage/img/FAVICON-SPACEX.png"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body class="py-5">
+    <div class="container px-4 container1">
+      <!-- LOGO-->
+      <div class="text-center img-center">
+        <img
+          class="img-fluid mt-3"
+          src="./bootstrap-ex1-landingPage/img/logoOneBitDark.png"
+          alt=""
+        />
+      </div>
+      <!--1ª parte do Form-->
+      <p class="paragraph">1 - Qual é o teu nome?</p>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Primeiro nome:</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Escreve o teu nome..."
+          aria-label="username"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Segundo nome:</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Escreve o teu nome..."
+          aria-label="username"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+      <!--2ª parte do Form-->
+      <p class="paragraph">2 - Qual é o teu genero?</p>
+      <div class="form-check mb-1">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="flexRadioDefault"
+          id="flexRadioDefault1"
+        />
+        <label class="form-check-label" for="flexRadioDefault1"> Homem </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="flexRadioDefault"
+          id="flexRadioDefault2"
+          checked
+        />
+        <label class="form-check-label" for="flexRadioDefault2"> Mulher </label>
+      </div>
+      <div class="form-check mb-3">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="flexRadioDefault"
+          id="flexRadioDefault3"
+        />
+        <label class="form-check-label" for="flexRadioDefault3">
+          Prefiro não informar
+        </label>
+      </div>
+      <!--3ª parte do Form-->
+      <p class="paragraph">3 - Marca os treinos que fizeste:</p>
+      <div class="form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckDefault"
+        />
+        <label class="form-check-label" for="flexSwitchCheckDefault"
+          >Treino básico de astronauta</label
+        >
+      </div>
+      <div class="form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckChecked"
+        />
+        <label class="form-check-label" for="flexSwitchCheckChecked"
+          >Treino físico básico</label
+        >
+      </div>
+      <div class="form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckDisabled"
+        />
+        <label class="form-check-label" for="flexSwitchCheckDisabled"
+          >Treino avançado de astronauta</label
+        >
+      </div>
+      <div class="form-check form-switch mb-3">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckCheckedDisabled"
+        />
+        <label class="form-check-label" for="flexSwitchCheckCheckedDisabled"
+          >Treino físico intenso</label
+        >
+      </div>
+      <!--4ª parte do Form-->
+      <p class="paragraph">4 - Quais são as tuas qualidades?</p>
+      <div class="form-check-inline">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value="option1"
+          id="defaultCheck1"
+        />
+        <label class="form-check-label" for="defaultCheck1"> Proativo </label>
+      </div>
+      <div class="form-check-inline">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value="option2"
+          id="defaultCheck2"
+        />
+        <label class="form-check-label" for="defaultCheck2"> Resistente </label>
+      </div>
+      <div class="form-check-inline">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value="option3"
+          id="defaultCheck3"
+        />
+        <label class="form-check-label" for="defaultCheck3">
+          Não tenho medo
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value="option4"
+          id="defaultCheck4"
+        />
+        <label class="form-check-label" for="defaultCheck4">
+          Não vomito facilmente
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value="option5"
+          id="defaultCheck5"
+        />
+        <label class="form-check-label" for="defaultCheck5">
+          Já vi todos os star wars
+        </label>
+      </div>
+
+      <!--4ª Parte-->
+      <div class="text-center">
+        <button type="button" class="btn btn-outline-danger btn-send">
+          Enviar
+        </button>
+      </div>
+    </div>
+    <div class="container text-center footer">
+      <p>
+        Feito por Cláudio Cunha &copy; OneBitCode todos os direitos reservados -
+        2022
+      </p>
+    </div>
+    <!-- Script bootsrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

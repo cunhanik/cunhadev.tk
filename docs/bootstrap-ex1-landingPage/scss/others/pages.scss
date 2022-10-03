@@ -1,0 +1,42 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-image: url(../../img/backgroundLp.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  color: white;
+}
+
+.container1 {
+  background-color: $background-color;
+  max-width: 450px;
+  height: auto;
+}
+
+.img-center img {
+  width: 180px;
+}
+
+.paragraph {
+  margin-top: 15px;
+}
+
+.btn-send {
+  color: $button-color;
+  margin: 10px 0px;
+  border: 1px solid $button-color;
+
+  &:hover {
+    background-color: $button-color;
+    color: white;
+  }
+}
+
+.footer {
+  margin-top: 20px;
+  font-weight: bold;
+}
