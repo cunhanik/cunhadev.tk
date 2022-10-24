@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-III (js moderno)</title>
+  </head>
+  <body>
+    <h1>Template literals</h1>
+    <p>
+      Serve para escrevermos codigo Js numa variavel, sem precisar de interpolar
+      (+) tudo.
+    </p>
+    <p>usamos o Template literals assim:</p>
+    <p>
+      ` podemos escrever o que quisermos e juntar uma variavel ou codigo js:
+      ${codigoJs/variavel} `
+    </p>
+    <h3>Por ex:</h3>
+    <h3>Ficheiro Script</h3>
+    <p>const name = "Cunha";</p>
+    <p>console.log(`Hello, ${name}</p>
+    <p>We're in ${Date()}</p>
+    <p>2+2=${2 + 2}`);</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Arrow functions</h1>
+    <p>Uma forma de escrevermos funções anônimas</p>
+    <p>Não escrevemos a palavra "function", utilizamos => após os parâmetros</p>
+    <p>Não possui as propriedades: this, arguments, super e new.target</p>
+    <p>
+      também permite retornar diretamente uma expressão, caso seja uma função de
+      uma unica linha
+    </p>
+    <p>exemplo:</p>
+    <p>const sum = (a,b) =>{</p>
+    <p>return a+b</p>
+    <p>}</p>
+    <br />
+    <p>Outro exemplo:</p>
+    <p>const multiply = (a,b) => a*b</p>
+    <br />
+    <h3>Ficheiro js</h3>
+    <br />
+    <p>function normalSum(a, b) {</p>
+    <p>return a + b;</p>
+    <p>}</p>
+    <p>console.log(`Soma normal: ${normalSum(5, 12)}`);</p>
+    <p>const anonymousSum = function (a, b) {</p>
+    <p>return a + b;</p>
+    <p>};</p>
+    <p>console.log(`Soma anônima: ${anonymousSum(5, 12)}`);</p>
+    <p>const arrowSum = (a, b) => {</p>
+    <p>return a + b;</p>
+    <p>};</p>
+    <p>console.log(`Soma Arrow: ${arrowSum(5, 12)}`);</p>
+    <p>const arrowLine = (a, b) => a + b;</p>
+    <p>console.log(`Soma ArrowLine: ${arrowLine(5, 12)}`);</p>
+    <p>const towns = ["Porto", "Lisboa", "Porto-Covo", "asdasd", "lorem"];</p>
+    <p>const startingWithP = towns.filter((town) => town[0] === "P");</p>
+    <p>console.log(startingWithP);</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Desestruturação de objetos e arrays</h1>
+    <br />
+    <p>
+      Funcionalidade que permite criar variaveis a partir de propriedades de um
+      objeto ou elementos de um array
+    </p>
+    <p>
+      No caso das propriedades do objeto, as variaveis serão criadas com mesmo
+      nome da propriedade
+    </p>
+    <p>
+      No caso dos elementos do array, podemos atribuir qualquer nome para a
+      variável
+    </p>
+    <p>
+      Também pode ser utilizada de outras formas, como nos parâmetros de uma
+      função
+    </p>
+    <p>ex:</p>
+    <p>const {name,email}=person</p>
+    <p>const [x,y]= coordinates</p>
+    <p>function hello({name}) {</p>
+    <p>console.log(`Hello, ${name}`)</p>
+    <p>}</p>
+    <br />
+    <h3>Ficheiro Js</h3>
+    <br />
+    <p>const person = {</p>
+    <p>name: "Luke",</p>
+    <p>job: "Farmer",</p>
+    <p>parents: ["Anakin", "Padme"],</p>
+    <p>};</p>
+    <p>const name = person.name;</p>
+    <p>const { job, parents } = person;</p>
+    <p>console.log(name, job, parents);</p>
+    <p>const [father, mother] = parents;</p>
+    <p>console.log(father, mother);</p>
+    <p>function createUser(person) {</p>
+    <p>const id = Math.floor(Math.random() * 999);</p>
+    <p>return {</p>
+    <p>id,</p>
+    <p>name: person.name,</p>
+    <p>job: person.job,</p>
+    <p>parents: person.parents,</p>
+    <p>};</p>
+    <p>}</p>
+    <p>const luke = createUser(person);</p>
+    <p>console.log(luke);</p>
+    <p>const person2 = {</p>
+    <p>name: "Alice",</p>
+    <p>job: "Farmer",</p>
+    <p>parents: ["Jonh", "Marie"],</p>
+    <p>};</p>
+    <p>function createUser2({ name, job, parents }) {</p>
+    <p>const id = Math.floor(Math.random() * 999);</p>
+    <p>return {</p>
+    <p>id,</p>
+    <p>name,</p>
+    <p>job,</p>
+    <p>parents,</p>
+    <p>};</p>
+    <p>}</p>
+    <p>const alice = createUser2(person2);</p>
+    <p>console.log(alice);</p>
+    <br />
+    <hr />
+    <br />
+  </body>
+</html>
