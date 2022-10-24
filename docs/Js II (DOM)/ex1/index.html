@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex1</title>
+  </head>
+  <body>
+    <div>
+      <h2>Add player</h2>
+      <label for="name">Player Name: </label>
+      <input type="text" name="name" id="name" />
+      <br />
+      <br />
+      <label for="position">Player Position: </label>
+      <input type="text" name="position" id="position" />
+      <br />
+      <br />
+      <label for="jersey">Player jersey: </label>
+      <input type="text" name="jersey" id="jersey" />
+      <br />
+      <br />
+      <button onclick="addPlayer()">Add player</button>
+    </div>
+    <div>
+      <h2>Remove player</h2>
+      <label for="nameToRemove">Player Name: </label>
+      <input type="text" name="nameToRemove" id="nameToRemove" />
+      <br />
+      <br />
+      <label for="positionToRemove">Player Position: </label>
+      <input type="text" name="positionToRemove" id="positionToRemove" />
+      <br />
+      <br />
+      <label for="jerseyToRemove">Player jersey: </label>
+      <input type="text" name="jerseyToRemove" id="jerseyToRemove" />
+      <br />
+      <br />
+      <button onclick="removePlayer()">Remove player</button>
+    </div>
+    <div>
+      <h2>Team</h2>
+      <ul id="teamList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

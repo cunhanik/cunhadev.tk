@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jogo do galo</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1 id="title">Jogo do Galo</h1>
+    <hr />
+    <div class="players">
+      <label for="player1">X</label>
+      <input type="text" id="player1" placeholder="Nome do jogador 1" />
+      <br />
+      <br />
+      <label for="player2">O</label>
+      <input type="text" id="player2" placeholder="Nome do jogador 2" />
+      <br />
+      <br />
+      <button id="start">Start!</button>
+    </div>
+    <h2 id="turn">Vez de: <span id="turnPlayer"></span></h2>
+    <section id="gameBoard">
+      <span class="cursor" data-region="0.0"></span>
+      <span class="cursor" data-region="0.1"></span>
+      <span class="cursor" data-region="0.2"></span>
+      <span class="cursor" data-region="1.0"></span>
+      <span class="cursor" data-region="1.1"></span>
+      <span class="cursor" data-region="1.2"></span>
+      <span class="cursor" data-region="2.0"></span>
+      <span class="cursor" data-region="2.1"></span>
+      <span class="cursor" data-region="2.2"></span>
+    </section>
+  </body>
+</html>

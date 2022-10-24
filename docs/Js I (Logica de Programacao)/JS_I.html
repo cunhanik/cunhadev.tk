@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-I (Logica da Programação)</title>
+  </head>
+  <body>
+    <h1>Operadores aritméticos</h1>
+    <p>5+2= 7</p>
+    <p>5-2= 3</p>
+    <p>5*2= 10</p>
+    <p>5/2= 2.5</p>
+    <p>5%2= 1</p>
+    <p>5**2= 25</p>
+    <h3>Simplificar:</h3>
+    <p>
+      Podemos simplificar desta maneira (n += 4), se a nossa conta for n = n + 4
+      É igual em todas operações
+    </p>
+    <h3>ordem:</h3>
+    <p>() ** * / % + -</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Operadores Relacionais:</h1>
+    <p>Maior ></p>
+    <p>Menor <</p>
+    <p>Maior ou igual >=</p>
+    <p>Menor ou igual <=</p>
+    <p>igual ==</p>
+    <p>igual restritamente (compara o tipo, string, number, etc) ===</p>
+    <p>Diferente !=</p>
+    <p>Diferente restritamente (compara o tipo, string, number, etc) !==</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Operadores Lógicos:</h1>
+    <p>! negação (não é)</p>
+    <p>&& conjunção (e)</p>
+    <p>|| disjunção (ou)</p>
+    <br />
+    <hr />
+    <br />
+    <h1>if, else if, else</h1>
+    <p>let numero = prompt("Escreve um numero:")</p>
+    <p>let x = parseFloat(numero)</p>
+    <p>if (x>5){</p>
+    <p>alert(o teu numero é maior que 5)}</p>
+    <p>else if(x=5){</p>
+    <p>console.log(o teu numero é igual a 5)}</p>
+    <p>else{</p>
+    <p>console.log(o teu numero é menor que 5)}</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Operador Ternário:</h1>
+    <p>? -> Funciona como o Se</p>
+    <p>: -> Funciona como o Else</p>
+    <p>Tem o nome de ternário porque tem 3 partes (logicos, True or False)</p>
+    <p>var media = 10</p>
+    <p>Resultado = 7.0 > media ? "Aprovado" : "Reprovado"</p>
+    <p>console.log(resultado)</p>
+    <br />
+    <hr />
+    <br />
+    <h1>ORDEM DE TODOS OS OPERADORES (ARTIMÉTICOS, RELACIONAIS, LOGICOS):</h1>
+    <p>1º Operadores aritméticos -> () ** * / % + -</p>
+    <p>2º Operadores relacionais -> > < >= <=</p>
+    <p>3º Operadores lógicos -> ! && ||</p>
+    <p>4º Operadores Ternários -> ? :</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Switch</h1>
+    <p>let resultado = prompt("Escolhe uma letra: \n a)\n b) \n c)");</p>
+    <p>switch (resultado) {</p>
+    <p>case "a":</p>
+    <p>alert("O resultado que escolheste foi a letra a)");</p>
+    <p>break;</p>
+    <p>case "b":</p>
+    <p>alert("O resultado que escolheste foi a letra b)");</p>
+    <p>break;</p>
+    <p>case "c":</p>
+    <p>alert("O resultado que escolheste foi a letra c)");</p>
+    <p>break;</p>
+    <p>default:</p>
+    <p>alert("Não escolheste nenhuma das opções.");</p>
+    <p>}</p>
+    <br />
+    <hr />
+    <br />
+    <h1>While</h1>
+    <p>let speed = 80;</p>
+    <p>while (speed > 0) {</p>
+    <p>alert(`O carro está em movimento, está a ${speed}km/h`);</p>
+    <p>speed -= 20;</p>
+    <p>alert(`Vamos diminuir 20km/h`);</p>
+    <p>alert(`Agora a velocidade do teu carro é ${speed}`);</p>
+    <p>if (speed === 40) {</p>
+    <p>break;</p>
+    <p>}</p>
+    <p>}</p>
+    <p>alert("O carro parou");</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Do While</h1>
+    <p>let velocidade = 0;</p>
+    <p>do {</p>
+    <p>alert(`A velocidade do veículo é ${velocidade}km/h`);</p>
+    <p>velocidade -= 20;</p>
+    <p>} while (velocidade > 0);</p>
+    <p>alert(`A velocidade final é de ${velocidade}km/h`);</p>
+    <br />
+    <hr />
+    <br />
+    <h1>For</h1>
+    <p>for (i = 0; i < 6; i++) {</p>
+    <p>alert(`O valor é ${i}`);</p>
+    <p>}</p>
+    <h4>Outro Exemplo:</h4>
+    <p>let firstName = "Cunha";</p>
+    <p>for (indice = 0; indice < firstName.length; indice++) {</p>
+    <p>console.log(firstName[indice]);</p>
+    <p>}</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Estrutura de dados</h1>
+    <h2>Lista ligada:</h2>
+    <p>Coleção ordenada de valores onde cada elemento aponta para o próximo</p>
+    <br />
+    <h2>Fila (Queue)</h2>
+    <p>Tambem chamadas de listas FIFO (first-in/first-out).</p>
+    <p>
+      É uma coleção de elementos onde o primeiro elemento a ser retirado foi o
+      primeiro elemento adicionado. O ultimo a ser retirado foi o ultimo a
+      adicionado.
+    </p>
+    <p>
+      Ex: Fila de supermercado - O primeiro da fila, vai ser o primeiro a sair
+      da mesma.
+    </p>
+    <br />
+    <h2>Pilha (Stack)</h2>
+    <p>Tambem chamadas de listas LIFO (last-in/first-out).</p>
+    <p>
+      É uma coleção de elementos onde o primeiro elemento a ser retirado foi o
+      ultimo elemento adicionado. O ultimo a ser retirado é o primeiro a entrar.
+    </p>
+    <p>
+      Ex: Torre de livros - O ultimo livro a entrar na torre, vai ser o primeiro
+      a sair.
+    </p>
+    <br />
+    <h2>Árvore(Tree)</h2>
+    <p>
+      Conjunto de elementos chamados nodes(nós) organizados num estrutura
+      hierárquica, ou seja, podem estar "abaixo" ou "acima" de outros nodes.
+    </p>
+    <p>
+      Pensa numa arvore geneológica/na estrutura das pastas do pc\na estrutura
+      da pagina HTML
+    </p>
+    <p>
+      ex: Pastas do pc - Criamos uma pasta "A", com 2 pastas dentro
+      "PastaFilho1" "PastaFilho2", dentro da "PastaFilho1" criamos a pasta
+      "PastaNeto1", dentro da "PastaFilho2" criamos a pasta "PastaNeto2"
+    </p>
+    <br />
+    <h2>Array</h2>
+    <p>Coleção de elementos que podem ser identificados por um índice.</p>
+    <p>Dica: Não podemos tratar os Arrays como uma String</p>
+    <p>let array = [1,4,6,8]</p>
+    <p>console.log(array)</p>
+    <p>Vai printar o nosso array: [1,4,6,8]</p>
+    <p>let array2 = array</p>
+    <p>console.log(array2)</p>
+    <p>Vai printar o nosso array2: [1,4,6,8]</p>
+    <p>array2[0]=10</p>
+    <p>console.log(array2)</p>
+    <p>Vai printar o nosso array2: [10,4,6,8]</p>
+    <p>console.log(array)</p>
+    <p>
+      Vai printar o nosso array mas com a alteração que fizemos no array2:
+      [10,4,6,8]
+    </p>
+    <h4>
+      Ou seja, Se alterarmos o Array2 que recebeu o Array, essa alteração vai
+      acontecer nos 2 Arrays
+    </h4>
+    <p>const array = ["Cunha", "Bea", "Maria", "Carlota"];</p>
+    <p>console.log(array);</p>
+    <h3>//Adicionar Elementos</h3>
+    <h4>
+      //push -> Serve para adicionarmos alguma coisa no fim do array e podemos
+      ficar com ele guardado porque o push retorna o elemento que
+      acrescenta(ultimo elemento)
+    </h4>
+    <p>let possivelFilha = array.push("Maria Francisca");</p>
+    <p>console.log(array);</p>
+    <p>console.log(possivelFilha);</p>
+    <p>array.push("Maria Francisca");</p>
+    <p>array.push("Maria Francisca");</p>
+    <p>console.log(array);</p>
+    <h4>
+      //unshift -> Serve para adicionarmos alguma coisa no inicio do array e
+      podemos ficar com ele guardado porque o unshift retorna o elemento que
+      adiciona(primeiro elemento)
+    </h4>
+    <p>let criacao = array.unshift("PAIS");</p>
+    <p>console.log(array);</p>
+    <p>console.log(criacao);</p>
+    <br />
+    <h3>//Remover Elementos</h3>
+    <h4>
+      //pop -> Serve para removermos o ultimo elemento do array e podemos ficar
+      com ele guardado porque o pop retorna o elemento que tira(ultimo elemento)
+    </h4>
+    <p>const lastElement = array.pop();</p>
+    <p>console.log(array);</p>
+    <p>console.log(lastElement);</p>
+    <h4>
+      //shift -> Serve para removermos o primeiro elemento do array e podemos
+      ficar com ele guardado porque o pop retorna o elemento que tira(ultimo
+      elemento)
+    </h4>
+    <p>let firstElement = array.shift("PAIS");</p>
+    <p>console.log(array);</p>
+    <p>console.log(firstElement);</p>
+    <br />
+    <h3>//Pesquisar um Elemento</h3>
+    <h4>
+      //includes -> Serve para nos dizer se algo existe na nossa lista, com os
+      valores True ou False
+    </h4>
+    <p>const inclui = array.includes("Bea");</p>
+    <p>console.log(inclui);</p>
+    <h4>
+      //indexOf -> Serve para nos dizer se algo existe na nossa lista, com a
+      posição desse valor. Quando não existe: -1
+    </h4>
+    <p>const indice = array.indexOf("Bea");</p>
+    <p>console.log(indice);</p>
+    <br />
+    <h3>//cortar e concatenar (juntar)</h3>
+    <h4>
+      //slice(cortar) -> Serve para copiar e colar elementos de um Array de uma
+      determinada posição. Numeros negativos são contados do fim para o inicio,
+      sendo que -1 é o ultimo, -2 penultimo, etc...
+    </h4>
+    <p>const copia = array.slice(2, 4);</p>
+    <p>const copiaLast = array.slice(-1, -3);</p>
+    <p>console.log(copia);</p>
+    <p>console.log(copiaLast);</p>
+    <br />
+    <h4>
+      //concat concatenar(juntar) -> Serve para acrescentar outros Arrays e
+      elementos a um array.
+    </h4>
+    <p>const secondArray = [1, 2, 3, 4, 5];</p>
+    <p>const thirdArray = ["Familia", "Amor", "Paz"];</p>
+    <p>const sociedade = array.concat(secondArray, thirdArray, "TUDO");</p>
+    <p>console.log(sociedade);</p>
+    <br />
+    <h3>//Substituição dos elementos</h3>
+    <h4>
+      //splice -> Serve para substituir algo da lista por algo que queremos.
+      Funciona desta maneira: (oQueQueremosSubstituir,quantosElementos(começando
+      no que escolhemos no inicio), peloQueQueremosSubstituir)
+    </h4>
+    <p>console.log(array);</p>
+    <p>const sub = array.splice(indice, 1, "Bizica");</p>
+    <p>
+      //Em cima, ja tinhamos usado a variavel indice para determinarmos a
+      posição da string "Bea". Deu-nos a posição [1]
+    </p>
+    <p>
+      //Então o splice vai encontrar a variavel indice (posição 1), e
+      subistituir 1 elemento desde essa posição [1](indice) e subistutir por:
+      "Bizica"
+    </p>
+    <p>console.log(sub);</p>
+    <p>console.log(array);</p>
+    <br />
+    <h4>//iterar(ir de elemento em elemento) pelos elementos -></h4>
+    <p>for (let teste = 0; teste < sociedade.length; teste++) {</p>
+    <p>const element = sociedade[teste];</p>
+    <p>console.log(`${element} está na posição ${teste}`);</p>
+    <p>}</p>
+    <br />
+    <h2>Dicionários (objetos)</h2>
+    <p>
+      Cada palavra do dicionario tem um significado. Cada variavel nos objetos
+      tem um valor
+    </p>
+    <br />
+    <hr />
+    <br />
+    <h1>Arrays Bidimensionais</h1>
+    <p>const array = [</p>
+    <p>["1º Nivel", "2º Nivel", "3º Nivel"],</p>
+    <p>["4º Nivel", "5º Nivel", "6º Nivel"],</p>
+    <p>["7º Nivel", "8º Nivel", "9º Nivel"],</p>
+    <p>];</p>
+    <p>console.log(array[0]);</p>
+    <p>console.log(array[(1)[1]]);</p>
+    <p>console.table(array);</p>
+    <p>array.push(["Nova linha 10º", "Nova linha 11º", "Nova linha 12º"]);</p>
+    <p>array[1].push("Nova coluna 1");</p>
+    <p>console.table(array);</p>
+    <p>for (i = 0; i < array[i].length; i++) {</p>
+    <p>for (j = 0; j < array[i].length; j++) {</p>
+    <p>console.log(array[i][j]);</p>
+    <p>}</p>
+    <p>}</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Funções</h1>
+    <p>
+      É uma estrutura que permite declarar um procedimento e executá-lo
+      programaticamente.
+    </p>
+    <h4>É vista como: ENTRADA->PROCEDIMENTO->SAÍDA</h4>
+    <p>
+      Tanto a ENTRADA como a SAÍDA são opcionais, uma função pode existir sem um
+      deles ou sem ambos
+    </p>
+    <p>
+      As ENTRADAS das funções são chamadas de "parâmetros". As SAÍDAS são
+      chamadas de "retorno"
+    </p>
+    <h4>sintaxe:</h4>
+    <br />
+    <h4>function nomeDaFuncao(entrada){</h4>
+    <h4>//procedimento</h4>
+    <h4>return saída</h4>
+    <br />
+    <p>chamar a função:</p>
+    <p>nomeDaFuncao()</p>
+    <br />
+    <h2>Parâmetros de uma função</h2>
+    <p>function dobro(x){}</p>
+    <p>Parametro de uma função com valor default</p>
+    <p>function frase2(name2 = "Mundo") {}</p>
+    <p>function utilizador(nome, email, senha, tipo = "admin") {}</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Retorno de uma Função</h1>
+    <p>function calcularMedia(a, b) {</p>
+    <p>const media = (a + b) / 2;</p>
+    <p>return media;</p>
+    <p>}</p>
+    <p>const resultado = calcularMedia(7, 2);</p>
+    <p>console.log(resultado);</p>
+    <br />
+    <p>function criarProduto(nome, preco) {</p>
+    <p>const product = {</p>
+    <p>nome, //nome:nome</p>
+    <p>preco, //preco:preco</p>
+    <p>stock: 1,</p>
+    <p>};</p>
+    <p>return product;</p>
+    <p>}</p>
+    <p>const laptop = criarProduto("Lenovo", 500);</p>
+    <p>console.log(laptop);</p>
+    <p>//OU</p>
+    <p>console.log(criarProduto("Lenovo", 500));</p>
+    <br />
+    <p>function areaRectangulo(base, altura) {</p>
+    <p>//const area = base*altura</p>
+    <p>//Podemos fazer isto diretamente:</p>
+    <p>return base * altura;</p>
+    <p>}</p>
+    <p>console.log(areaRectangulo(3, 5));</p>
+    <p>function areaQuadrado(lado) {</p>
+    <p>return areaRectangulo(lado, lado);</p>
+    <p>}</p>
+    <p>console.log(areaQuadrado(9));</p>
+    <p>
+      //A função areaQuadrado vai chamar a função areaRectangulo para calcular a
+      area do quadrado.
+    </p>
+    <br />
+    <p>function ola() {</p>
+    <p>let texto = "blablabla";</p>
+    <p>return texto;</p>
+    <p>texto = "ola mundo";</p>
+    <p>console.log(texto);</p>
+    <p>}</p>
+    <p>console.log(ola());</p>
+    <br />
+    <p>function maiorDeIdade(idade) {</p>
+    <p>if (idade > 18) {</p>
+    <p>return "Maior de idade";</p>
+    <p>} else {</p>
+    <p>return "Menor de idade";</p>
+    <p>}</p>
+    <p>}</p>
+    <p>console.log(maiorDeIdade(21));</p>
+    <p>console.log(maiorDeIdade(12));</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Escopo</h1>
+    <p>
+      Só conseguimos aceder a uma variavel dentro da função se criarmos antes.
+    </p>
+    <p>let pokemon = "Charmander";</p>
+    <p>function evoluir() {</p>
+    <p>alert("A Evoluir...");</p>
+    <p>pokemon = "Charmeleon";</p>
+    <p>}</p>
+    <p>alert(pokemon);</p>
+    <p>evoluir();</p>
+    <p>alert(pokemon);</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Metodos</h1>
+    <p>let pessoa = {</p>
+    <p>nome: "Cunha",</p>
+    <p>idade: 26,</p>
+    <p>dizerola(){</p>
+    <p>console.log(`Ola mundo`)</p>
+    <p>}</p>
+    <p>}</p>
+    <p>console.log(pessoa)</p>
+    <br />
+    <p>Se fizermos na consola: typeof console</p>
+    <p>
+      Vai dizer-nos que é um objeto... tal como o objeto pessoa que criamos "
+      let pessoa = {} "
+    </p>
+    <p>Se fizermos na consola: typeof console.log</p>
+    <p>Vai dizer-nos que é uma function...</p>
+    <p>
+      E é a isso que chamamos de METODO, uma função dentro de um objeto. Criamos
+      como o nosso " dizerola(){} "
+    </p>
+    <p>
+      é criar uma function normal, dentro de um objeto, mas sem a palavra
+      "function"
+    </p>
+    <p>Se fizermos na consola: typeof pessoa</p>
+    <p>Vai dizer-nos que é um objeto!</p>
+    <p>Se fizermos na consola: typeof pessoa.dizerola</p>
+    <p>Vai dizer-nos que é uma function!</p>
+    <p>pessoa.dizerola()</p>
+    <br />
+    <p>
+      Tambem podemos querer usar algo do nosso objeto. Por exemplo: No metodo
+      "dizerola()" vamos dizer ola e utilizar o nome que está dentro do objeto
+    </p>
+    <p>Para fazer isso, utilizamos o: this.algoDentroDoObjeto</p>
+    <p>let pessoa = {</p>
+    <p>nome: "Cunha",</p>
+    <p>idade: 26,</p>
+    <p>dizerola(){</p>
+    <p>console.log(`Ola mundo, eu sou o ${this.nome}`)</p>
+    <p>}</p>
+    <p>}</p>
+    <p>pessoa.dizerola()</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Funções Recursivas</h1>
+    <h4>São funções que dentro delas usam a propria função:</h4>
+    <p>function dividir(num) {</p>
+    <p>console.log(num);</p>
+    <p>if (num % 2 === 0) {</p>
+    <p>dividir(num / 2);</p>
+    <p>} else {</p>
+    <p>return console.log(`Este numero não é par ${num}`);</p>
+    <p>}</p>
+    <p>}</p>
+    <p>dividir(4);</p>
+    <br />
+    <p>function fatorial(num) {</p>
+    <p>console.log(`numero: ${num}`);</p>
+    <p>if (num === 0) {</p>
+    <p>return 1;</p>
+    <p>} else if (num === 1) {</p>
+    <p>return 1;</p>
+    <p>} else {</p>
+    <p>console.log(`${num} * !${num - 1}`);</p>
+    <p>return num * fatorial(num - 1);</p>
+    <p>}</p>
+    <p>}</p>
+    <p>console.log(fatorial(5));</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Funções Anônimas</h1>
+    <h4>
+      As funções (normais) podem ser guardadas em variaveis...É so criar uma
+      variavel que receba o nome da função: let x = nomeDaFunção;
+    </h4>
+    <p>por ex:</p>
+    <p>function somar(a,b){</p>
+    <p>return a+b</p>
+    <p>}</p>
+    <p>let operacao = somar</p>
+    <p>console.log(operacao(4,5))</p>
+    <br />
+    <h4>
+      Função anonima é quando uma função não tem nome e passamos como variavel
+    </h4>
+    <p>por ex:</p>
+    <p>const subtrair = function (a,b){</p>
+    <p>return a-b</p>
+    <p>}</p>
+    <p>console.log(subtrair(5,2))</p>
+    <br />
+    <h4>
+      Dica: Para usarmos/chamarmos uma função anonima, temos que primeiro
+      escrever a função e dps usá-la/chamá-la. Ao contrario das funções normais,
+      que podemos chamar antes ou depois de criarmos as funções.
+    </h4>
+    <br />
+    <hr />
+    <br />
+    <h1>High Order Functions</h1>
+    <h4>É uma função que recebe uma outra função como parametro</h4>
+    <h4>Funciona assim: function nomeFuncao(x,y,outraFuncao){}</h4>
+    <p>por ex:</p>
+    <p>function calcular(a, b, operacao) {</p>
+    <p>console.log("A realizar uma operação.");</p>
+    <p>const resultado = operacao(a, b);</p>
+    <p>return resultado;</p>
+    <p>}</p>
+    <p>function somar(x, y) {</p>
+    <p>console.log("A realizar uma soma.");</p>
+    <p>return x + y;</p>
+    <p>}</p>
+    <p>
+      Agora podemos trocar o nosso parametro "operacao" por uma função: somar,
+      sem chamar a função: somar()! é so o nome dela.
+    </p>
+    <p>console.log(calcular(5, 2, somar));</p>
+    <br />
+    <h4>
+      Tambem podemos colocar uma função anonima dentro da nossa high function
+    </h4>
+    <p>por ex:</p>
+    <p>console.log(</p>
+    <p>calcular(10, 5, function (x, y) {</p>
+    <p>console.log("A realizar uma subtração");</p>
+    <p>return x - y;</p>
+    <p>})</p>
+    <p>);</p>
+    <br />
+    <h4>Outro exemplo:</h4>
+    <p>function mostrarElemento(elemento, indice, array) {</p>
+    <p>console.log({</p>
+    <p>elemento,</p>
+    <p>indice,</p>
+    <p>array,</p>
+    <p>});</p>
+    <p>}</p>
+    <p>const list = ["maça","banana", "laranja","limao"]</p>
+    <p>for(let i=0;i<list.length;i++){</p>
+    <p>mostrarElemento(list[i],i,list)</p>
+    <p>}</p>
+    <p>
+      O JavaScript oferece uma função que faz exatamente o mesmo que fizemos em
+      cima: forEach
+    </p>
+    <h4>forEach</h4>
+    <h4>
+      forEach é uma high order function, porque é uma função que vai "chamar de
+      volta(call back)" outra função
+    </h4>
+    <p>list.forEach(função) - Para cada elemento da list, executa a função</p>
+    <p>list.forEach(mostrarElemento)</p>
+    <br />
+    <p>Podemos fazer o mesmo com uma função anonima:</p>
+    <p>list.forEach(function (elemento, indice, array) {</p>
+    <p>console.log({</p>
+    <p>elemento,</p>
+    <p>indice,</p>
+    <p>array,</p>
+    <p>});</p>
+    <p>});</p>
+    <br />
+    <hr />
+    <br />
+    <h1>High order functions e Arrays</h1>
+    <h4>Metodo Map:</h4>
+    <h4>Serve para fazer transformações em Arrays, criando um novo Array.</h4>
+    <h4>
+      Ou seja, ele usa um Array para ir buscar informações e cria outro Array
+      para colocar essas informações
+    </h4>
+    <p>por ex:</p>
+    <p>const personagens = [</p>
+    <p>{ nivel: 42, nome: "Thrall", raca: "Orc", classe: "Xamã" },</p>
+    <p>{ nivel: 28, nome: "Garrosh", raca: "Orc", classe: "Guerreiro" },</p>
+    <p>{ nivel: 35, nome: "Varok", raca: "Orc", classe: "Guerreiro" },</p>
+    <p>{ nivel: 35, nome: "Uther", raca: "Humano", classe: "Paladino" },</p>
+    <p>{ nivel: 26, nome: "Jaina", raca: "Humano", classe: "Maga" },</p>
+    <p>
+      { nivel: 39, nome: "Tyrande", raca: "Elfo Noturno", classe: "Sacerdotisa"
+      },
+    </p>
+    <p>{ nivel: 29, nome: "Muradin", raca: "Anão", classe: "Guerreiro" },</p>
+    <p>];</p>
+    <br />
+    <p>
+      Vamos guardar numa lista o nome das personagens dentro da nossa lista com
+      objetos:
+    </p>
+    <p>const nomesPersonagens = [];</p>
+    <p>for (let i = 0; i < personagens.length; i++) {</p>
+    <p>nomesPersonagens.push(personagens[i].nome);</p>
+    <p>}</p>
+    <p>console.log(nomesPersonagens);</p>
+    <br />
+    <p>Agora vamos fazer a mesma coisa, mas a utilizar o metodo map:</p>
+    <p>
+      const nomesPersonagensMetodoMap = personagens.map(function (umaPersonagem)
+      {
+    </p>
+    <p>return umaPersonagem.nome;</p>
+    <p>});</p>
+    <p>console.log(nomesPersonagensMetodoMap);</p>
+    <br />
+    <br />
+    <h4>Metodo Filter</h4>
+    <h4>Serve para filtrar elementos em Arrays, criando um novo Array.</h4>
+    <h4>
+      Ou seja, ele usa um Array para ir buscar informações especificas e cria
+      outro Array para colocar essas informações
+    </h4>
+    <p>por ex: (USANDO A MESMA LISTA DE OBJETOS COMO EXEMPLO)</p>
+    <p>const guerreiros = [];</p>
+    <p>for (let i = 0; i < personagens.length; i++) {</p>
+    <p>if (personagens[i].classe === "Guerreiro") {</p>
+    <p>guerreiros.push(personagens[i]);</p>
+    <p>}</p>
+    <p>}</p>
+    <p>console.log(guerreiros);</p>
+    <br />
+    <p>Agora vamos fazer a mesma coisa, mas a utilizar o metodo Filter:</p>
+    <p>
+      const guerreirosMetodoFilter = personagens.filter(function (personagem) {
+    </p>
+    <p>return personagem.classe === "Guerreiro";</p>
+    <p>});</p>
+    <p>console.log(guerreirosMetodoFilter);</p>
+    <br />
+    <br />
+    <h4>Metodo Reduce</h4>
+    <h4>
+      //metodo Reduce ->Serve para transformarmos um Array em outro
+      elemento/valor (array,objeto,numero,string), criando um novo Array.
+    </h4>
+    <h4>
+      //Vamos dar o exemplo de sumar todos os niveis dos nossos personagens, com
+      o Reduce isso vai dar apenas um numero (o resultado da soma de todos)
+    </h4>
+    <h4>
+      //Funciona desta maneira: ele passa pelo 1º elemento e guarda o seu valor,
+      depois passa pelo 2ºelemento com acesso ao 1º elemento e agora guarda o
+      valor da soma dos 2 (1º elemento + 2ºelemento),depois vai para o 3º
+      elemento com acesso ao valor do anterior (soma do 1º+2º elemento) e guarda
+      o valor da soma dos dois(soma do elemento anterior + 3º) ou dos tres (soma
+      do 1º 2º 3º elemento)
+    </h4>
+    <p>
+      const nivelTotal = personagens.reduce(function (valorAcomulado,
+      personagem) {
+    </p>
+    <p>return valorAcomulado + personagem.nivel;</p>
+    <p>}, 0);</p>
+    <p>console.log(nivelTotal);</p>
+    <p>//Basicamente o que fizemos aqui foi:</p>
+    <p>//Criamos uma variavel que vai receber a lista com a função reduce..</p>
+    <p>
+      a função reduce recebe outra função com 2 parametros: valorAcomulado e
+      personagem{
+    </p>
+    <p>
+      valorAcomulado é o que queremos saber (total dos niveis) e personagem
+      refere-se a cada personagem da lista personagens (é o mesmo que ter:
+      for(let i=0;i(simboloDoMenor)personagens.length;i++)
+    </p>
+    <p>//return valorAcomulado + personagem.nivel</p>
+    <p>
+      //},0); 0 é o valor que vamos dar ao nosso primeiro parametro
+      "ValorAcomulado"
+    </p>
+    <p>
+      //Ou seja, o valorAcomulado é 0 e vai somar(+) com o valor do
+      personagem.nivel, guarda esse valor e repete mas agora o valor acomulado
+      ao invés de 0 é o valor dessa soma
+    </p>
+    <br />
+    <h4>Outro exemplo do Reduce:</h4>
+    <p>
+      Vamos pegar no Array personagens e transformá-lo num unico objeto(não é um
+      Array) que vai agrupar as personagens que estão dentro da lista, por raça
+    </p>
+    <p>
+      const racas = personagens.reduce(function (valorAcomulado, personagem) {
+    </p>
+    <p>if (valorAcomulado[personagem.raca]) {</p>
+    <p>
+      //Se for True(se isto existir), devolve o que está por baixo. Se for
+      falso(se isto não existir), devolve undefined
+    </p>
+    <p>valorAcomulado[personagem.raca].push(personagem);</p>
+    <p>} else {</p>
+    <p>valorAcomulado[personagem.raca] = [personagem];</p>
+    <p>}</p>
+    <p>return valorAcomulado;</p>
+    <p>}, {});</p>
+    <p>console.log(racas);</p>
+    <br />
+    <p>Basicamente o que fizemos foi:</p>
+    <p>//Criamos uma variavel que vai guardar o resultado da função reduce</p>
+    <p>
+      //função reduce vai receber outra função (anonima) com 2 parametros:
+      valorAcomulado,personagem
+    </p>
+    <p>
+      //No fim da função, dizemos o que o parametro valorAcomulado vai ser
+      (neste caso um objeto vazio): {}
+    </p>
+    <p>
+      //Dentro da função fazemos uma verificação para que SE valorAcomulado na
+      posição [personagem.raca] existir, dá-mos um push da personagem toda para
+      o nosso objeto vazio
+    </p>
+    <p>
+      //Se valorAcomulado na posição[personagem.raca] não existir, dá-mos um
+      push da personagem toda para o nosso objeto vazio
+    </p>
+    <br />
+    <br />
+    <h4>Metodo Sort</h4>
+    <h4>
+      Metodo Sort -> Serve para ordenar Arrays, nós conseguimos ir buscar
+      elementos de um Array e mudá-los de posição conforme o critério
+    </h4>
+    <h4>
+      Ou seja, ele usa um Array para ir buscar informações e ordená-las, ao
+      contrario dos outros metodos, este não cria um novo Array para guardar o
+      resultado, este guarda automaticamente o resultado no proprio Array
+    </h4>
+    <h4>
+      Funciona da seguinte forma: metodo sort recebe uma função, sempre com 2
+      argumentos (a,b) e basicamente ele vai comparar os primeiros dois e decide
+      qual deles coloca primeiro (consoante se o valor do return for positivo ou
+      negativo), depois vai comparar o elemento 2 e 3, depois o 3 e 4, etc
+    </h4>
+    <h4>
+      Se o "a"(primeiro da lista) - "b"(segundo da lista), for positivo = numero
+      positivo, ele coloca o "a" para depois do "b"(mais para o fim), se for
+      negativo, ele coloca o "a" para antes do "b"(mais para o inicio)
+    </h4>
+    <h4>
+      ex: numeros [1,2,9,7,5,4,3,99,21] o sort vai de 2 em 2 elementos e
+      compara-os, primeiro compara o 1 e 2, depois o 2 e 9, depois o 9 e 7, etc
+    </h4>
+    <p>
+      Neste exemplo vamos ordenar o nosso Array personagens, baseando-nos no
+      nivel das personagens:
+    </p>
+    <p>personagens.sort(function (personagemX, personagemY) {</p>
+    <p>
+      //Se o nivel do personageX (primeiro da lista) - o nivel do
+      personagemY(segundo da lista), for positivo = numero positivo, ele coloca
+      o personagemX para depois do personagemY(mais para o fim), se for
+      negativo, ele coloca o personagemX para antes do personagemY(mais para o
+      inicio)
+    </p>
+    <p>return personagemX.nivel - personagemY.nivel;</p>
+    <p>});</p>
+    <p>console.log(personagens);</p>
+    <p>
+      Para guardamos este resultado numa variavel, temos que utilizar o metodo
+      slice(), que é o que copia os arrays, ou seja, podemos fazer uma copia do
+      arrayoriginal mas ordenado: arrayOriginal.slice().sort(função), guardando
+      isto numa variavel: const
+      personagensOrdenados=personagens.slice().sort(function (personagemX,
+      personagemY) {
+    </p>
+    <p>
+      const personagensOrdenadas = personagens.slice().sort(function
+      (personagemX, personagemY) {
+    </p>
+    <p>
+      //Se o nivel do personageX (primeiro da lista) - o nivel do
+      personagemY(segundo da lista) for positivo,
+    </p>
+    <p>return personagemX.nivel - personagemY.nivel;</p>
+    <p>});</p>
+    <p>console.log(personagens);</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Objetos Globais</h1>
+    <h4>//Exitem muitos objetos globais, ex:</h4>
+    <h4>//Object</h4>
+    <h4>//Array</h4>
+    <h4>//String</h4>
+    <h4>//Number</h4>
+    <h4>//Date</h4>
+    <h4>//Math</h4>
+    <p>let pessoa = {};</p>
+    <p>let animal = Object();</p>
+    <p>console.log(typeof pessoa);</p>
+    <p>console.log(typeof animal);</p>
+    <p>let pessoa1 = { nome: "jose", idade: 30 };</p>
+    <p>let animal1 = Object({ nome: "tigre", idade: 15 });</p>
+    <p>console.log(pessoa1);</p>
+    <p>console.log(animal1);</p>
+    <p>let lista = [];</p>
+    <p>let lista2 = Array();</p>
+    <p>console.log(typeof lista);</p>
+    <p>console.log(typeof lista2);</p>
+    <p>let lista3 = [1, 2, 3, 4];</p>
+    <p>let lista4 = Array(1, 2, 3, 4);</p>
+    <p>console.log(lista3);</p>
+    <p>console.log(lista4);</p>
+    <p>let txt = "Olá";</p>
+    <p>let txt2 = String("Mundo");</p>
+    <p>console.log(typeof txt);</p>
+    <p>console.log(typeof txt2);</p>
+    <p>console.log(txt);</p>
+    <p>console.log(txt2);</p>
+    <p>let dia = Date();</p>
+    <p>console.log(dia);</p>
+    <br />
+    <h4>//Estes objetos globais tambem possuem propriedades e funções, ex:</h4>
+    <h4>Number;</h4>
+    <p>console.log(Number.isInteger(26.3));</p>
+    <p>console.log(Number.isInteger(26));</p>
+    <h4>Math;</h4>
+    <p>let piMaisDez = Math.PI + 10;</p>
+    <p>console.log(piMaisDez);</p>
+    <h4>//Potencia</h4>
+    <p>console.log(Math.pow(2, 3));</p>
+    <h4>//Raíz quadrada</h4>
+    <p>console.log(Math.sqrt(144));</p>
+    <br />
+    <hr />
+    <br />
+    <h1></h1>
+  </body>
+</html>

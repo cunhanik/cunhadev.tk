@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-II (DOM)</title>
+  </head>
+  <body>
+    <h1>Eventos</h1>
+    <p>
+      Os Eventos permitem executar javascript sem travar o carregamento da
+      página como utilizamos anteriormente
+    </p>
+    <p>
+      São associados por ações específicas na página (clicar, passar o rato por
+      cima, focar, escrever,etc)
+    </p>
+    <h3>Por ex:</h3>
+    <h3>Vamos criar um ficheiro script.js e fazer 4 funções:</h3>
+    <h4>function ratoNoInput() {</h4>
+    <h4>alert(`Passaste o rato por cima do primeiro input`);</h4>
+    <h4>}</h4>
+    <br />
+    <h4>function mudarValor() {</h4>
+    <h4>alert(`Alteraste o valor do segundo input`);</h4>
+    <h4>}</h4>
+    <br />
+    <h4>function sairInput() {</h4>
+    <h4>alert(`Saíste do input`);</h4>
+    <h4>}</h4>
+    <br />
+    <h4>function entrarInput() {</h4>
+    <h4>alert(`Entraste do input`);</h4>
+    <h4>}</h4>
+    <br />
+    <h4>function clicar() {</h4>
+    <h4>alert(`Clicaste no botão`);</h4>
+    <h4>}</h4>
+    <br />
+    <h3>Agora no nosso html criamos um mini formulário com os eventos:</h3>
+    <h4>onmouseenter</h4>
+    <h4>onchange</h4>
+    <h4>onblur</h4>
+    <h4>onfocus</h4>
+    <h4>onclick</h4>
+    <br />
+    <h4>Atenção que o for da label, tem que ser o mesmo que o id do input.</h4>
+    <br />
+    <p>div</p>
+    <p>label for="onMouseEnter">Entrada do Rato:</p>
+    <p>input type="text" id="onMouseEnter" onmouseenter="ratoNoInput()"</p>
+    <p>div</p>
+    <br />
+    <p>div</p>
+    <p>label for="onChange">Mudança de Valor:</p>
+    <p>input type="text" id="onChange" onchange="mudarValor()"</p>
+    <p>div</p>
+    <br />
+    <p>div</p>
+    <p>label for="onBlur">Saída de Foco:</p>
+    <p>input type="text" id="onBlur" onblur="sairInput()"</p>
+    <p>div</p>
+    <br />
+    <p>div</p>
+    <p>label for="onFocus">Entrada do Foco:</p>
+    <p>input type="text" id="onFocus" onfocus="entrarInput()"</p>
+    <p>div</p>
+    <br />
+    <p>button onclick="clicar()">Clica Aqui!></p>
+    <p>script src="script.js"> script</p>
+    <br />
+    <hr />
+    <br />
+    <h1>O QUE É O DOM</h1>
+    <p>Document Object Model (Modelo de objeto de documento)</p>
+    <p>
+      O DOM é um objeto de um modelo/documento(html): É como se transformassemos
+      o nosso html(modelo/documento) num objeto
+    </p>
+    <p>
+      Podemos ir a um site qualquer, ir ao inspect do chrome e escrever na
+      consola: console.log(document)
+    </p>
+    <p>Podemos ver que temos acesso a todo HTML que está no Site</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Obter elementos HTML do DOM</h1>
+    <br />
+    <h3>HTMLCollection</h3>
+    <p>document.getElementsByTagName()</p>
+    <p>document.getElementsByClassName()</p>
+    <br />
+    <h3>NodeList</h3>
+    <p>document.getElementsByName()</p>
+    <p>document.querySelectorAll()</p>
+    <br />
+    <h3>Unico elemento</h3>
+    <p>document.getElementById()</p>
+    <p>document.querySelector()</p>
+    <br />
+    <h3>Por ex:</h3>
+    <br />
+    <h4>FICHEIRO HTML:</h4>
+    <br />
+    <p>ul id="contact-list"</p>
+    <p>li</p>
+    <p>label for="contact1">Contato 1 label</p>
+    <p>input type="text" id="contact1" name="contact1" class="contact-input"</p>
+    <p>li</p>
+    <p>li</p>
+    <p>label for="contact2">Contato 2 label</p>
+    <p>input type="text" id="contact2" name="contact2" class="contact-input"</p>
+    <p>li</p>
+    <p>li</p>
+    <p>label for="contact3">Contato 3 label</p>
+    <p>input type="text" id="contact3" name="contact3" class="contact-input"</p>
+    <p>li</p>
+    <p>button onclick="show()"> Mostrar na consola button</p>
+    <p>ul</p>
+    <p>script src="./script.js"> script></p>
+    <br />
+    <br />
+    <h4>FICHEIRO JS:</h4>
+    <br />
+    <p>function show() {</p>
+    <p>// Obter um elemento único a partir do seu id</p>
+    <p>const contactList = document.getElementById("contact-list");</p>
+    <p>console.log(contactList);</p>
+    <br />
+    <p>// Obter vários elementos (HTMLCollection) a partir de um nome de tag</p>
+    <p>const liElements = document.getElementsByTagName("li");</p>
+    <p>console.log(liElements);</p>
+    <br />
+    <p>// Obter vários elementos (HTMLCollection) a partir de uma classe</p>
+    <p>
+      const contactInputs = document.getElementsByClassName("contact-input");
+    </p>
+    <p>console.log(contactInputs);</p>
+    <br />
+    <p>// Obter vários elementos (NodeList) a partir do atributo name</p>
+    <p>const contact1 = document.getElementsByName("contact1");</p>
+    <p>console.log(contact1);</p>
+    <br />
+    <p>
+      // Obter vários elementos (NodeList) a partir de uma query (semelhante aos
+      seletores do CSS)
+    </p>
+    <p>
+      const contacts = document.querySelectorAll("#contact-list > li > label");
+    </p>
+    <p>console.log(contacts);</p>
+    <br />
+    <p>
+      // Obter um elemento a partir de uma query (o primeiro elemento a
+      corresponder)
+    </p>
+    <p>const contact = document.querySelector("#contact-list > li > label");</p>
+    <p>console.log(contact);</p>
+    <p>console.log(contact.textContent);</p>
+    <p>}</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Criar novos elementos no DOM</h1>
+    <h3>Funciona desta maneira:</h3>
+    <p>1. Criar o elemento</p>
+    <p>document.createElement()</p>
+    <p>2. Adicionar conteudo ao elemento</p>
+    <p>newElemental.innerHTML = "Olá Mundo!"</p>
+    <p>3. Adicionar o elemento como um novo nó no DOM</p>
+    <p>element.appendChild(newElement)</p>
+    <h3>Por ex:</h3>
+    <h3>Vamos criar uma li com um input, dentro de uma ul</h3>
+    <br />
+    <h4>FICHEIRO HTML:</h4>
+    <br />
+    <p>h1 Criar Novos Elementos no DOM h1</p>
+    <p>button onclick="addInput()">Adicionar Input button</p>
+    <p>ul id="inputs"> ul</p>
+    <p>script src="./index.js"> script</p>
+    <br />
+    <br />
+    <h4>FICHEIRO JS:</h4>
+    <p>function addInput() {</p>
+    <p>const ul = document.getElementById("inputs");</p>
+    <br />
+    <p>const newLi = document.createElement("li");</p>
+    <p>newLi.className = "list-item";</p>
+    <p>newLi.innerText = "Novo input: ";</p>
+    <br />
+    <p>const newInput = document.createElement("input");</p>
+    <p>newInput.type = "text";</p>
+    <p>newInput.name = "input";</p>
+    <br />
+    <p>newLi.appendChild(newInput);</p>
+    <p>ul.appendChild(newLi);</p>
+    <br />
+    <h4>appendChild() -> Adiciona 1 elemento</h4>
+    <h4>append() -> Adiciona varios elementos</h4>
+    <p>}</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Praticar a Manipulação do DOM</h1>
+    <h3>Por ex:</h3>
+    <h3>Vamos fazer bla bla bla</h3>
+    <br />
+    <h4>FICHEIRO HTML:</h4>
+    <br />
+    <p>h1 Praticar a Manipulação do DOM h1</p>
+    <p>hr</p>
+    <p>h2 Contacts List: h2</p>
+    <p>button onclick="addContact()">Add New Contact button</p>
+    <p>button onclick="removeContact()">Remove Contact button</p>
+    <p>div id="contacts-list"> div</p>
+    <p>script src="./script.js"> script</p>
+    <br />
+    <h4>FICHEIRO JS:</h4>
+    <br />
+    <p>function addContact() {</p>
+    <p>const contactDiv = document.getElementById("contacts-list");</p>
+    <br />
+    <p>const h3 = document.createElement("h3");</p>
+    <p>h3.innerText = "Contact: ";</p>
+    <br />
+    <p>const newUl = document.createElement("ul");</p>
+    <br />
+    <p>const nameLi = document.createElement("li");</p>
+    <p>nameLi.innerHTML = "label for='name' id='label-Name'>Name: label>";</p>
+    <p>const inputName = document.createElement("input");</p>
+    <p>inputName.type = "text";</p>
+    <p>inputName.id = "name";</p>
+    <p>nameLi.appendChild(inputName);</p>
+    <p>newUl.appendChild(nameLi);</p>
+    <p>newUl.appendChild(document.createElement("br"));</p>
+    <br />
+    <p>const phoneNumberLi = document.createElement("li");</p>
+    <p>
+      phoneNumberLi.innerHTML = "label for='number' id='label-Name'>Phone
+      Number: label>";
+    </p>
+    <p>const inputPhoneNumber = document.createElement("input");</p>
+    <p>inputPhoneNumber.type = "text";</p>
+    <p>inputPhoneNumber.id = "number";</p>
+    <p>phoneNumberLi.appendChild(inputPhoneNumber);</p>
+    <p>newUl.appendChild(phoneNumberLi);</p>
+    <p>newUl.appendChild(document.createElement("br"));</p>
+    <br />
+    <p>const addressLi = document.createElement("li");</p>
+    <p>
+      addressLi.innerHTML = "label for="adress" id="label-Name" >Address: label
+      >";
+    </p>
+    <p>const inputAddress = document.createElement("input");</p>
+    <p>inputAddress.type = "text";</p>
+    <p>inputAddress.id = "number";</p>
+    <p>addressLi.appendChild(inputAddress);</p>
+    <p>newUl.appendChild(addressLi);</p>
+    <p>newUl.appendChild(document.createElement("br"));</p>
+    <br />
+    <p>const btnSave = document.createElement("button");</p>
+    <p>btnSave.type = "button";</p>
+    <p>btnSave.innerText = "Save";</p>
+    <p>newUl.appendChild(btnSave);</p>
+    <p>contactDiv.append(h3, newUl);</p>
+    <p>}</p>
+    <p>function removeContact() {</p>
+    <p>const contactDiv = document.getElementById("contacts-list");</p>
+    <p>const titles = document.getElementsByTagName("h3");</p>
+    <p>const contacts = document.getElementsByTagName("ul");</p>
+    <p>contactDiv.removeChild(titles[titles.length - 1]);</p>
+    <p>contactDiv.removeChild(contacts[contacts.length - 1]);</p>
+    <p>}</p>
+    <br />
+    <br />
+    <h4>removeChild() -> Remove 1 elemento</h4>
+    <h4>remove() -> Remove o proprio elemento (Exemplo: ex1)</h4>
+    <br />
+    <hr />
+    <br />
+    <h1>Enviar Valores do Dom para o javascript</h1>
+    <br />
+    <h4>Podemos usar parametros nas funções que passamos nos eventos.</h4>
+    <h4>Vamos usar o objeto "this"</h4>
+    <h4>
+      E com esse objeto, temos direitos a varios metodos, neste caso vamos o
+      usar o "this.parentNode"
+    </h4>
+    <h4>this.parentNode -> Dá-nos acesso ao elemento pai da propria Tag.</h4>
+    <h5>Neste caso o elemento pai da tag "button" é a "div"</h5>
+    <h3>Ficheiro HTML:</h3>
+    <br />
+    <p>div</p>
+    <p>label for="name">Name: label</p>
+    <p>input type="text" id="name" name="name" /></p>
+    <p>br</p>
+    <p>label for="password">Password: label></p>
+    <p>input type="password" id="password" name="password" /></p>
+    <p>br</p>
+    <p>label for="passwordConfirm">Confirm Password: label></p>
+    <p>input type="password" id="passwordConfirm" name="passwordConfirm" /></p>
+    <p>br</p>
+    <p>button onclick="registar(this.parentNode)">Registar button></p>
+    <p>div</p>
+    <p>script src="script.js">script</p>
+    <br />
+    <h3>Ficheiro JavaScript:</h3>
+    <h4>
+      Aqui, como sempre, criamos a função do evento e vamos colocar um nome do
+      parametro: "elements"
+    </h4>
+    <h4>
+      elements vai ser o nome que dá acesso ao parametro que passamos no HTML
+      "this.parentNode". dá-nos acesso ao elemento da div (porque a div é o pai
+      do button que tem o evento com este parametro this.parentNode, neste
+      caso):
+    </h4>
+    <h4>
+      Agora para termos acesso a algo em particular dessa div, como o formulário
+      que está dentro dela, usamos:
+    </h4>
+    <h5>
+      1. parametro que passamos para se referir ao this.parentNode -> elements
+    </h5>
+    <h5>2. filho desse elemento -> children</h5>
+    <h5>3. ID desse filho -> name</h5>
+    <h5>4. Valor que vão escrever nesse filho -> value</h5>
+    <h4>elements.children.name.value</h4>
+    <br />
+    <br />
+    <p>function registar(elements) {</p>
+    <p>const name = elements.children.name.value;</p>
+    <p>const password = elements.children.password.value;</p>
+    <p>const passwordConfirm = elements.children.passwordConfirm.value;</p>
+    <p>console.log({ name, password, passwordConfirm });</p>
+    <p>if (password === passwordConfirm) {</p>
+    <p>alert(`Conta Registada com sucesso!\n\nBem-vindo: ${name}`);</p>
+    <p>} else {</p>
+    <p>alert(`Passwords diferentes.\n Tenta outra vez!`);</p>
+    <p>}</p>
+    <p>}</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Trabalhar com eventos no JavaScript</h1>
+    <br />
+    <h3>Ficheiro HTML:</h3>
+    <br />
+    <p>div</p>
+    <p>label for="name">Name: label</p>
+    <p>input type="text" name="name" id="name" /></p>
+    <p>br</p>
+    <p>label for="password">Password: label</p>
+    <p>input type="password" name="password" id="password" /></p>
+    <p>br</p>
+    <p>label for="passwordConfirm">Confirm your password: label></p>
+    <p>input type="password" name="passwordConfirm" id="passwordConfirm" /></p>
+    <p>br</p>
+    <p>button id="registerBtn">Sign Up button></p>
+    <p>
+      button id="removeEventBtn" onclick="removeEvent()">Remove Event button>
+    </p>
+    <p>button id="otherEvent">Other Event button></p>
+    <p>div</p>
+    <p>script src="./script.js"> script></p>
+    <h4>
+      Dica: O script tanto pode estar no fim do body como no head; Se estiver no
+      head, temos que escrever:
+    </h4>
+    <h4>defer -> Para que o javascript seja executado depois do html.</h4>
+    <br />
+    <h3>Ficheiro JavaScript:</h3>
+    <h4>Vamos criar a função com um parametro</h4>
+    <h4>
+      Vamos criar uma variavel que recebe o pai do proprio parametro:
+      event.currentTarget.partenNode
+    </h4>
+    <h4>depois fazemos a mesma coisa que fizemos antes(mais em cima)...</h4>
+    <h4>Depois da função feita:</h4>
+    <h4>
+      Criamos uma variavel que recebe o id do botão que vai receber o evento
+    </h4>
+    <h4>
+      Criamos o evento nesse botão, neste caso um evento de click com a função
+      criada em cima
+    </h4>
+    <h4>Depois:</h4>
+    <h4>Criamos outra função, esta sem parametro</h4>
+    <h4>
+      Usamos o botão do click(o que criamos em cima) para remover o proprio
+      evento e a função dele: nomeDoBotao.removeEventListener("click",register)
+    </h4>
+    <h4>Podemos criar um alert para recebermos o aviso que foi removido</h4>
+    <h4>Depois da função:</h4>
+    <h4>Criamos uma variavel que recebe o id do otherEvent</h4>
+    <h4>
+      Adicionámos um evento a esse botão e criamos uma função anonima com um
+      parametro
+    </h4>
+    <h4>
+      Receber na consola o elemento pai deste botão:
+      console.log(parametro.currentTarge.parentNode)
+    </h4>
+    <h4>Criar um alerta para avisar que o "Other Event" foi ativado!</h4>
+    <br />
+    <p>function register(event) {</p>
+    <p>const div = event.currentTarget.parentNode;</p>
+    <p>const name = div.children.name.value;</p>
+    <p>const password = div.children.password.value;</p>
+    <p>const passwordConfirm = div.children.passwordConfirm.value;</p>
+    <br />
+    <p>if (password === passwordConfirm) {</p>
+    <p>alert(`successfully registered!\n\nWelcome: ${name}`);</p>
+    <p>} else {</p>
+    <p>alert(`Invalid Passwords.\n\nTry Again!`);</p>
+    <p>}</p>
+    <p>}</p>
+    <br />
+    <p>const btnRegister = document.getElementById("registerBtn");</p>
+    <p>btnRegister.addEventListener("click", register);</p>
+    <br />
+    <p>function removeEvent() {</p>
+    <p>btnRegister.removeEventListener("click", register);</p>
+    <p>alert("Event Removed");</p>
+    <p>}</p>
+    <br />
+    <p>const otherEvent = document.getElementById("otherEvent");</p>
+    <p>otherEvent.addEventListener("click", function (event) {</p>
+    <p>console.log(event.currentTarget.parentNode);</p>
+    <p>alert("Other Event Activated!\n\nCheck the console.");</p>
+    <p>});</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Trabalhar com formulários no JavaScript</h1>
+    <br />
+    <h3>Ficheiro HTML:</h3>
+    <br />
+    <p>h2 Faz o teu pedido: h2</p>
+    <p>br</p>
+    <p>form id="orderForm"></p>
+    <p>label for="name">Nome: label</p>
+    <p>br</p>
+    <p>input type="text" name="name" id="name"</p>
+    <p>br</p>
+    <p>br</p>
+    <p>label for="address">Morada de Entrega: label</p>
+    <p>br</p>
+    <p>input type="text" name="address" id="address"</p>
+    <p>br</p>
+    <p>br</p>
+    <p>label for="breadType">Tipo de Pão label</p>
+    <p>br</p>
+    <p>select name="breadType" id="breadType"</p>
+    <p>option selected disabled>Escolhe uma opção...option</p>
+    <p>option value="3 queijos">3 queijos option</p>
+    <p>option value="Parmesão e oregão">Parmesão e oregão option</p>
+    <p>option value="9 grãos">9 grãos option</p>
+    <p>option value="Italiano branco">Italiano branco option</p>
+    <p>option value="Manteiga temperada">Manteiga temperada option</p>
+    <p>select</p>
+    <p>br</p>
+    <p>br</p>
+    <p>label for="main">Principal: label</p>
+    <p>br</p>
+    <p>input type="radio" name="main" id="main1" value="Carne"</p>
+    <p>label for="main1">Carne label</p>
+    <p>input type="radio" name="main" id="main2" value="Frango"</p>
+    <p>label for="main2">Peixe label</p>
+    <p>input type="radio" name="main" id="main3" value="Vegano"</p>
+    <p>label for="main3">Vegan label></p>
+    <p>br</p>
+    <p>br</p>
+    <p>label for="salad">Salada: label</p>
+    <p>br</p>
+    <p>input type="checkbox" name="salad" id="salad1" value="Alface"</p>
+    <p>for="salad1">Alface label</p>
+    <p>type="checkbox" name="salad" id="salad2" value="Tomate"</p>
+    <p>for="salad2">Tomate label</p>
+    <p>input type="checkbox" name="salad" id="salad3" value="Azeitonas"</p>
+    <p>for="salad3">Azeitonas label</p>
+    <p>input type="checkbox" name="salad" id="salad4" value="Cenoura"</p>
+    <p>label for="salad4">Cenoura label</p>
+    <p>br</p>
+    <p>br</p>
+    <p>label for="observations">Observações: label</p>
+    <p>br</p>
+    <p>textarea name="observations" id="observations" cols="30" rows="6"</p>
+    <p>textarea</p>
+    <p>br</p>
+    <p>br</p>
+    <p>button type="submit">Efetuar Pedido button></p>
+    <p>form</p>
+    <br />
+    <br />
+    <h3>Ficheiro JavaScript:</h3>
+    <h4>Criamos uma variavel para fazer ligação ao nosso form</h4>
+    <h4>
+      Usamos essa variavel e adicionámos um evento submit, com uma função
+      anonima com um parametro
+    </h4>
+    <h4>
+      Usar o metodo preventDefault() para conseguirmos ver os nossos items. Sem
+      isto a página ia atualizar por causa do comportamento default do form e
+      não conseguiamos ver os items
+    </h4>
+    <h4>
+      Criamos uma variavel que faz ligação com o valor do nosso input name,
+      fizemos ligação com o querySelector, referindo o input com [name="x"]
+    </h4>
+    <h4>
+      Criamos uma variavel que faz ligação com o valor do nosso input address,
+      fizemos ligação com o querySelector, referindo o input com [name="y"]
+    </h4>
+    <h4>
+      Criamos uma variavel que faz ligação com o valor da nossa label breadType,
+      fizemos ligação com o querySelector, referindo o select com[name="z"]
+    </h4>
+    <h4>
+      Criamos uma variavel que faz ligação com o valor do nosso input main,
+      fizemos ligação com o querySelector, referindo o input[name="a"]
+    </h4>
+    <h4>
+      Criamos uma variavel que faz ligação com o valor da nossa textarea
+      observations, fizemos ligação com o querySelector, referindo a
+      textarea[name="b"]
+    </h4>
+    <h4>Criamos uma variavel com uma string vazia</h4>
+    <h4>
+      Usamos um querySelectorAll para selecionar o valor de todos os inputs que
+      levarem CHECK (.checked), referindo os inputs com [name="c"], usamos o
+      metodo forEach()para termos acesso a esses items, usando uma função
+      anonima dentro do .forEach com parametro: .forEach(function(item){)
+    </h4>
+    <h4>
+      Agora usamos a variavel que criamos em cima "salad" e usámos essa variavel
+      para aceder a todos os valores desses items: salad += `${item.value}
+    </h4>
+    <h4>
+      usamos o console.log com um objeto que recebe todas as nossas informações:
+      name,address,breadType,main,salad,observations,
+    </h4>
+    <h4>
+      Podemos usar um alert com uma mensagem a mostrar o "menu" que o user
+      escolheu!
+    </h4>
+    <br />
+    <p>const form = document.getElementById("orderForm");</p>
+    <p>form.addEventListener("submit", function (ev) {</p>
+    <p>ev.preventDefault();</p>
+    <p>const name = document.querySelector("input[name='name']").value;</p>
+    <p>
+      const address = document.querySelector("input[name='address']").value;
+    </p>
+    <p>
+      const breadType =
+      document.querySelector("select[name='breadType']").value;
+    </p>
+    <p>const main = document.querySelector("input[name='main']").value;</p>
+    <p>
+      const observations =
+      document.querySelector("textarea[name='observations']").value;
+    </p>
+    <p>let salad = "";</p>
+    <p>
+      document.querySelectorAll("input[name='salad']:checked").forEach(function
+      (item) {
+    </p>
+    <p>salad += `- ${item.value} \n`;</p>
+    <p>});</p>
+    <p>console.log({name,address,breadType,main,salad,observations,});</p>
+    <p>
+      alert(`Pedido realizado!\n\nNome do cliente: ${name}\nMorada de entrega:
+      ${address}\nTipo de pão: ${breadType}\nRecheio: ${main}\nSalada:
+      ${salad}\nObservações: ${observations}`);
+    </p>
+    <p>});</p>
+    <br />
+    <h4>
+      Dica: Usando o metodo "preventDefault" -> Conseguimos prevenir o
+      comportamento default do nosso evento. Neste caso no formulário. Não deixa
+      executar a action default dele.
+    </h4>
+    <h4>
+      Com isso, Conseguimos mostrar os valores dos nossos items. Sem isso, o
+      browser atualiza muito rapido a pagina e não conseguimos ver nada
+    </h4>
+    <h4>Funciona assim: parametro.preventDefault()</h4>
+    <h4>No nosso caso: event.preventDefault()</h4>
+    <br />
+    <hr />
+    <br />
+    <h1>Manipular Estilos com Javascript</h1>
+    <br />
+    <h4>Podemos manipular o css com JavaScript:</h4>
+    <h4>
+      Neste exemplo vamos mudar o tema da pagina para Dark/light, de duas
+      maneiras:
+    </h4>
+    <h4>- Mudando as cores do body: document.body.style</h4>
+    <h4>- Mudando a classe do body: document.body.classList.toggle("")</h4>
+    <br />
+    <h3>Ficheiro HTML:</h3>
+    <br />
+    <p>link rel="stylesheet" href="style.css"</p>
+    <p>body class="is-light"></p>
+    <p>button id="lightBtn">Tema Claro button</p>
+    <p>button id="darkBtn">Tema Escuro button</p>
+    <p>button id="switchBtn">Alternar Tema Claro/Escuro button</p>
+    <p>h2 Título da Página h2</p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus sed, labore
+      blanditiis hic perspiciatis error veritatis eum animi aliquam consequuntur
+      non facere sit nisi nam similique at obcaecati odit debitis.
+    </p>
+    <p>script src="script.js"> script</p>
+    <br />
+    <br />
+    <h3>Ficheiro css:</h3>
+    <br />
+    <p>.is-light {</p>
+    <p>background-color: #f1f5f9;</p>
+    <p>color: #212529;</p>
+    <p>}</p>
+    <p>.is-dark {</p>
+    <p>background-color: #212529;</p>
+    <p>color: #f1f5f9;</p>
+    <p>}</p>
+    <br />
+    <br />
+    <h3>Ficheiro JavaScript:</h3>
+    <br />
+    <p>function useLightTheme() {</p>
+    <p>document.body.style.color = "#212529";</p>
+    <p>document.body.style.backgroundColor = "#f1f5f9";</p>
+    <p>}</p>
+    <p>function useDarkTheme() {</p>
+    <p>document.body.style.color = "#f1f5f9";</p>
+    <p>document.body.style.backgroundColor = "#212529";</p>
+    <p>}</p>
+    <p>function switchTheme() {</p>
+    <p>document.body.classList.toggle("is-light");</p>
+    <p>document.body.classList.toggle("is-dark");</p>
+    <p>}</p>
+    <p>
+      document.getElementById("lightBtn").addEventListener("click",
+      useLightTheme);
+    </p>
+    <p>
+      document.getElementById("darkBtn").addEventListener("click",
+      useDarkTheme);
+    </p>
+    <p>
+      document.getElementById("switchBtn").addEventListener("click",
+      switchTheme);
+    </p>
+    <br />
+    <hr />
+    <br />
+    <h1>Manipular Atributos com Javascript</h1>
+    <br />
+    <h3>Ficheiro HTML</h3>
+    <br />
+    <p>script src="./script.js" defer> script</p>
+    <p>
+      input type="text" name="input" id="input" data-something="2022"
+      data-something-else="2024" value="Aparecer o valor com o getAttribute"
+    </p>
+    <p>button id="value">Mudar Valor button</p>
+    <p>button id="type">Mudar Tipo button</p>
+    <p>button id="placeholder">Mudar Placeholder button</p>
+    <p>button id="disable">Desabilitar/Habilitar button></p>
+    <p>button id="data">Mostrar Dados button></p>
+    <br />
+    <br />
+    <h3>Ficheiro JavaScript</h3>
+    <br />
+    <p>const input = document.getElementById("input");</p>
+    <p>
+      document.getElementById("value").addEventListener("click", function () {
+    </p>
+    <p>input.value = input.value === "" ? "hello, World!" : "";</p>
+    <p>console.log(input.value); //Recebe o valor em tempo real</p>
+    <p>console.log(input.getAttribute("value"));</p>
+    <p>});</p>
+    <h4>
+      console.log(input.value); //Recebe o valor em tempo real, ou seja, o que
+      estiver escrito no input
+    </h4>
+    <h4>
+      console.log(input.getAttribute("value")); //Recebe o valor que está no
+      html. Se no html, o nosso input não tiver um value, aparece "null", se
+      tiver aparece o value do input
+    </h4>
+    <br />
+    <p>
+      document.getElementById("type").addEventListener("click", function () {
+    </p>
+    <p>//input.type = input.type !== "radio" ? "radio" : "text";</p>
+    <p>input.setAttribute("type", "radio");</p>
+    <p>});</p>
+    <h4>
+      //input.type = input.type !== "radio" ? "radio" : "text"; Conseguimos
+      fazer com que ao clicar no botão, o type do input se transforme em
+      radio/text
+    </h4>
+    <h4>
+      //input.setAttribute("type", "radio"); Conseguimos transformar aquele
+      input em radio
+    </h4>
+    <br />
+    <p>
+      document.getElementById("placeholder").addEventListener("click", function
+      () {
+    </p>
+    <p>input.placeholder = "Escreve alguma coisa...";</p>
+    <p>});</p>
+    <h4>
+      //input.placeholder = "Escreve alguma coisa..."; Conseguimos fazer com que
+      um input vazio, fique com um placeholder, clicando no botão
+    </h4>
+    <br />
+    <p>
+      document.getElementById("disable").addEventListener("click", function () {
+    </p>
+    <p>input.setAttribute("disabled", !input.disabled);</p>
+    <p>});</p>
+    <h4>
+      //input.setAttribute("disabled", !input.disabled); Conseguimos desabilitar
+      o input se ele estiver ao contrario de disabled (enabled)
+    </h4>
+    <br />
+    <p>
+      document.getElementById("data").addEventListener("click", function () {
+    </p>
+    <p>const data1 = input.dataset.something;</p>
+    <p>console.log(`O valor do data-something é ${data1}`);</p>
+    <p>const data2 = input.dataset.somethingElse;</p>
+    <p>console.log(`O valor do data-somethingElse é ${data2}`);</p>
+    <p>input.dataset.somethingBirthday = "07/09"</p>
+    <p>
+      console.log(`O valor do data-something-Birthday é
+      ${input.dataset.somethingBirthday}`);
+    </p>
+    <p>});</p>
+    <h4>
+      //dataset serve para referenciar todos os atributos do tipo data:
+      data-something; data-status; data-name; data-birthday; etc...
+    </h4>
+    <h4>
+      //dataset é um objeto, ou seja, nós temos acesso a todas as propriedades:
+      dataset.something; dataset.status; dataset.name; etc...
+    </h4>
+    <h4>
+      //No Javascript não podemos usar -, então para acedermos ao valor da
+      data-something-else do html, escrevemos em cammelCase: const data2 =
+      input.dataset.somethingElse
+    </h4>
+    <h4>
+      //input.dataset.somethingBirthday = "07/09" ; Conseguimos criar no html o
+      atributo data-something-birthday, escrevendo no javascript em cammelCase:
+      somethingBirthday = "07/09"
+    </h4>
+    <br />
+    <hr />
+    <br />
+    <h1>Recursos de Armazenamento do Navegador</h1>
+    <br />
+    <h3>Session Storage:</h3>
+    <p>Forma simples de armazenar dados no navegador durante a navegação</p>
+    <p>
+      Guarda as informações mesmo depois de mudarmos de página num site enquanto
+      a janela estiver aberta
+    </p>
+    <p>
+      Guarda os dados daquele site, enquanto a janela está aberta, ao fechahr o
+      sessionStorage é limpo
+    </p>
+    <br />
+    <br />
+    <h3>Local Storage:</h3>
+    <p>
+      Dados armazenados no navegador ficam guardados mesmo depois de fecharmos a
+      janela do navegador
+    </p>
+    <p>
+      Existem "para sempre" até serem removidos, não possuem data de
+      expiração/p>
+      <br />
+      <br />
+    </p>
+
+    <h3>Cookies:</h3>
+    <p>
+      Dados armazenados em pequenos arquivos de texto no computador do cliente
+    </p>
+    <p>Podem possuir uma data de expiração</p>
+    <p>
+      A forma mais tradicional de permitir "lembrar" informações mesmo depois de
+      fechar o navegador
+    </p>
+    <p>
+      São enviados nas requisições e podem existir no servidor, sendo devolvidos
+      quando uma pagina html for solicitada
+    </p>
+    <br />
+    <br />
+    <h3>Ficheiro HTML</h3>
+    <br />
+    <p>h1 Recursos de Armazenamento do Navegador h1</p>
+    <p>h2 Session Storage h2</p>
+    <p>label for="session">Digite uma informação: label</p>
+    <p>input type="text" id="session"</p>
+    <p>button id="sessionBtn">Guardar! button</p>
+    <p>button id="readSesssion">Ler button</p>
+    <br />
+    <p>hr</p>
+    <p>h2 Local Storage h2</p>
+    <p>label for="local">Digite uma informação: label</p>
+    <p>input type="text" id="local"</p>
+    <p>button id="localBtn">Guardar! button</p>
+    <p>button id="readLocal">Ler button</p>
+    <br />
+    <p>hr</p>
+    <p>h2 Cookies h2</p>
+    <p>label for="cookie">Digite uma informação: label</p>
+    <p>input type="text" id="cookie"</p>
+    <p>button id="cookieBtn">Guardar! button</p>
+    <p>br br</p>
+    <p>label for="cookie2">Digite uma informação: label</p>
+    <p>input type="text" id="cookie2"</p>
+    <p>button id="cookie2Btn">Guardar! button</p>
+    <p>script src="./script.js" script</p>
+    <br />
+    <br />
+    <h3>Ficheiro Script</h3>
+    <p>
+      document.getElementById("sessionBtn").addEventListener("click", function
+      () {
+    </p>
+    <p>const userDataSession = document.getElementById("session");</p>
+    <p>window.sessionStorage.setItem("info", userDataSession.value);</p>
+    <p>userDataSession.value = "";</p>
+    <p>});</p>
+    <p>
+      document.getElementById("readSesssion").addEventListener("click", function
+      () {
+    </p>
+    <p>const userDataAlert = window.sessionStorage.getItem("info");</p>
+    <p>alert(userDataAlert);</p>
+    <p>});</p>
+    <br />
+    <p>
+      document.getElementById("localBtn").addEventListener("click", function ()
+      {
+    </p>
+    <p>const userData2Local = document.getElementById("local");</p>
+    <p>window.localStorage.setItem("txt", userData2Local.value);</p>
+    <p>userData2Local.value = "";</p>
+    <p>});</p>
+    <p>
+      document.getElementById("readLocal").addEventListener("click", function ()
+      {
+    </p>
+    <p>const userDataAlert2 = window.localStorage.getItem("txt");</p>
+    <p>alert(userDataAlert2);</p>
+    <p>});</p>
+    <br />
+    <p>
+      document.getElementById("cookieBtn").addEventListener("click", function ()
+      {
+    </p>
+    <p>const userData3Cookie = document.getElementById("cookie");</p>
+    <p>//cookieName = value; expires=UTCStringDate; path=/;</p>
+    <p>const cookie = `info=${userData3Cookie.value};`;</p>
+    <p>const expiration = `expires=${new Date(2022, 11, 31)};`;</p>
+    <p>const path = "path=/;";</p>
+    <p>document.cookie = `${cookie}${expiration}${path}`;</p>
+    <p>userData3Cookie.value = "";</p>
+    <p>console.log(document.cookie);</p>
+    <p>});</p>
+    <br />
+    <p>
+      document.getElementById("cookie2Btn").addEventListener("click", function
+      () {
+    </p>
+    <p>const userData3Cookie2 = document.getElementById("cookie2");</p>
+    <p>const cookie2 = `test=${userData3Cookie2.value};`;</p>
+    <p>const expiration = `expires=${new Date(2023, 0, 1)}`;</p>
+    <p>const path = "path=/;";</p>
+    <p>document.cookie = `${cookie2}${expiration}${path}`;</p>
+    <p>userData3Cookie2.value = "";</p>
+    <p>console.log(document.cookie);</p>
+    <p>});</p>
+    <br />
+    <hr />
+    <br />
+  </body>
+</html>

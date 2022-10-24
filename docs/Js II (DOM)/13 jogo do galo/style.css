@@ -1,0 +1,46 @@
+* {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+#title {
+  padding: 20px;
+  text-align: center;
+}
+.players {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#turn {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#gameBoard {
+  background-color: #232323;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+  max-width: 400px;
+  height: 400px;
+  margin: 20px auto auto auto;
+}
+
+#gameBoard span {
+  background-color: #ddd;
+  display: grid;
+  place-content: center;
+  font-size: 75px;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+#gameBoard span.win {
+  background-color: #25a340;
+}
