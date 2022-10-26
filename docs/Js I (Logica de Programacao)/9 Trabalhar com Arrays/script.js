@@ -59,7 +59,7 @@ const sub = array.splice(indice, 1, "Bizica");
 console.log(sub);
 console.log(array);
 
-//iterar pelos elementos -> 
+//iterar(passar individualmente) pelos elementos ->
 for (let teste = 0; teste < sociedade.length; teste++) {
   const element = sociedade[teste];
   console.log(`${element} está na posição ${teste}`);
