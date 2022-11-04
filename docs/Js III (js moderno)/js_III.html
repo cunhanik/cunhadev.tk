@@ -131,5 +131,652 @@
     <br />
     <hr />
     <br />
+    <h1>Operador spread</h1>
+    <br />
+    <p>
+      Operador spread (espalhar), serve para espalhar os elementos de um objeto
+      iteravel, como um array ou uma string.
+    </p>
+    <p>Utilizamos o spread, desta maneira:</p>
+    <p>let str = "Hello, World"</p>
+    <p>let arr = [4,2,8,3,1]</p>
+    <p>console.log(...str) // separa as letras: H E L L O , W O R L D</p>
+    <p>consolelog(...arr) // separa os elementos: 4 2 8 3 1</p>
+    <h4>Com o operador spread, podemos:</h4>
+    <h4>Passar vários parâmetros de uma unica vez</h4>
+    <h4>Clonar objetos iteráveis</h4>
+    <h4>
+      Copiar um array/objeto, conseguindo fazer manipulações sem afetar o
+      array/objeto original
+    </h4>
+    <h4>Transformar strings em arrays</h4>
+    <br />
+    <h3>Ficheiro js:</h3>
+    <br />
+    <p>
+      const towns = ["Prontera", "Izlude", "Payon", "Alberta", "Geffen",
+      "Morroc"];
+    </p>
+    <p>console.log(towns);</p>
+    <p>console.log(...towns);</p>
+    <p>console.log(...towns[0]);</p>
+    <p>const townsCopy = towns;</p>
+    <p>townsCopy.pop();</p>
+    <p>townsCopy.pop();</p>
+    <p>townsCopy.push("Porto");</p>
+    <p>console.log({ towns, townsCopy });</p>
+    <p>const townsClone = [...towns];</p>
+    <p>townsClone.push("Lisbon");</p>
+    <p>console.log({ towns, townsCopy, townsClone });</p>
+    <p>const townsObj = { ...towns };</p>
+    <p>const townsObjClone = { ...townsObj };</p>
+    <p>townsObjClone.test = "CloneCloneClone";</p>
+    <p>console.log({ townsObj, townsObjClone });</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Rest params</h1>
+    <br />
+    <p>
+      É uma técnica que permite a uma função receber qualquer número de
+      parâmetros
+    </p>
+    <p>
+      Também permite manipular esses parâmetros como um array na definição da
+      função (o que diferencia do objeto arguments)
+    </p>
+    <br />
+    <h3>ex:</h3>
+    <h3>Ficheiro JS</h3>
+    <h4>function sum(...numbers){</h4>
+    <h4>return numbers.reduce((accum,num) => accum + num, 0)</h4>
+    <h4>console.log(sum(2, 2));</h4>
+    <h4>console.log(sum(2, 2, 2, 2, 2, 2, 2));</h4>
+    <h4>console.log(sum(32, 24, 55, 57, 41, 39, 12, 6));</h4>
+    <br />
+    <hr />
+    <br />
+    <h1>Encadeamento opcional (optional chaining)</h1>
+    <br />
+    <p>
+      Operador que permite ler propriedades internas de uma cadeia de objetos
+      sem que a validação de cada referência da cadeia seja realizada
+    </p>
+    <p>
+      Por outras palavras, permite aceder propriedades internas sem lançar erros
+      quando uma propriedade é nullish (null ou undefined)
+    </p>
+    <p>
+      Funciona de forma similar ao encadeamento normal, (operador "."), porém é
+      escrito com "?."
+    </p>
+    <p>encadeamento normal: console.log</p>
+    <p>encadeamento opcional: console?log</p>
+    <h3>ex:</h3>
+    <h3>Ficheiro JS</h3>
+    <br />
+    <p>const user = {</p>
+    <p>name: "John Doe",</p>
+    <p>email: "doejohn@email.com",</p>
+    <p>friends: [</p>
+    <p>{</p>
+    <p>name: "Marry",</p>
+    <p>address: {</p>
+    <p>street: "Some Street",</p>
+    <p>number: 77,</p>
+    <p>},</p>
+    <p>},</p>
+    <p>],</p>
+    <p>age: 42,</p>
+    <p>phone: {</p>
+    <p>countryCode: "+55",</p>
+    <p>ddd: "22",</p>
+    <p>number: "998765432",</p>
+    <p>},</p>
+    <p>};</p>
+    <p>
+      console.log(user.friends[0]?.phone?.ddd); //Isto é igual a undefined (mas
+      não dá erro)
+    </p>
+    <p>
+      //console.log(user.friends[0].phone.ddd); //Isto é igual a erro: Uncaught
+      TypeError: Cannot read properties of undefined (reading 'ddd')
+    </p>
+    <p>
+      console.log(user?.brothers?.name); //Mesmo que as coisas não existam, não
+      há erros na consola
+    </p>
+    <p>
+      //console.log(user.brothers.name); //Podemos ver que aqui também vai dar
+      erro: Uncaught TypeError: Cannot read properties of undefined (reading
+      'name')
+    </p>
+    <p>
+      //Basicamente o ?. serve para ler o que está atras e se não existir, ele
+      diz-nos undefined e que não consegue ler o que está à frente...
+    </p>
+    <p>//Outro ex:</p>
+    <p>console.log(user.brothers?.[5].name); //Isto é igual a undefined</p>
+    <p>
+      //console.log(user.brothers[5].name); //Isto dá erro e diz que não
+      consegue ler o [5], porque o brothers não existe
+    </p>
+    <br />
+    <hr />
+    <br />
+    <h1>Operador de Coalescência Nula</h1>
+    <br />
+    <p>
+      Operador lógico que retorna o seu operando do lado direito quando o seu
+      operador do lado esquerdo é null ou undefined. Caso contrário, ele retorna
+      o seu operando do lado esquerdo
+    </p>
+    <p>Utiliza dois pontos de interrogação "??"</p>
+    <p>
+      Vale destacar que ele é diferente do operador lógico OU(||), que dá
+      curto-circuito em expressões falsy(por exemplo, o numero 0)
+    </p>
+    <p>
+      Pode ser usado para operações lógicas e também para atribuições de valores
+      padrão através de short-circuit evaluation (avaliação de curto-circuito)
+    </p>
+    <p>ex:</p>
+    <p>let a = 0</p>
+    <p>let c = a || 42 //c será 42</p>
+    <p>
+      let d = a ?? 42 //d será 0, pois 0 é falsy, mas não nullish (null ou
+      undefined)
+    </p>
+    <p>let e = null ?? 42 //e será 42</p>
+    <br />
+    <h4>Outro ex com explicação:</h4>
+    <br />
+    <p>const a = 0; //false</p>
+    <p>const b = null; //false</p>
+    <p>const c = "teste"; //true</p>
+    <p>console.log(a || b || c);</p>
+    <p>const a2 = 0; //false and not null/undefined</p>
+    <p>const b2 = null; //false and null</p>
+    <p>const c2 = "teste2"; //true and not null/undefined</p>
+    <p>console.log(a ?? b ?? c);</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Introdução aos módulos</h1>
+    <br />
+    <p>Já vimos como incluir código javascript diretamente no html:</p>
+    <p>Com a tag script</p>
+    <p>
+      À medida que os sites evoluíram e as aplicações web começaram a surgir, o
+      javascript foi cada vez mais utilizado.
+    </p>
+    <p>
+      Além disso, o uso do javascript fora dos navegadores também passou a ser
+      não apenas possível, como muito popular:
+    </p>
+    <p>
+      Node.js tecnologia que permite interpretar código javascript fora do
+      navegador, foi criado em 2009
+    </p>
+    <p>
+      Isto tudo contribuiu para o amadurecimento do javascript e a implementação
+      de uma funcionalidade já existente em outras linguagens: módulos
+    </p>
+    <br />
+    <br />
+    <p>O que são módulos?</p>
+    <br />
+    <p>Pensa em capítulos de um livro, ou secções de um supermercado</p>
+    <p>Os autores organizam as suas histórias em capítulos.</p>
+    <p>Supermercados organizam os seus produtos em secções.</p>
+    <p>Bons programadores organizam os seus códigos em módulos</p>
+    <p>
+      Módulos são grupos de codigos agrupados com funcionalidades distintas que
+      podem ser partilhados, adicionados ou removidos dos nossos softwares
+    </p>
+    <br />
+    <p>O porquê de usar módulos:</p>
+    <p>Facilidade de dar Manutenção</p>
+    <p>
+      Namespacing: Para evitar conflitos, porque podemos ter um modulo A com a
+      função x dentro; e um modulo B com a função x dentro. Sendo as funções
+      completamente diferentes! Não entram em conflito mesmo com o mesmo nome
+    </p>
+    <p>Facilidade de Reutilizar</p>
+    <br />
+    <br />
+    <p>Módulos no javascript:</p>
+    <p>CommonJS</p>
+    <p>ES Modules (EcmaScript)</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Módulos CommonJS</h1>
+    <h4>Só funcionam com o node, não funciona com o browser.</h4>
+    <br />
+    <h3>
+      Podemos ter varios ficheiros js: Vamos usar como exemplo 2 ficheiros--
+      x.js; ficheiro.js
+    </h3>
+    <h3>No ficheiro principal (normalmente: script.js / index.js):</h3>
+    <h3>
+      importámos o ficheiro.js com: const ficheiro =
+      require(./caminhoDoFicheiro/ficheiro.js)
+    </h3>
+    <h3>importámos o x.js com: const x = require(./caminhoDoX/x.js)</h3>
+    <h3>
+      No ficheiro.js, para que a importação seja possivel, fazemos:
+      module.exports = ficheiro
+    </h3>
+    <h3>
+      No x.js, para que a importação seja possivel, fazemos: module.exports = x
+    </h3>
+    <br />
+    <hr />
+    <br />
+    <h1>ES Modules</h1>
+    <h4>Já funciona com o browser.</h4>
+    <br />
+    <h3>
+      Num ficheiro js separado do principal (script.js / index.js), podemos ter
+      várias funções
+    </h3>
+    <h3>
+      Vamos dizer que o ficheiro secundário se chama: functions.js e tem muitas
+      funções dentro deles
+    </h3>
+    <h3>
+      Para permitirmos uma importação destas funções noutro ficheiro: Antes de
+      cada função dentro do ficheiro functions.js, escrevemos: export
+    </h3>
+    <h3>ex: export function hw(){</h3>
+    <h3>console.log("Hello World!")}</h3>
+    <br />
+    <h3>
+      Agora para importarmos essa função no ficheiro principal (index.js /
+      script.js) fazemos: import {hw} from "./functions.js"
+    </h3>
+    <h3>
+      Para usarmos essa função no ficheiro principal, é so: console.log(hw())
+    </h3>
+    <br />
+    <h3>
+      Só com isto ainda vamos ter um erro, para corrigir esse erro, precisamos
+      de ir ao nosso ficheiro HTML e no script escrever: type="module"
+    </h3>
+    <h3>ex: script src="script.js" type="module" script</h3>
+    <br />
+    <hr />
+    <br />
+    <h1>Tipos de export do ESM</h1>
+    <br />
+    <h3>
+      Para não usarmos sempre o "export" em linha, nas funções, fazemos isto:
+    </h3>
+    <br />
+    <h3>Criámos um ficheiro para as funções: funcoes.js e:</h3>
+    <br />
+    <p>function group() {</p>
+    <p>console.log("Export nomeado não-inline (agrupado)");</p>
+    <p>}</p>
+    <p>function a() {</p>
+    <p>alert("função A");</p>
+    <p>}</p>
+    <p>function b() {}</p>
+    <p>function c() {}</p>
+    <p>function d() {}</p>
+    <p>function exportDefault() {</p>
+    <p>console.log("Export default não-inline");</p>
+    <p>}</p>
+    <p>export { group, a, b, c, d };</p>
+    <br />
+    <h3>Criamos um ficheiro principal: script.js e:</h3>
+    <br />
+    <p>import { inline } from "./funcoes.js";</p>
+    <p>import exportDefault, { group, a, b, c, d } from "./funcoes.js";</p>
+    <p>inline();</p>
+    <p>defaultInline();</p>
+    <p>group();</p>
+    <p>a();</p>
+    <p>exportDefault();</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Conhecer o NPM</h1>
+    <h3>O que é:</h3>
+    <h4>
+      npm, ou node package manager, é um gerenciador de pacotes do Node.js
+    </h4>
+    <h4>
+      OBS: Node.js é a ferraenta que h4rmite executar o javascript fora do
+      browser
+    </h4>
+    <br />
+    <h3>Para que serve:</h3>
+    <h4>
+      Com o npm, os programadores podem partilhar os seus módulos com outros
+    </h4>
+    <h4>
+      O npm é um conjunto de ferramentas que permite partilhar os módulos na
+      internet, transferir módulos para o nosso proprio projeto e gerir os
+      módulos instalados no nosso projeto
+    </h4>
+    <h4>
+      Isto tudo aliado ao poder da comunidade open-source permite aumentar a
+      nossa produtividade (princípio DRY, Don't Repeat Yourself)
+    </h4>
+    <br />
+    <h3>O npm também pode ser visto como 3 recursos que trabalham juntos:</h3>
+    <h4>1º Uma ferramenta de linha de comando para executar o nom</h4>
+    <h4>
+      2º Um repositório online de pacotes, onde ficam guardados os módulos que
+      podemos tranferir
+    </h4>
+    <h4>
+      3º O site <a href="https://npmjs.com">https://npmjs.com</a> é onde podemos
+      navegar pelos módulos existentes no repositório
+    </h4>
+    <br />
+    <hr />
+    <br />
+    <h1>Usar o npm</h1>
+    <br />
+    <h3>Instalar o node:</h3>
+    <h4>
+      No Windows a maneira mais fácil de instalar o npm é através do site
+      https://nodejs.org, dowload da versão LTS (versão mais estável, menos
+      sujeita a bugs e falhas de segurança)
+    </h4>
+    <br />
+    <h4>
+      No Linux podes instalar o Node e o npm utilizando o gerenciador de pacotes
+      da sua distribuição (apt para Debian/Ubuntu, yum para Fedora, pacman para
+      Arch, etc)
+    </h4>
+    <h4>
+      No Linux também é possível usar o asdf, um gerenciador de versões, para
+      instalar o Node e o npm. Passo a passo da instalação:
+      https://asdf-vm.com/guide/getting-started.html
+    </h4>
+    <p>
+      Atenção! Se utilizas o WSL deves instalar o Node e o npm dentro da sua
+      distribuição Linux do WSL, seguindo o método de instalação para Linux
+    </p>
+    <br />
+    <h3>
+      Uma vez que tenhas o npm instalado, vamos começar a utilizá-lo abrimos a
+      linha de comando e testamos a instalação. Executa o comando abaixo e ele
+      deverá retornar a versão do npm:
+    </h3>
+    <br />
+    <h4>Ver se está instalado: npm --version</h4>
+    <br />
+    <h4>
+      Agora já podemos criar um projeto gerenciado pelo npm com o seguinte
+      comando: npm init
+    </h4>
+    <p>
+      Obs.: foi criado o arquivo “package.json”, um arquivo com informações do
+      nosso projeto.
+    </p>
+    <br />
+    <h4>
+      Para instalar um novo módulo no nosso projeto usamos o comando: npm
+      install --save lodash
+    </h4>
+    <br />
+    <h4>
+      Já podemos criar um arquivo "script.js”, importar o módulo lodash e
+      utilizá-lo:
+    </h4>
+    <p>const _ = require("lodash")</p>
+    <p>console.log(_.isArray([]))</p>
+    <p>console.log(_.kebabCase("Cláudio Cunha"))</p>
+    <br />
+    <h3>Corremos o ficheiro (no terminal): node script.js</h3>
+    <h4>
+      Outra funcionalidade importante é a instalação de dependências de
+      desenvolvimento, o que pode ser feito com a flag: npm install --save-dev
+      eslint
+    </h4>
+    <p>
+      Obs.: Uma dependência de desenvolvimento é um módulo que o nosso projeto
+      só utiliza enquanto o estamos a codificar
+    </p>
+    <br />
+    <h4>
+      Um último recurso interessante para mencionar nesta introdução são as
+      dependências globais. Uma dependência global é um módulo que não fica
+      vinculado a um projeto específico, mas é instalado no computador para
+      usarmos onde e quando quiser. Para instalar um módulo globalmente usamos o
+      comando com a flag: npm install --global sass
+    </h4>
+    <br />
+    <h4>
+      E por fim, também podemos remover módulos manualmente excluindo-os do
+      arquivo “package.json” ou usando o comando: npm uninstall eslint
+    </h4>
+    <br />
+    <hr />
+    <br />
+    <h1>Json</h1>
+    <br />
+    <h4>
+      JSON, ou JavaScript Object Notation, é um
+      <strong>formato de arquivo</strong> utilizado para troca de dados
+    </h4>
+    <h4>
+      É um formato compacto, representado em texto, de padrão aberto e que
+      trabalha utilizando o sistema de chave-valor
+    </h4>
+    <h4>
+      Como o próprio nome diz, ele utiliza a mesma notação, ou seja, forma de se
+      escrever o conteúdo, dos <strong>objetos do javascript</strong>(com alguns
+      mínimos detalhes diferentes)
+    </h4>
+    <h4>
+      É muito utilizado para troca de dados entre diferentes sistemas e em
+      arquivos de configuração no javascript
+    </h4>
+    <h4>
+      É amplamente utilizado na web e é suportado por várias linguagens além do
+      javascript
+    </h4>
+    <br />
+    <h3>Manipular arquivos JSON no javascript:</h3>
+    <br />
+    <h4>JSON.parse() //converte ua string para objeto json-compatible</h4>
+    <h4>JSON.stringify() //converte um objeto json-compatible para string</h4>
+    <br />
+    <hr />
+    <br />
+    <h1>npx e scripts npm</h1>
+    <br />
+    <h3>Criamos uma pasta e:</h3>
+    <h4>No terminal (pode ser no vscode) escrevemos:</h4>
+    <h4>npm init -y</h4>
+    <p>
+      NPX: Comando que utilizamos para executar as bibliotecas(pacotes) que
+      instalarmos pela linha de comando
+    </p>
+    <h4>npm install --save hello-world-npm</h4>
+    <br />
+    <h3>
+      Nem todas as bibliotecas(pacotes) vão ter executáveis, para vermos se há
+      ficheiros executáveis ou não:
+    </h3>
+    <h4>- Ver a documentação (obviamente)</h4>
+    <h4>
+      - Abrir a pasta [node_moduloes] -> .bin -> podemos ver que temos um
+      atalho: hello-world-npm
+    </h4>
+    <br />
+    <h3>Para executarmos isto:</h3>
+    <h4>npx hello-world-npm</h4>
+    <br />
+    <h4>
+      No ficheiro: package.json, na parte dos "scripts" criamos uma chave
+      "hello" com "npx hellow-world-npm"
+    </h4>
+    <h4>npm run hello</h4>
+    <p>
+      Dica: Nos scripts não precisamos de usar a palavra "npx", pois já é
+      sub-entendida pelo node
+    </p>
+    <h4>
+      Ou seja: no ficheiro "package.json", na parte dos "scripts", criamos a
+      chave "hello" com o valor "hellow-world-npm
+    </h4>
+    <br />
+    <h4>Tambem podemos executar uma própria função nestes "scripts"</h4>
+    <h3>Vamos criar um ficheiro: script.js</h3>
+    <h3>Dentro desse ficheiro:</h3>
+    <h4>const hello = require("hello-world-npm");</h4>
+    <h4>
+      console.log(`Isto é um exemplo de uma função num script: ${hello()}`);
+    </h4>
+    <h4>
+      Agora para corrermos isto, sem colocar a função nos "scripts": node
+      script.js
+    </h4>
+    <h4>
+      No ficheiro "package.json", nos "scripts" adicionamos uma chave
+      "start"(nome específico do npm para inciar) e o valor : "node script.js"
+    </h4>
+    <h4>Agora fazemos: npm run start</h4>
+    <p>
+      Como o valor da chave "start" é específico do npm, nós para correr isto só
+      precisamos de fazer: npm start
+    </p>
+    <br />
+    <hr />
+    <br />
+    <h1>Conhecer o babel</h1>
+    <br />
+    <h4>Babel é um compilador JavaScript</h4>
+    <h4>
+      Um compilador é uma ferramenta que permite converter o código escrito numa
+      linguagem para outra linguagem
+    </h4>
+    <h4>
+      O babel é um conjunto de ferramentas que serve principalmente para
+      converter código nas versões mais recentes do javascript para código de
+      versões mais antigas, a fim de torná-lo compativel com plataformas que não
+      suportam as versões mais novas
+    </h4>
+    <br />
+    <h3>Alguns recursos do Babel:</h3>
+    <h4>Transformação da sintaxe</h4>
+    <h4>Polyfill de recursos não existentes no ambiente alvo</h4>
+    <h4>Transformação de código</h4>
+    <h4>E muito mais...</h4>
+    <h4>
+      Mais informações sobre:
+      <a href="https://babeljs.io/">https://babeljs.io/</a>
+    </h4>
+    <br />
+    <p>Usamos o babel assim:</p>
+    <p>Criamos uma pasta, entramos no terminal dessa pasta</p>
+    <p>
+      npm install --save-dev //instalação de dependências de desenvolvimento
+    </p>
+    <p>npm install -D //instalação de dependências de desenvolvimento</p>
+    <p>O babel é composto por 2 pacotes principais:</p>
+    <p>@babel/core //nucleo do babel, é o que compila o codigo etc etc</p>
+    <p>
+      @babel/cli //ferramenta de linha de comando do babel, com ele interagimos
+      com o babel core através do terminal
+    </p>
+    <br />
+    <p>
+      Tambem existe o: @babel/preset-env //É um pacote que vai configurar
+      automaticamente o babel para nós, configuração "preset" pre-definida
+    </p>
+    <p>
+      Então vamos instalar esses 3: npm install --save-dev @babel/core
+      @babel/cli @babel/preset-env
+    </p>
+    <p>
+      Agora ja podemos começar a utilizar, vamos criar um arquivo com o nome:
+      index.js e copiar o exercicio "1 Estatística na programação" deste modulo
+    </p>
+    <p>
+      Exercicio onde temos Arrow Functions, alguns metodos, Rest Params, etc
+    </p>
+    <p>npx babel index.js</p>
+    <p>
+      Mostra no terminal todo o conteúdo que temos, com algumas correções como
+      por ex: O uso do ; no fim de cada linha
+    </p>
+    <p>
+      Mas no terminal fica um bocado inutil, podemos passar esse codigo
+      corrigido diretamente para um ficheiro, com a flag: npx babel index.js
+      --out-file dist.js
+    </p>
+    <p>
+      Mas o código ainda não foi compilado porque não utilizamos o preset-env
+      ainda, para compilar: npx babel index.js --outfile dist.js
+      --presets=@babel/preset-env
+    </p>
+    <p>
+      Feito isso, o nosso código mudou completamente, podemos ver que há um uso
+      do "use strict" que é um recurso que deixa o código melhor e mais seguro,
+      as variáveis agora são todas com o var e não com const/let, temos o nosso
+      for para substituir o uso do Rest Params, etc
+    </p>
+    <p>
+      Agora, isto é a forma como compilámos o codigo de um ficheiro, mas se
+      tivermos vários ficheiros fica um bocado chato fazermos isto... então:
+    </p>
+    <p>
+      Vamos criar uma pasta com o nome "src" (source que significa fonte) e
+      colocar o arquivo index.js e criar outro arquivo dentro da pasta, com o
+      nome "hello" com o codigo:
+    </p>
+    <p>const msg = "Hello World"</p>
+    <p>console.log(msg)</p>
+    <p>
+      Agora no terminal, passamos o npx babel com a pasta dos nossos ficheiros
+      src com o diretório (outra pasta) dist, codigo:
+    </p>
+    <p>npx babel src --out-dir dist --presets=@babel/preset-env</p>
+    <p>
+      Para facilitar estes passos, podemos usar os "scripts" do package.json,
+      como falamos antes:
+    </p>
+    <p>
+      No ficheiro "package.json", nos "scripts", adicionamos uma chavel "babel"
+      com o valor: "babel src --out-dir dist --presets=@babel/preset-env"
+    </p>
+    <p>
+      Agora no terminal, so precisámos de fazer npm run babel e vai ser feito o
+      mesmo procedimento. Podemos apagar a pasta "dist" e testar
+    </p>
+    <p>
+      Até agora fomos utilizando o comando presets=@babel/preset-env, mas o
+      babel tem um arquivo de configuração próprio, é so criarmos o arquivo:
+      babel.config.js
+    </p>
+    <p>
+      A primeira coisa que o babel faz é procurar se existe esse arquivo de
+      configuração
+    </p>
+    <p>Dentro desse arquvio temos que exportar um objeto: module.exports{</p>
+    <p>presets: [</p>
+    <p>["@babel/preset-env"]</p>
+    <p>]</p>
+    <p>Feito isto, não precisamos de usar o:--presets=@babel/preset-env</p>
+    <p>
+      Basta o: "npm babel src --out-dir dist" ao invés do: npm babel src
+      --out-dir dist --presets=@babel/preset-env
+    </p>
+    <p>
+      Para vermos mais sobre as chaves que as configurações do babel podem ter,
+      temos que ir à documentação
+    </p>
+    <br />
+    <hr />
+    <br />
+    <h1></h1>
   </body>
 </html>
