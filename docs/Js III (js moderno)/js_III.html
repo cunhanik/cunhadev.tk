@@ -1028,9 +1028,9 @@
     <h4>
       vamos então correr o webpack e ver que foi criado o ficheiro: npx webpack
     </h4>
-    <br>
+    <br />
     <h3>O ficheiro "webpack.config.js" ficou:</h3>
-    <br>
+    <br />
     <h4>const path = require("path");</h4>
     <h4>module.exports = {</h4>
     <h4>entry: {</h4>
@@ -1048,6 +1048,184 @@
     <br />
     <h1>Utilizar loaders</h1>
     <br />
-    <p></p>
+    <p>Vamos copiar a pasta anterior e mudar o nome para "Utilizar loaders"</p>
+    <p>Para além disso, vamos:</p>
+    <p>-Apagar a pasta "public"</p>
+    <p>
+      -Dentro do ficheiro do webpack "webpack.config.js", deixámos só o entry
+      com a chave index e o seu valor : "./src/index.js", e o mode em modo
+      development
+    </p>
+    <p>-Apagar os ficheiros da pasta "dist" a não ser o "index.html"</p>
+    <p>
+      -Dentro do ficheiro "index.html", mudamos o src do script que faz ligação
+      ao javaScript para index.js ao invés de main.js
+    </p>
+    <p>Dentro da pasta "src" apagamos o ficheiro helloWorld.js</p>
+    <br />
+    <h3>Feito isto, proseguimos com a utilização dos loaders</h3>
+    <h3>Vamos utilizar os loaders para incluir css nos nossos módulos</h3>
+    <h4>
+      Estes dois loaders são necessários para incluirmos css a partir do
+      webpack:
+    </h4>
+    <h4>style-loader //Serve para o webpack entender a estilização</h4>
+    <h4>
+      css-loader //Serve para o webpack conseguir ler os arquivos .css
+      específicamente
+    </h4>
+    <h4>
+      npm install -D style-loader css-loader //Instalámos como dependecia de
+      desenvolvimento;
+    </h4>
+    <p>
+      Podemos ver agora o arquivo "package.json" e nas "devDependencies" tem o
+      style-loader e o css-loader
+    </p>
+    <h3>Agora que estão os loaders instalados, vamos usá-los</h3>
+    <h3>No arquivo do webpack "webpack.config.js":</h3>
+    <h4>Passamos mais uma opção (chave), depois do modo (mode): module:{}</h4>
+    <h4>
+      module:{ //Dentro do module vamos ter outra opção (chave) que vai ser uma
+      lista de objetos: rules:[{}]
+    </h4>
+    <h4>rules : [{}] //Dentro da rules vamos passar algumas propriedades:</h4>
+    <h4>
+      test: \\Propriedade test é para dizermos ao webpack quais os arquivos que
+      queremos que ele execute o loader.
+    </h4>
+    <h4>
+      Para fazer isso utilizámos expressões regulares (forma de analisar/avaliar
+      strings): /escrevemosAqui/
+    </h4>
+    <h4>test: /\.css$/</h4>
+    <p>
+      O "$" serve para dizermos ao webpack que queremos os ficheiros que tenham
+      .css no final do arquivo;
+    </p>
+    <p>
+      A contra barra (\) serve para dizermos que o ponto(.) é mesmo um ponto e
+      não outra função. Nas expressões regulares o "." é significa outra coisa
+    </p>
+    <h4>
+      use:[] //Propriedade use é para dizermos ao webpack qual o loader que vai
+      usar.
+    </h4>
+    <p>
+      Ou seja, no <strong>test</strong> dizemos quais arquivos é que vamos usar
+      o loader; No <strong>use</strong> dizemos quais loaders vamos querer usar
+      (os que instalamos)
+    </p>
+    <h4>use: ["style-loader","css-loader"]</h4>
+    <br />
+    <h4>O codigo do ficheiro "webpack.config.js" fica:</h4>
+    <p>module.exports = {</p>
+    <p>entry: {</p>
+    <p>index: "./src/index.js",</p>
+    <p>},</p>
+    <p>mode: "development",</p>
+    <p>module: {</p>
+    <p>rules: [{</p>
+    <p>test: /\.css$/,</p>
+    <p>use: ["style-loader", "css-loader"],</p>
+    <p>}],</p>
+    <p>},</p>
+    <p>};</p>
+    <br />
+    <h3>
+      Dentro da pasta "src" Criámos a pasta "styles" com o arquivo "index.css"
+      que vai ser o arquivo que vamos incluir na nossa pagina index.html
+    </h3>
+    <h4>
+      Vamos fazer uma estilização simples: cor de fundo escura, cor de texto
+      clara (inverter o default da pagina html que tem o fundo claro e o texto
+      escuro)
+    </h4>
+    <p>body{</p>
+    <p>background-color: #232323</p>
+    <p>color: #fafafa}</p>
+    <br />
+    <h3>
+      Agora para incluir este estilo(css) na nossa página, importamos este
+      arquivo css no nosso ponto de entrada (entry); Que é o nosso ficheiro
+      index.js"
+    </h3>
+    <h3>No ficheiro "index.js":</h3>
+    <h4>
+      import "./styles/index.css" \\importamos o ficheiro css no ficheiro
+      javascript
+    </h4>
+    <h4>Agora executamos o webpack</h4>
+    <br />
+    <hr />
+    <br />
+    <h1>Utilizar plugins</h1>
+    <br />
+    <p>Vamos copiar a pasta anterior e mudar o nome para "Utilizar plugins"</p>
+    <h4>
+      Vamos utilizar o plugin "mini-css-extract-plugin" //É um plugin que serve
+      para ir buscar o css que está incluso no webpack e criar um arquivo
+      separado na saída
+    </h4>
+    <h3>Vamos instalar o plugin:</h3>
+    <h4>
+      npm install --save-dev mini-css-extact-plugin //instalção com dependecia
+      de desenvolvimento
+    </h4>
+    <h3>
+      Agora vamos começar a utilizá-lo e mais uma vez, vamos ao arquivo do
+      webpack "webpack.config.js"
+    </h3>
+    <h4>
+      Primeiro precisamos de importar o plugin da propria biblioteca: const
+      miniCssExtractPlugin = require("mini-css-extract-plugin")
+    </h4>
+    <h3>
+      Agora no nosso module.exports, criámos outra chave com o nome: plugins
+    </h3>
+    <h4>Chave essa que tem como valor um array. plugins:[]</h4>
+    <h3>
+      Dentro desse array, passamos os plugins que vamos utilizar; Neste plugin
+      (mini-css-extract-plugin) para passar os plugins que vamos utilizar,
+      precisamos de criar uma instancia dele e uma função construtora
+    </h3>
+    <h4>instacia é algo que criamos com a palavra "new"</h4>
+    <h4>
+      função construtora é uma função que devolve um objeto desta class
+      (miniCssExtractPlugin)
+    </h4>
+    <h4>plugins: [new miniCssExtractPlugin()]</h4>
+    <h3>Feito isto, agora precisamos de dizer COMO é que vamos utilizá-lo</h3>
+    <h4>
+      Vamos às nossas "rules" e vamos tirar o nosso "style-loader" e substituir
+      pelo loader do proprio plugin: miniCssExtractPlugin.loader
+    </h4>
+    <h3>o ficheiro "webpack.config.js" fica:</h3>
+    <p>const miniCssExtractPlugin = require("mini-css-extract-plugin");</p>
+    <p>module.exports = {</p>
+    <p>entry: {</p>
+    <p>index: "./src/index.js",</p>
+    <p>},</p>
+    <p>mode: "development",</p>
+    <p>module: {</p>
+    <p>rules: [</p>
+    <p>{</p>
+    <p>test: /\.css$/,</p>
+    <p>use: [miniCssExtractPlugin.loader, "css-loader"],</p>
+    <p>},</p>
+    <p>],</p>
+    <p>},</p>
+    <p>plugins: [new miniCssExtractPlugin()],</p>
+    <p>};</p>
+    <h4>executamos o webpack: npx webpack</h4>
+    <h4>Podemos ver que na pasta "dist" foi criado o ficheiro index.css</h4>
+    <h4>
+      Agora no ficheiro "index.html" podemos incluir o arquivo css que foi
+      criado: link rel="stylesheet" href="index.css"
+    </h4>
+    <br />
+    <hr />
+    <br />
+    <h1></h1>
   </body>
 </html>
