@@ -777,6 +777,277 @@
     <br />
     <hr />
     <br />
-    <h1></h1>
+    <h1>Conhecer o webpack</h1>
+    <br />
+    <h3>O que é o webpack:</h3>
+    <h4>Stack module bundler (empacotador de módulo estático)</h4>
+    <h4>
+      O objetivo dele é empacotar todos os módulos de uma aplicação a partir de
+      um ou mais <strong>pontos de entrada</strong> num ou mais
+      <strong>bundles (pacotes)</strong>, que são arquivos estáticos que contêm
+      tudo o que a aplicação precisa para funcionar
+    </h4>
+    <h4>
+      O webpack constrói um grafo de dependências para os pontos de entrada, o
+      que permite saber exatamente quais módulos são necessários
+    </h4>
+    <br />
+    <h3>funcionamento:</h3>
+    <h4>
+      o webpack vai buscar todo o conteúdo JavaScript da nossa aplicação e até
+      mais do que javascript, junta tudo num pacote que pode ser servido
+      estáticamente (arquivo estático é um arquivo que não precisa de ser
+      executado/avaliado, simplesmente entregamos o arquivo, como se fizessemos
+      download de algo da net... o browser entraga-nos o arquivo que fizemos
+      download sem executar nada por trás.
+    </h4>
+    <h4><a href="https://webpack.js.org">https://webpack.js.org</a></h4>
+    <br />
+    <h3>Peças chave do webpack:</h3>
+    <h4>-Entry:</h4>
+    <p>
+      Pontos de entrada de onde o webpack procurará por arquivos para empacotar
+    </p>
+    <h4>-Output:</h4>
+    <p>
+      A saída resultante do processo de empacotamento dos módulos, ou seja, o
+      webpack vai buscar o ponto de entrada e transformar na saída
+    </p>
+    <h4>Loaders:</h4>
+    <p>Por default, o webpack entende apenas javascript e JSON</p>
+    <p>
+      Loaders permitem que o webpack consiga entender outros tipos de arquivos
+      (como .css, por ex), transformando-os em módulos válidos e incluindo-os no
+      grafo de dependências
+    </p>
+    <h4>Plugins:</h4>
+    <p>
+      São utilizados para estender o comportamento do webpack, realizando
+      tarefas mais elaboradas que os loaders (que apenas transformam módulos)
+    </p>
+    <h3>Porque usar o webpack:</h3>
+    <h4>
+      Possibilidade de trabalhar com módulos de forma fácil, inclusive módulos
+      CommonJS
+    </h4>
+    <h4>
+      Possibilidade de automatizar o gerenciamento dos módulos e dependências da
+      aplicação
+    </h4>
+    <h4>
+      Empacotar os módulos em arquivos estáticos permite que sejam servidos na
+      web de forma mais fácil e rápida
+    </h4>
+    <h4>
+      Webpack é uma das soluções mais utilizadas do mercado para gerenciamento
+      de assets estáticos, sendo utilizado por grandes empresas e frameworks
+      populares como Next.js, Vue.js, etc
+    </h4>
+    <br />
+    <h3>Vamos ver na prática</h3>
+    <h4>Vamos criar uma pasta com o nome: "15 Usar o webpack"</h4>
+    <h4>
+      Agora vamos abrir o terminal do vscode nessa pasta e vamos iniciar o npm
+      com as respostas do projeto default, para instalarmos as ferramentas que
+      vamos precisar: npm init -y
+    </h4>
+    <h4>
+      Agora vamos criar uma pasta com o nome "dist" com o arquivo "index.html"
+      com o html default, um titulo e uma ligação a um ficheiro javascript
+      "main.js"
+    </h4>
+    <h4>Criar uma pasta "src" e dentro dela criamos um arquivo "index.js"</h4>
+    <h4>
+      Instalamos o webpack com uma dependência de desenvolvimento (npm install
+      -D), porque o webpack assim como o babel, só é necessário enquanto estámos
+      a desenvolver o projeto. Não precisamos de instalar como uma dependência
+      (npm install --save). Instalamos tambem 2 pacotes do webpack: o webpack
+      ("core" nucleo principal do webpack,faz com que funcione) e o webpack-cli
+      (interface de linha de comando, ferramente que deixa executarmos no
+      terminal) : npm i -D webpack webpack-cli
+    </h4>
+    <h4>
+      Instalar uma dependência normal (um pacote) como fariamos a desenvolver um
+      site ou uma aplicação web: npm i dayjs
+    </h4>
+    <h4>
+      No arquivo "index.js", agora vamos importar o dayjs e dar um alert para
+      que mostre o dia de hoje no formato DD/MM/YYY:
+    </h4>
+    <h4>const dayjs = require("dayjs")</h4>
+    <h4>alert(`A data de hoje é: ${dayjs().format("DD/MM/YYYY")}`)</h4>
+    <h4>
+      Agora vamos utilizar o webpack para empacotar todo o codigo (este index.js
+      de exemplo): npx webpack
+    </h4>
+    <h4>
+      Agora na nossa pasta "dist" apareceu o arquivo "main.js" com o codigo
+      otimizado, tudo numa linha.
+    </h4>
+    <h4>
+      Agora se apagarmos a pasta node_modules que contem o nosso modulo dayjs,
+      vai funcionar tudo na mesma. Porque no arquivo main.js ja está incluido
+      tudo o que o nosso codigo precisa para funcionar, assim não precisamos de
+      nos preocupar com instalação de dependencias, fazer download no npm dos
+      pacotes, etc...
+    </h4>
+    <br />
+    <h3>Configurar o webpack</h3>
+    <h4>
+      Vamos copiar a pasta em que estamos a trabalhar e mudar de nome para
+      "configurar o webpack"
+    </h4>
+    <h4>
+      Na nova pasta (configurar o webpack) vamos trocar o nosso require por um
+      import: import dayjs from "dayjs"
+    </h4>
+    <h4>
+      Como apagamos a pasta node_modules, agora vamos ter que a instalar outra
+      vez: npm install
+    </h4>
+    <p>
+      Ele vai olhar para o package.json e ver as nossas dependencias e assim
+      sabe que pacotes instalar
+    </p>
+    <h3>Agora vamos configurar o webpack:</h3>
+    <h4>
+      Nós sabemos que o webpack criou o arquivo "main.js" dentro da pasta "dist"
+      sozinho e também identificou que o nosso ficheiro de "entrada" era o
+      "index.js".
+    </h4>
+    <h4>
+      Nós conseguimos mudar as opções do webpack para não assumir
+      automaticamente isso, com o arquivo default do webpack: webpack.config.js
+    </h4>
+    <h4>
+      Dentro desse arquivo, precisamos de ter um export de um objeto javascript
+      (como fizemos no babel) com as configurações que queremos:
+    </h4>
+    <h4>module.exports = {}</h4>
+    <br />
+    <h3>Vamos configurar a entrada (entry)</h3>
+    <h4>module.exports ={</h4>
+    <h4>entry: {</h4>
+    <h4>
+      index: "./src/index.js" //Assim, conseguimos manualmente específicar a
+      "entrada"
+    </h4>
+    <h4>}</h4>
+    <h4>}</h4>
+    <h4>Se execurtarmos agora o webpack: npx webpack</h4>
+    <h4>
+      Foi criado na pasta "dist" um ficheiro "index.js" ao invés do "main.js"
+      porque por default, o nome da "saída" é o mesmo da "entrada". Neste caso a
+      entrada foi o nome da chave no objeto entry{}.
+    </h4>
+    <h4>
+      Ou seja, se ao invés de-> index: "./src/index.js" escrevermos: date:
+      "../src/index.js"
+    </h4>
+    <h4>
+      Assim que executarmos o npx webpack, Vai ser criado o ficheiro "date.js"
+    </h4>
+    <br />
+    <h3>
+      Tambem podemos configurar mais opções, vamos configurar a opção que a
+      consola está a pedir e a executar por defaul: "mode"
+    </h3>
+    <h4>Então, no nosso objeto, continuamos:</h4>
+    <h4>module.exports = {</h4>
+    <h4>entry: {</h4>
+    <h4>date: "./src/index.js",</h4>
+    <h4>},</h4>
+    <h4>
+      mode: "development", //Modo development: Com este modo, o webpack não
+      deixa o ficheiro otimizado e se formos ver ja não tem só 1 linha com o
+      código todo. Este modo serve para conseguirmos ler e análisar melhor qual
+      a saída que o webpack está a produzir
+    </h4>
+    <br />
+    <h3>Agora vamos configurar a saída (output)</h3>
+    <h4>E para isto vamos importar o modulo "path" do node:</h4>
+    <h4>const path = require("path")</h4>
+    <h4>
+      o modulo path //Vai servir para nos facilitar a escrita dos "caminhos" das
+      pastas, com o metodo: resolve()
+    </h4>
+    <h4>
+      resolve() //Serve para calcular o caminho absoluto baseado nos argumentos
+      que passarmos: path.resolve()
+    </h4>
+    <h4>Também tem um argumento que podemos passar em primeiro lugar:</h4>
+    <h4>
+      __dirname, //Que é o caminho completo para o nosso diretório atual (pasta
+      atual): path.resolve(__dirname,)
+    </h4>
+    <h4>No segundo argumento vamos passar o: "public"</h4>
+    <h4>
+      "public" //Serve para ficar guardado numa pasta diferente, ou seja, vai
+      usar o caminho todo e criar a pasta "public" onde vai ser a nossa saída:
+      <br />
+      path: path.resolve(__dirname,"public")
+    </h4>
+    <h4>output: {</h4>
+    <h4>path: path.resolve(__dirname,"public")</h4>
+    <h4>}</h4>
+    <h4>Agora se executarmos o webpack: npx webpack</h4>
+    <p>
+      Conseguimos ver que foi criada a pasta "public" com o ficheiro "date.js"
+      em modo development
+    </p>
+    <h3>
+      Tambem podemos mudar manualmente o nome do arquivo, atraves da chave
+      "filename" no output{}
+    </h3>
+    <h4>filename: "bundle.min.js"</h4>
+    <br />
+    <h3>
+      Agora vamos fazer com que o webpack leia mais arquivos de entrada, porque
+      podemos ter varias paginas html com um arquivo de entrada para cada
+    </h3>
+    <h4>
+      Primeiro vamos criar outro arquivo na pasta src com o nome "helloWorld.js"
+      com um alert("Hello World")
+    </h4>
+    <h3>
+      Agora no ficheiro webpack.config.js, no objeto "entry:{}", por baixo do
+      date:
+    </h3>
+    <h4>Usamos como chave "hello" com o caminho "./src/hello.js"</h4>
+    <h4>hello : "./src/hello.js"</h4>
+    <h3>
+      Agora a unica coisa que precisámos de estar atentos é ao nome (filename)
+      porque não pode ter o mesmo nome (obviamente), para diferenciar cada
+      arquivo, fazemos:
+    </h3>
+    <h4>filename: "./[name]bundle.min.js"</h4>
+    <h4>
+      Agora vai ser criado um "hello.bundle.min.js" e vamos continuar a ter o
+      nosso "bundle.min.js"
+    </h4>
+    <h4>
+      vamos então correr o webpack e ver que foi criado o ficheiro: npx webpack
+    </h4>
+    <br>
+    <h3>O ficheiro "webpack.config.js" ficou:</h3>
+    <br>
+    <h4>const path = require("path");</h4>
+    <h4>module.exports = {</h4>
+    <h4>entry: {</h4>
+    <h4>date: "./src/index.js",</h4>
+    <h4>hello: "./src/helloWorld.js",</h4>
+    <h4>},</h4>
+    <h4>mode: "development",</h4>
+    <h4>output: {</h4>
+    <h4>path: path.resolve(__dirname, "public"),</h4>
+    <h4>filename: "[name]bundle.min.js",</h4>
+    <h4>},</h4>
+    <h4>};</h4>
+    <br />
+    <hr />
+    <br />
+    <h1>Utilizar loaders</h1>
+    <br />
+    <p></p>
   </body>
 </html>
