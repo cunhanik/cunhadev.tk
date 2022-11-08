@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js IV POO</title>
+  </head>
+  <body>
+    <h1>Funções construtoras</h1>
+    <br />
+    <h4>
+      Vamos criar uma pasta com o nome "funcao Construtora", dentro dessa pasta
+      um ficheiro js com o nome "funcaoConstrutora.js"
+    </h4>
+    <br />
+    <h3>
+      As funções construtoras começam com a primeira letra maiúscula
+      (Pascalcase)
+    </h3>
+    <h4>function Book(title, pages, tags, author){</h4>
+    <h4>this.title = title</h4>
+    <h4>this.pages = pages</h4>
+    <h4>this.tags = tags</h4>
+    <h4>this.author = author</h4>
+    <h4>this.published = false</h4>
+    <h4>this.inStock = 0</h4>
+    <h4>this.addToStock = function(quantity){this.inStock+= quantity}</h4>
+    <h4>this.save = function(){/*Guardar-Dados*/}</h4>
+    <h4>}</h4>
+    <br />
+    <h3>
+      Para utilizarmos esta função para nos devolver um livro, utilizámos a
+      palavra "new", ou seja:
+    </h3>
+    <h4>
+      criamos uma variavel com o nome do livro que queremos, dizemos que essa
+      variável recebe um "new" Book(); Depois é so passar os parâmetros que a
+      função construtora que criamos tem.
+    </h4>
+    <h4>const tags = ["Fantasy","Adventure"]</h4>
+    <h4>const author = {name: "Christopher Peolini"}</h4>
+    <h4>const aragon = new Book("Eragon",468, tags, author)</h4>
+    <h4>console.log(aragon)</h4>
+    <br />
+    <h3>Agora se executarmos isto no terminal: node funcao_construtora.js</h3>
+    <h4>
+      Conseguimos ver o nosso objeto e antes do objeto, no terminal conseguimos
+      ver o "tipo" deste objeto. Neste caso é como se fosse do tipo "Book", que
+      foi o constutor que usamos para contruir o objeto.
+    </h4>
+    <br />
+    <h3>Agora vamos criar outro objeto do tipo Book</h3>
+    <h4>const eldest = new Book("Eldest",644, tags, author)</h4>
+    <h4>console.log(eldest)</h4>
+    <h3>Executamos o node no terminal: node funcao_construtora.js</h3>
+    <h4>Conseguimos ver que temos 2 objetos do mesmo "tipo" Book.</h4>
+    <br />
+    <hr />
+    <br />
+    <h1>
+      O que é Programação Orientada a Objetos (POO) / Object-Oriented
+      Programming (OOP)
+    </h1>
+    <br />
+    <h4>
+      Programação orientada a objetos é: Um paradigma de programação, ou seja,
+      um conjunto de conceitos e recursos de linguagem que guiam a forma como
+      programamos
+    </h4>
+    <h4>Tem como peça central os objetos e a forma como eles se comunicam</h4>
+    <h4>Os objetos podem conter dados (atributos) e código (métodos)</h4>
+    <h4>Outros dois termos importantes na POO/OOP são classes e instâncias:</h4>
+    <h5>Classes: são como fábricas de objetos a partir de uma "fôrma"</h5>
+    <h5>Instâncias: são os objetos fabricados pelas classes</h5>
+    <br />
+    <hr />
+    <br />
+    <h1>Classes e Instâncias</h1>
+    <br />
+    <h3>
+      Vamos criar uma pasta com o nome "Classes e Instancias", dentro dessa
+      pasta um ficheiro js com o nome "Book.js" (primeira letra em maiúscula
+      (Pascalcase) é uma boa prática e o nome do ficheiro ser o nome da classe)
+      <strong>também</strong>)
+    </h3>
+    <br />
+    <h3>Criar uma class:</h3>
+    <h4>class Book{</h4>
+    <h4>constructor(title){</h4>
+    <h4>this.title = title</h4>
+    <h4>}</h4>
+    <h4>}</h4>
+    <h3>
+      A class funciona quase como as funções construtoras, apenas os parâmetros
+      são passados no método "constructor" que é como se fosse uma função;<br />
+      Depois, dentro desse método temos acesso a outro metodo que é o "this";<br />
+      Conseguimos dizer que o título (this.title) do objeto (instancia) que
+      utilizar esta classe (Book) recebe o parâmetro da classe Book chamado pela
+      instância: this.title = title
+    </h3>
+    <br />
+    <h3>Criar uma instância:</h3>
+    <h4>const livroX = new Book("X")</h4>
+    <h3>
+      Basicamnete a instância é cada livro que use a classe book, ou seja:
+    </h3>
+    <h3>O nosso "livroX" é uma instância da classe "Book"</h3>
+    <br />
+    <h4>console.log(livroX)</h4>
+    <h4>Executamos o node no terminal: node Book.js</h4>
+    <h4>Podemos ver que temos o nosso objeto com o título</h4>
+    <br />
+    <h3>Vamos criar outra instância da classe "Book":</h3>
+    <h4>const livroY = new Book("Y")</h4>
+    <h4>console.log(livroY)</h4>
+    <br />
+    <h3>Instancias: livroX ; livroY</h3>
+    <h3>Classe: Book</h3>
+    <h3>
+      Dica: Não esquecer que os parâmetros das classes são passados no metodo
+      "constructor" que funciona como uma função e depois temos acesso ao metodo
+      "this".
+    </h3>
+    <br />
+    <h3>Métodos nas classes:</h3>
+    <h3>
+      Vamos adicionar à nossa class uma chave default chamado "published" e
+      dizer que começa sempre em false, ou seja, que o valor da chave seja
+      false: this.published = false
+    </h3>
+    <h4>class Book{</h4>
+    <h4>constructor(title){</h4>
+    <h4>this.title = title</h4>
+    <h4>this.published = false</h4>
+    <h4>}</h4>
+    <h3>
+      Agora vamos criar um método "publish()", para quando for chamado, passe o
+      published para "true"
+    </h3>
+    <h3>
+      Fazemos isso fora do metodo "constructor" mas dentro da class Book{}.
+    </h3>
+    <h4>publish(){</h4>
+    <h4>this.published = true</h4>
+    <h4>}</h4>
+    <h4>}</h4>
+    <br />
+    <h4>Agora se chamarmos o metodo publish na instacia "livroY"</h4>
+    <h4>livroY.publish()</h4>
+    <h4>Vamos ver na consola as duas instâncias novamente:</h4>
+    <h4>console.log(livroX)</h4>
+    <h4>console.log(livroY)</h4>
+    <h3>
+      Agora podemos ver que depois de chamarmos o metodo publish na instacia
+      "livroY", o published passou a true nessa instância
+    </h3>
+    <br />
+    <h3>
+      Para vermos se uma certa instãncia pertence a uma certa class, podemos
+      usar o metodo "intanceof":
+    </h3>
+    <h4>console.log(livroX instanceof Book)</h4>
+    <h4>console.log([livroX,livroY] instanceof Array</h4>
+    <h3>Ambos são True</h3>
+    <h4>console.log(livroy instanceof String)</h4>
+    <br />
+    <hr />
+    <br />
+    <h1>Associação</h1>
+    <br />
+    <h3>O que é uma associação:</h3>
+    <h4>
+      Associação é um relacionamente entre classes que permite que uma instância
+      de uma classe faça a outra realizar uma ação
+    </h4>
+    <h4>
+      É como dizer para a aplicação que um objeto de um tipo está conectado, ou
+      depende, de um objeto de outro tipo
+    </h4>
+    <h3>Exemplos:</h3>
+    <h4>
+      Objetos de uma classe Person possuem um atributo que é um objeto da classe
+      Address
+    </h4>
+    <h4>
+      Objetos de uma classe Product possuem um atributo que é um array de
+      objetos da classe Category
+    </h4>
+    <h3>Vamos ver na pratica:</h3>
+    <h3>
+      Vamos criar uma pasta com o nome "associacao" com o ficheiro "Person.js" e
+      "Address.js"
+    </h3>
+    <h3>Dentro do ficheiro "Address.js":</h3>
+    <h3>Criamos uma class Address</h3>
+    <h4>class Address{}</h4>
+    <h3>Passamos parametros na classe</h3>
+    <h4>constructor(street, number, neighborhood, city, state){</h4>
+    <h4>this.street = street</h4>
+    <h4>this.neighborhood = neighborhood</h4>
+    <h4>this.city = city</h4>
+    <h4>this.state = state</h4>
+    <h4>}</h4>
+    <h3>Agora vamos criar um metodo dentro da classe chamado "fullAddress"</h3>
+    <h4>fulladdress(){</h4>
+    <h4>
+      return `Rua ${this.street}, nº ${this.number}. ${neighborhood},
+      ${this.city}/${this.state}.`
+    </h4>
+    <h4>}</h4>
+    <h4>}</h4>
+    <h3>
+      Agora utilizamos o commonJs para exportar a nossa classe Address, para
+      podermos usá-la noutro arquivo
+    </h3>
+    <h4>module.exports = Address</h4>
+    <br />
+    <h3>No ficheiro "Person.js":</h3>
+    <h3>Criamos uma class Person</h3>
+    <h4>class Person{}</h4>
+    <h3>Passamos 2 parametros na classe: name and address</h3>
+    <h4>constructor(name, address){</h4>
+    <h4>this.name = name</h4>
+    <h4>this.address = address</h4>
+    <h4>}</h4>
+    <h4>}</h4>
+    <h3>
+      Agora utilizamos o commonJs para exportar a nossa classe Person, para
+      podermos usá-a noutro arquivo
+    </h3>
+    <h4>module.exports = Person</h4>
+    <br />
+    <h3>Agora criamos outro ficheiro com o nome: index.js</h3>
+    <h3>importamos os nossos modulos</h3>
+    <h4>const Address = require("./Address")</h4>
+    <h4>const Person = require ("./Person")</h4>
+    <h3>
+      Agora criamos duas variaveis que recebam as classes e passamos os
+      parâmetros necessários
+    </h3>
+    <h4>
+      const addr = new Address("rua das flores", 5,"bairroX", "Porto", "Porto")
+    </h4>
+    <h4>const cunha = new Person("Claudio Cunha", addr)</h4>
+    <br />
+    <h3>
+      Agora vamos dar console.log no "cunha" e como temos acesso à classe
+      "Address", conseguimos executar o metodo também, por isso vamos dar
+      console.log(cunha.Address.fullAddress
+    </h3>
+    <h4>console.log(cunha)</h4>
+    <h4>console.log(cunha.address.fullAddress())</h4>
+    <h4>Abrimos o terminal e executamos com o node: node index.js</h4>
+    <h3>
+      Como dá pra ver, conseguimos associar estes dois objetos: o objeto da
+      classe Person tem uma referência ao objeto da classe Address; Por isso
+      temos acesso aos metodos e atributos da classe Address
+    </h3>
+    <br />
+    <h3>
+      Esta é uma das formas que temos de fazer "associacão" entre as classes e
+      os objetos. Passando diretamente um objeto de outra classe
+    </h3>
+    <br />
+    <h3>Existem mais formas de se fazer</h3>
+    <h3>
+      Podiamos fazer diretamente dentro da class Person (ficheiro Person.js):
+    </h3>
+    <h3>
+      Era so passar mais parametros no "constructor" e depois o nosso
+      this.address recebia a nossa classe Address
+    </h3>
+    <h4>const address = require("address")</h4>
+    <h4>class Person{</h4>
+    <h4>constructor(name,street,number,neighborhood,city,state){</h4>
+    <h4>this.name = name</h4>
+    <h4>
+      this.address = new Address(street, number, neighborhood, city, state)
+    </h4>
+    <h3>Agora no nosso ficheiro "index.js"</h3>
+    <h4>
+      Já não precisamos do: const addr = new Address("rua das flores", 5,
+      "bairroX", "Porto", "Porto");
+    </h4>
+    <h3>Podiamos passar tudo diretamente na classe Person:</h3>
+    <h4>
+      const cunha = new Person("Claudio Cunha", "rua das flores", 5, "bairroX",
+      "Porto", "Porto")
+    </h4>
+    <h3>Antes a classe Person, não dependia de nenhuma outra classe.</h3>
+    <h3>Agora a classe Person, depende da classe Address</h3>
+    <h3>Estão associadas</h3>
+    <br />
+    <hr />
+    <br />
+    <h1>Encapsulamento</h1>
+    <br />
+    <h3>
+      Encapsulamento é o princípio de impedir que determinadas partes de uma
+      classe sejam acessíveis pelo contexto exterior
+    </h3>
+    <h3>No javaScript existem 2 niveis de encapsulamento:</h3>
+    <h4>
+      Publico: Onde o atributo/método é acessível fora da classe (default)
+    </h4>
+    <h4>
+      Privado: Onde o atributo/método só é acessível dentro da própria classe
+    </h4>
+    <h3>
+      Para definirmos um atributo ou método como privado utilizamos um # no
+      começo do seu nome
+    </h3>
+    <h3>
+      Todo atributo ou método que não for privado será automaticamente público
+    </h3>
+    <h3>Trabalha com o conceito: Abstração</h3>
+    <p>
+      Funciona desta maneira: Um método executa vários passos dentro dele, a
+      pessoa não precisa de saber quais são aqueles passos
+    </p>
+    <p>
+      imaginem que temos um Carro; Nós não precisamos de saber exatamente o que
+      o carro faz quando rodamos a chave e ele liga... Nós só precisamos de
+      saber que temos que virar a chave para o carro ligar.
+    </p>
+    <h4>
+      Isto chama-se Abstração. Todo o comportamento complexo e dificil é
+      ocultado do utilizador e o utilizador fica com a parte mais simples de
+      trabalhar. O ENCAPSULAMENTO ajuda com isto também
+    </h4>
+    <br />
+    <h3>Exemplos:</h3>
+    <h3>Porquê que haveriamos de querer encapsular as coisas numa classe?</h3>
+    <h4>
+      Imaginem uma classe que tem um atributo que é definido uma vez durante a
+      construção (password ou balance$), depois, como é obvio não pode ser
+      alterado diretamente (a usar: obj.balance = 9999 / obj.password = "Mudei a
+      tua password"). Nós queremos que esses atributos só possam ser
+      vistos/mudados pela pessoa própria pessoa e não por qualquer pessoa
+    </h4>
+    <h4>
+      Imaginem uma classe que possui um método principal que internamente chama
+      vários outros métodos da própria classe que não fazem sentido
+      individualmente ou chama um método muito complexo que o utilizador vulgar
+      não sabe como funciona. Nós queremos que o utilizador use o método mais
+      facil e que esse método facil encapsule e abstraia o método dificil
+    </h4>
+    <br />
+    <h3>Ver na prática como criamos estes atributos e métodos privados:</h3>
+    <br />
+    <h3>
+      Vamos criar uma pasta com o nome "Encapsulamento" e dentro da pasta
+      criamos uma classe "Account.js"
+    </h3>
+    <h4>
+      Criamos o construtor dessa classe e como parâmetro vai receber um "user":
+      constructor(user){
+    </h4>
+    <h4>this.email = user.email</h4>
+    <h4>this.password = user.password</h4>
+    <h4>this.balance = 0</h4>
+    <h4>}</h4>
+    <br />
+    <h3>Agora conseguimos criar objetos desta classe</h3>
+    <h4>const user = {</h4>
+    <h4>email: "cunha@email.com",</h4>
+    <h4>password: adminadmin</h4>
+    <h4>}</h4>
+    <h3>
+      Feito o "user", Agora podemos criar uma conta com a classe que criamos
+    </h3>
+    <h4>const myAccount = new Account(user)</h4>
+    <h3>Podemos executar o node no terminal para ver: node Account.js</h3>
+    <br />
+    <h3>
+      Com isto, nós conseguimos mexer no "myAccount" e mudar a password e o
+      valor que esse user tem
+    </h3>
+    <h4>myAccount.password = "12345"</h4>
+    <h4>myAccount.balance = 99999999</h4>
+    <br />
+    <h3>
+      Podemos executar o node para vermos que realmente está diferente: node
+      Account.js
+    </h3>
+    <br />
+    <h3>
+      Agora, como é obvio, nós queremos que não seja possível mexer nesses 2
+      valores, porque são valores privados.
+    </h3>
+    <h3>Para fazer isso, precisamos de adicionar o # antes do nome</h3>
+    <h4>this.#password = user.password</h4>
+    <h4>this.#balance = user.balance</h4>
+    <h3>
+      Tambem precisamos de definir quais são estes atributos privados fora do
+      constructor mas dentro da classe
+    </h3>
+    <h4>#password</h4>
+    <h4>#balance</h4>
+    <h3>
+      Até conseguimos tirar o balance do constructor e pôr um valor default aqui
+    </h3>
+    <h4>#balance = 0</h4>
+    <br />
+    <h3>
+      Agora, reparem que a nossa password e balance mudou para #password e
+      #balance, ou seja, para alterar como alterámos em cima (com a mesma
+      logica) seria:
+    </h3>
+    <h4>myAccount.#password = "12cl345"</h4>
+    <h4>myAccount.#balance = 99999999</h4>
+    <h3>
+      Escrevendo isso, vamos ver que temos um erro. Diz que o valor é privado
+    </h3>
+    <br />
+    <h3>
+      Agora para termos acesso a estes valores (por exemplo, o balance da
+      conta), podemos usar um método dentro da classe
+    </h3>
+    <h4>getBalance(email,password){</h4>
+    <h4>if(this.email === email && this.#password === password){</h4>
+    <h4>return this.#balance</h4>
+    <h4>}else{console.log("Não tens acesso!")</h4>
+    <br />
+    <h3>Agora só conseguimos ter acesso se os dados tiverem certos:</h3>
+    <h4>console.log(myAccount.getBalance()) //Não nos vai dar acesso</h4>
+    <h4>
+      console.log(myAccount.getBalance("email@mail.com", "12345") //Não nos vai
+      dar acesso
+    </h4>
+    <h4>
+      console.log(myAccount.getBalance("cunha@email.com","adminadmin") //Vai
+      dar-nos acesso
+    </h4>
+    <br />
+    <h3>
+      Agora vamos estender o nosso exemplo escrito em cima, passar para o 2:
+      Vamos mexer neste método que criamos e abstraí-lo noutro método privado!
+    </h3>
+    <h3>
+      Então vamos criar o metodo "authenticate", privá-lo e usar como parametro
+      um email e uma senha, para que o método faça uma verificação (a mesma que
+      fizemos em cima e apagamos ou comentamos no if do método getBalance():
+    </h3>
+    <h4>#authenticate(email,password){</h4>
+    <h4>return this.email == email && this.password == password</h4>
+    <h3>
+      Esta função vai retornar um valor bolean (true or false) baseado na nossa
+      condição (se o email for igual ao email que está guardado e a password
+      igual à password que está guardada, dá-nos TRUE; se for o email for
+      diferente ao email que está guardado e a password for diferente à password
+      que está guardada, dá-nos FALSE)
+    </h3>
+    <br />
+    <h3>
+      Agora no if do método getBalance(), passamos o método que criamos
+      (authenticate): if(this.#authenticate(email,password))
+    </h3>
+    <h4>if(this.#authenticate(email,password)){</h4>
+    <h4>return this.#balance</h4>
+    <h4>}else { return null</h4>
+    <h4>}</h4>
+    <br />
+    <h3>executamos o node para ver: node Account.js</h3>
+    <br />
+    <h3>
+      Imaginem se o método "authenticate()" fosse muito complicado e complexo,
+      nós conseguiamos fazer com que o método que o utilizador usasse fosse a
+      parte facil. O método complicado estava abstraído
+    </h3>
+    <h3>Isto é o <strong>encapsulamento</strong>.</h3>
+    <br />
+    <hr />
+    <br />
+    <h1>Herança</h1>
+    <br>
+    <h3></h3>
+
+  </body>
+</html>

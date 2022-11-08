@@ -1226,6 +1226,87 @@
     <br />
     <hr />
     <br />
-    <h1></h1>
+    <h1>utilizar o webpack-dev-server</h1>
+    <br />
+    <h4>
+      webpack-dev-server é um pacote que é para ser utilizado em conjunto com o
+      webpack que permite que criemos um servidor de desenvolvimento para
+      podermos rodar as nossas aplicações enquanto trabalhamos nelas
+    </h4>
+    <h4>Como se fosse a extensão "live-server"</h4>
+    <h3>
+      Para demonstrar isto, vamos usar o "exercicio4 Estruturar um projeto
+      moderno"
+    </h3>
+    <h4>
+      Vamos copiar tudo do exercicio4 e colar noutra pasta "utilizar o
+      webpack-dev-server"
+    </h4>
+    <h3>
+      Começamos por instalar o webpack-dev-server como uma dependecia de
+      desenvolvimento
+    </h3>
+    <h4>npm i -D webpack-dev-server</h4>
+    <h4>Conseguimos utilizá-lo com: npx webpack-dev-server</h4>
+    <h3>
+      Antes de o usarmos ainda temos que configurar esta ferramenta no
+      "webpack.config.js", podiamos usar algumas configurações default mas não
+      as estamos a utilizar, então:
+    </h3>
+    <h3>Abrimos o ficheiro "webpack.config.js"</h3>
+    <h3>
+      Para configurarmos o webpack-dev-server, precisamos de criar o objeto
+      devServer no nosso "module.exports": devServer : {}
+    </h3>
+    <h4>
+      Precisamos de configurar o caminho da pasta, por default, o
+      webpack-dev-server utiliza a pasta "public", neste caso a pasta é "dist"
+    </h4>
+    <h4>
+      Dentro do objeto então mudamos essa configuração, com a opção: static
+    </h4>
+    <h4>static: {}</h4>
+    <h4>
+      Dentro do objeto static, passamos o "directory" que é a pasta onde estão
+      os nossos arquivos estáticos: directory:
+    </h4>
+    <h4>
+      Para colocarmos o caminho no directory, vamos novamente usar o modulo path
+      para facilitar os caminhos, então temos que o importar: const path =
+      require("path")
+    </h4>
+    <h4>directory : path.resolve(__dirname, "dist")</h4>
+    <p>
+      O path vai diretamente ao nosso caminho atual (a nossa pasta), depois
+      usamos o metodo resolve() para conseguirmos mexer no nome atual
+      (__dirname) e vamos juntá-lo com o nome("dist") para conseguir encontrar o
+      caminho completo dos nossos arquivos estaticos.
+    </p>
+    <h3>Agora sim, podemos rodar o: webpack-dev-server</h3>
+    <h4>
+      Conseguimos ver na consola tudo o que foi rodado e no browser o nosso site
+    </h4>
+    <h4>
+      Podemos fazer qualquer modificação no codigo (por ex css / js) e muda
+      autocamticamente no browser, não precisamos de correr nada
+    </h4>
+    <h3>Podemos também usar outras opções: compress e port</h3>
+    <p>
+      compress: O compress comprime o código todo e serve tudo para o browser
+    </p>
+    <p>
+      port: Serve para mudarmos a porta do link, por ex: vamos mudar a porta
+      para 7000 ao invés de 8080
+    </p>
+    <h3>
+      No ficheiro webpack.config.js, no objeto devServer, adicionamos mais 2
+      chaves:
+    </h3>
+    <h4>compress: true</h4>
+    <h4>port: 7000</h4>
+    <h3>Tambem podemos executar este comando através do "scripts":</h3>
+    <h4>No ficheiro "package.json", nos "scripts" adicionámos:</h4>
+    <h4>"dev": "webpack-dev-server"</h4>
+    <h4>Agora para executar é so fazer na consola: npm run dev</h4>
   </body>
 </html>
