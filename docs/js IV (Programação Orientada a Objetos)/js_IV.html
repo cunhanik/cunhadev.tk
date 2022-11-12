@@ -435,7 +435,7 @@
     </h4>
     <br />
     <h3>
-      Agora vamos estender o nosso exemplo escrito em cima, passar para o 2:
+      Agora vamos continuar o nosso exemplo escrito em cima, passar para o 2:
       Vamos mexer neste método que criamos e abstraí-lo noutro método privado!
     </h3>
     <h3>
@@ -464,6 +464,62 @@
     <br />
     <h3>executamos o node para ver: node Account.js</h3>
     <br />
+    <h3>O ficheiro fica:</h3>
+    <h4>class Account {</h4>
+    <h4>constructor(user) {</h4>
+    <h4>this.email = user.email;</h4>
+    <h4>this.password = user.password;</h4>
+    <h4>this.balance = 0;</h4>
+    <h4>}</h4>
+    <h4>}</h4>
+    <h4>const userX = {</h4>
+    <h4>email: "cunha@email.com",</h4>
+    <h4>password: "adminadmin",</h4>
+    <h4>};</h4>
+    <h4>const newAccount = new Account(userX);</h4>
+    <h4>console.log(newAccount);</h4>
+    <h4>newAccount.password = "Mudei-te a pw";</h4>
+    <h4>console.log(newAccount);</h4>
+    <h4>//Vou fazer as alterações noutro ficheiro "Account2.js" --></h4>
+    <h4>class Account {</h4>
+    <h4>#password;</h4>
+    <h4>#balance = 0;</h4>
+    <h4>constructor(user) {</h4>
+    <h4>this.email = user.email;</h4>
+    <h4>this.#password = user.password;</h4>
+    <h4>}</h4>
+    <h4>/*getBalance(email, password) {</h4>
+    <h4>if (this.email == email && this.#password == password) {</h4>
+    <h4>return this.#balance;</h4>
+    <h4>} else {</h4>
+    <h4>console.log("Não tens acesso!");</h4>
+    <h4>}</h4>
+    <h4>}*/</h4>
+    <h4>getBalance(email, password) {</h4>
+    <h4>if (this.#authenticate(email, password)) {</h4>
+    <h4>return this.#balance;</h4>
+    <h4>} else {</h4>
+    <h4>console.log("Não tens acesso!");</h4>
+    <h4>}</h4>
+    <h4>}</h4>
+    <h4>#authenticate(email, password) {</h4>
+    <h4>return this.email == email && this.#password == password;</h4>
+    <h4>}</h4>
+    <h4>}</h4>
+    <h4>const userC = {</h4>
+    <h4>email: "cunha@email.com",</h4>
+    <h4>password: "adminadmin",</h4>
+    <h4>};</h4>
+    <h4>const newAccount = new Account(userC);</h4>
+    <h4>console.log(newAccount);</h4>
+    <h4>//newAccount.#password = "12345";</h4>
+    <h4>//newAccount.#balance = 99999999;</h4>
+    <h4>console.log(newAccount.getBalance());</h4>
+    <h4>console.log(newAccount.getBalance("email@mail.com", "12345"));</h4>
+    <h4>
+      console.log(newAccount.getBalance("cunha@email.com", "adminadmin"));
+    </h4>
+    <br />
     <h3>
       Imaginem se o método "authenticate()" fosse muito complicado e complexo,
       nós conseguiamos fazer com que o método que o utilizador usasse fosse a
@@ -474,8 +530,484 @@
     <hr />
     <br />
     <h1>Herança</h1>
-    <br>
-    <h3></h3>
-
+    <br />
+    <h4>
+      Herança é um recurso que permite criar classes que incluem, ou "herdam"
+      para ser mais preciso, todos os atributos e métodos de uma outra classe
+    </h4>
+    <h4>
+      À classe que é herdada damos o nome de <strong>"superclass"</strong> (ou
+      classe mãe), e à classe que herda, damos o nome de
+      <strong>"subclass" (ou classe filha)</strong>
+    </h4>
+    <h4>
+      Uma classe filha (subclass) possui todos os atributos e métodos da classe
+      mãe, mas também pode possuir os seus próprios (que serão exclusivos dela)
+    </h4>
+    <h4>
+      Uma classe consegue herdar outra com a palavra: extends
+      nome_da_superclass(classe mãe){Aqui dentro podemos definir um constructor
+      que recebe os seus próprios parâmetros e também os parametros que queremos
+      herdar da classe mãe; Dentro da função constructor com a palavra "super()"
+      indicámos os parâmetros da classe mãe}
+    </h4>
+    <h3>Exemplos:</h3>
+    <h4>
+      Imagina uma classe User que possui os seus atributos e métodos. Poderíamos
+      ter classes AdminUser, EditorUser e StandardUser que são todas filhas de
+      User, mas cada uma também possui os seus próprios atributos e métodos
+    </h4>
+    <h4>
+      Ou ainda uma classe Property (como num imóvel) pode ser a classe mãe das
+      classes filhas House e Apartment
+    </h4>
+    <br />
+    <h3>Vamos ver na pratica</h3>
+    <h3>Criamos uma pasta com o nome "herança" com o ficheiro "index.js"</h3>
+    <h3>
+      Nesse ficheiro criamos a classe Property com os parâmmetros area e preço;
+      Também criamos um método para ver o preço do metro quadrado
+      (getPricePerSquareMeter)
+    </h3>
+    <h4>class Property{</h4>
+    <h4>constructor(price, area){</h4>
+    <h4>this.price = price</h4>
+    <h4>this.area = area</h4>
+    <h4>}</h4>
+    <h4>getPricePerSquareMeter(){</h4>
+    <h4>return this.price / this.area</h4>
+    <h4>}</h4>
+    <h4>}</h4>
+    <h3>
+      Agora vamos criar a classe House e herdar a classe Property (extends)
+    </h3>
+    <h4>class House extends Property{}</h4>
+    <h3>
+      Criamos uma instância (const land) da class Property (new Property) com os
+      seus parâmetros (50000, 200)
+    </h3>
+    <h4>const land = new Property(50000, 200)</h4>
+    <h3>
+      Agora criamos uma instância (const someHouse) da classe House() e se
+      virmos bem, a classe house traz-nos um constructor com os parâmetros da
+      class Porperty; Mesmo que tenhamos definido nada em cima (no extends a
+      classe em branco)
+    </h3>
+    <h4>const someHouse = new House(200000, 120)</h4>
+    <h3>
+      Agora podemos dar um console.log nos dois objetos (as duas instâncias)
+    </h3>
+    <h4>console.log(land)</h4>
+    <h4>console.log(someHouse)</h4>
+    <h3>executamos o node para ver o resultado: node index.js</h3>
+    <h4>Podemos ver que está tudo certo</h4>
+    <h3>
+      Outra coisa é que também podemos usar o método que criamos na classe
+      Property, na instância someHouse
+    </h3>
+    <h4>console.log(someHouse.getPricePerSquareMeter())</h4>
+    <h3>executamos o node: node index.js</h3>
+    <h4>Podemos ver o resutado</h4>
+    <h3>
+      Lembram-se do que se usa para ver se um objeto é uma instância de uma
+      determinada classe? instanceof
+    </h3>
+    <h3>Então vamos ver:</h3>
+    <h3>se o objeto someHouse é uma instância da classe House;</h3>
+    <h3>se o objeto someHouse é uma instância da classe Property;</h3>
+    <h4>console.log(someHouse instaceof House)</h4>
+    <h4>console.log(someHouse instaceof Property)</h4>
+    <h3>Executamos com node: node index.js</h3>
+    <h3>
+      As duas são verdadeiras, o objeto someHouse é uma instância de ambas
+      classes
+    </h3>
+    <br />
+    <h3>
+      Agora vamos criar outra class (Apartment) e dizer que também herda de
+      Property
+    </h3>
+    <h4>class Apartment extends Property{}</h4>
+    <h3>
+      Dentro escrevemos o constructor com os parâmetros da classe Apartment e os
+      parâmetros que queremos usar da class mãe (Property)
+    </h3>
+    <h4>constructor(number, price, area){}</h4>
+    <h3>
+      Dentro da função constructor, referenciamos o parâmetro da própria função
+      com o "this.number=number" e os parâmetros da função mãe com a palavra
+      "super()"; Os parâmetros da função mãe, têm de vir sempre em primeiro!!
+    </h3>
+    <h4>super(price, area)</h4>
+    <h4>this.number = number</h4>
+    <h4>}</h4>
+    <h3>
+      Agora podemos criar um método próprio para a nossa classe Apartment, por
+      exemplo um método para vermos o andar: getFloor(){}
+    </h3>
+    <h4>getFloor(){</h4>
+    <h4>
+      return `O teu Apartamento está no: ${this.number.slice(0,-2)}º Andar`
+      //Aqui usamos o método slice (a pensar que nos vão dar uma string) para
+      dizer que queremos guardar uma parte dessa string: Queremos a string toda
+      (0) excepto os ultimos 2 caracteres (-2). o -1 refere-se ao fim da string,
+      o -2 é o penultimo caractere
+    </h4>
+    <h4>}</h4>
+    <h3>Agora vamos criar uma instância da classe Apartment</h3>
+    <h4>const apt = new Apartment("201",100,160000)</h4>
+    <h3>Damos um console.log desta instancia</h3>
+    <h4>console.log(apt)</h4>
+    <h3>Executamos com o node: node index.js</h3>
+    <h4>Conseguimos ver o objeto completo com o number, price e area...</h4>
+    <h3>
+      Conseguimos também ver o andar deste apartamento se usarmos o método que
+      criamos "getFloor()"
+    </h3>
+    <h4>console.log(apt.getFloor())</h4>
+    <h3>
+      Se executarmos com o node, vai mostrar-nos que o nosso apartamento
+      encontra-se no 2º andar
+    </h3>
+    <br />
+    <hr />
+    <br />
+    <h1>Polimorfismo</h1>
+    <br />
+    <h4>
+      Polimorfismo é o conceito que descreve o ato de um objeto poder assumir
+      diferentes formas
+    </h4>
+    <h4>
+      Na OOP/POO, isso pode ser percebido na
+      <strong>"sobrescrita de métodos"</strong>
+    </h4>
+    <h4>
+      No javaScript, uma classe filha pode ter as suas próprias implementações
+      dos métodos da classe mãe. A isso damos o nome de
+      <strong>"sobrescrita de métodos"</strong>
+    </h4>
+    <br />
+    <h3>Exemplo:</h3>
+    <h4>A classe Vehicle possui alguns atributos e um método move()</h4>
+    <h4>
+      As classes Bike, Car, Ship and Plane, todas são filhas da classe Vehicle,
+      mas cada uma dessas filhas implementa o método move() de maneira diferente
+      (sobrescrevendo o método)
+    </h4>
+    <br />
+    <h3>Vamos ver na pratica</h3>
+    <h3>
+      Criamos uma pasta com o nome "polimorfismo", com o ficheiro "index.js"
+    </h3>
+    <h3>Dentro desse ficheiro, criamos uma classe Vehicle: class Vehicle{}</h3>
+    <h4>class Vehicle{}</h4>
+    <h3>
+      Dentro dessa classe, não precisámos de atributos, então escrevemos ja o
+      método move() sem parâmetros, com uma mensagem na consola `O veículo esá a
+      mover-se`
+    </h3>
+    <h4>move(){</h4>
+    <h4>console.log(`O veículo esá a mover-se`)</h4>
+    <h4>}</h4>
+    <h3>
+      Agora vamos criar uma classe Car que vai herdar (extends) a classe
+      Vehicle.
+    </h3>
+    <h3>
+      Vamos usar o método da classe Vehicle "move()" e vamos mudá-la dentro da
+      classe Car
+    </h3>
+    <h4>classe Car extends Vehicle{</h4>
+    <h4>move(speed){</h4>
+    <h4>console.log(`O carro está a mover-se a ${speed} km/h`)</h4>
+    <h3>
+      Agora vamos criar uma classe Bike que vai herdar (extends) a classe
+      Vehicle.
+    </h3>
+    <h3>
+      Vamos usar o método da classe Vehicle "move()" e vamos mudá-la dentro da
+      classe Bike
+    </h3>
+    <h4>classe Bike extends Vehicle{</h4>
+    <h4>move(speed){</h4>
+    <h4>console.log(`A bicicleta está a mover-se a ${speed} km/h`)</h4>
+    <h3>
+      Vamos criar uma classe Ship que vai herdar (extends) a classe Vehicle.
+    </h3>
+    <h3>
+      Vamos usar o método da classe Vehicle "move()" e vamos mudá-lo dentro da
+      classe Ship
+    </h3>
+    <h4>classe Ship extends Vehicle{</h4>
+    <h4>move(speed){</h4>
+    <h4>console.log(`O navio está a navegar a ${speed}km/h`)</h4>
+    <h3>
+      Agora vamos criar uma instância de cada uma destas 3 classes: Car, Bike
+      and Ship
+    </h3>
+    <h4>const ferrari = new Car()</h4>
+    <h4>const titanic = new Ship()</h4>
+    <h4>const ktm = new Bike()</h4>
+    <h3>Agora vamos usar o mesmo método nestas 3 instâncias</h3>
+    <h4>ferrari.move(280)</h4>
+    <h4>titanic.move(39)</h4>
+    <h4>ktm.move(20)</h4>
+    <h3>Executamos com o node e vemos o resultado: node index.js</h3>
+    <br />
+    <h3>
+      Vamos criar uma função start, que vai receber como parâmetro um veículo
+      qualquer, vai escrever uma mensagem na consola a dizer "A iniciar um
+      veículo..." e executar o método move() para vermos a mensagem diferente em
+      cada veículo
+    </h3>
+    <h4>function start(vehicle){</h4>
+    <h4>console.log("A iniciar um veículo..."</h4>
+    <h4>vehicle.move()</h4>
+    <h4>}</h4>
+    <h3>Executamos a função:</h3>
+    <h4>start(ferrari)</h4>
+    <h4>start(titanic)</h4>
+    <h4>start(ktm)</h4>
+    <br />
+    <hr />
+    <br />
+    <h1>Acessores: get e set</h1>
+    <br />
+    <h4>
+      Os acessores são um recurso para definir a forma de como acedemos a uma
+      propriedade de um objeto:
+    </h4>
+    <p>pessoa.nome -> GET</p>
+    <p>pessoa.nome = "Cunha" -> SET</p>
+    <h4>
+      Com o acessor <strong>"get"</strong> podemos modificar a forma como uma
+      propriedade é lida
+    </h4>
+    <h4>
+      Com o acessor <strong>"set"</strong> podemos modificar a forma como uma
+      propriedade é alterada via atribuição
+    </h4>
+    <h4>
+      Também conhecidos como <strong>"getters"</strong> and
+      <strong>"setters"</strong>
+    </h4>
+    <br />
+    <h3>exemplos:</h3>
+    <h4>
+      Uma classe possui uma propriedade que necessita de uma verificação antes
+      de ter o seu valor modificado
+    </h4>
+    <h4>
+      Uma classe possui uma propriedade privada que necessita de um acessor
+      público só de leitura
+    </h4>
+    <br />
+    <h3>Exemplo na pratica</h3>
+    <h3>GET</h3>
+    <h4>
+      Vamos criar uma pasta com o nome "Get and Set", dentro dessa pasta criamos
+      um ficheiro com o nome "getSet.js"
+    </h4>
+    <h4>
+      Dentro desse ficheiro criamos a classe "Wallet"; dentro dessa classe vamos
+      criar um atributo privado chamado "amount"; No construtor vamos dizer que
+      o nosso amount começa num valor fixo (109.99) e queremos que seja um
+      numero inteiro, então vamos multiplica-lo por 100; //Isto vai ser salvo
+      COMO 10999, SEM VIRGULAS/PONTOS, só para criarmos uma "regra" que faça com
+      que guarde sempre um numero inteiro;
+    </h4>
+    <h4>class Wallet{</h4>
+    <h4>#amount</h4>
+    <h4>constructor(){</h4>
+    <h4>
+      this.#amount = 109.99 * 100 //Isto vai ser salvo assim 10999, SEM
+      VIRGULAS/PONTOS, só para criarmos uma "regra" que faça com que guarde
+      sempre num numero inteiro
+    </h4>
+    <h4>}</h4>
+    <h3>Agora vamos usamos o get como se usassemos uma função:</h3>
+    <h3>
+      escrevemos get (palavra reservada do JS), definimos um nome para o nosso
+      get, agora precisamos de colocar parentisis como se fosse um método normal
+      () e abrir chavetas: get amount(){}
+    </h3>
+    <h3>
+      Dentro das chavetas conseguimos fazer o que quisermos, um determinado
+      comportamento ou operação; Neste caso só queremos que retorne o valor que
+      está na propriedade privada: return this.#amount; Mas não podemos só
+      retornar o this.#amount porque se fizermos isso vem neste numero: 10999;
+      Nós queremos que esse numero seja só para guardar MAS queremos que o user
+      veja o numero normalmente (109.99), então temos que dividir o this.#amount
+      por 100
+    </h3>
+    <h4>get amount(){</h4>
+    <h4>return this.#amount / 100</h4>
+    <h4>}</h4>
+    <h3>
+      Então agora vamos criar uma instância da classe Wallet e dar console.log
+      no amount dessa instância
+    </h3>
+    <h3>
+      com o get, nós não precisamos de usar o amount como se fosse um metodo com
+      o: xWallet.amount(); Com o get é so: xWallet.amount
+    </h3>
+    <h4>const myWallet = new Wallet()</h4>
+    <h4>console.log(myWallet.amount)</h4>
+    <br />
+    <h3>SET</h3>
+    <h3>Vamos criar uma propriedade privada chamada username: #username</h3>
+    <h4>#username</h4>
+    <h3>Agora usamos o SET também como se fosse uma função:</h3>
+    <h3>
+      escrevemos set (palavra reservada do JS), definimos um nome para o nosso
+      set "username", agora precisamos de colocar um parâmetro "newUsername"(vai
+      ser o que o utilizador vai escrever depois do sinal de igual), e abrir
+      chavetas: set username(newUsername){};
+    </h3>
+    <h3>
+      Dentro do set, vamos conseguir trocar o seu valor: this.username =
+      newUsername
+    </h3>
+    <h4>set username(newUsername){</h4>
+    <h4>this.#username = newUsername</h4>
+    <h3>
+      Agora vamos criar um get para podermos ler e ver o valor desse username
+      (desta vez sem nenhuma regra)
+    </h3>
+    <h4>get username(){</h4>
+    <h4>return this.#username</h4>
+    <br />
+    <h3>Agora para utilizarmos o set que fizemos é so:</h3>
+    <h4>myWallet.username= "Cunha"</h4>
+    <h4>console.log(myWallet.username)</h4>
+    <br />
+    <h3>Basicamente o get e set funcionam desta maneira...</h3>
+    <h3>
+      Podemos utiliza-los para proteger os nossos atributos privados e para
+      modificar o comportamento de atribuição de leitura de uma propriedade.
+    </h3>
+    <h3>
+      A diferença entre o get e set dos métodos normais é que nós conseguimos
+      manipula-los como se fosse um atributo; Ou seja, é como se fosse um método
+      mas nós conseguimos utilizar o sinal de =; Ex:
+    </h3>
+    <h4>myWallet.username += "Dev"</h4>
+    <h4>console.log(myWallet.username)</h4>
+    <br />
+    <h3>
+      Agora vamos aplicar a regra de validação no SET, para vermos como
+      conseguimos modificar o comportamento dele
+    </h3>
+    <h3>Dentro do set:</h3>
+    <h4>if(typeof newUsername === "string"){</h4>
+    <h4>this.#username = newUsername</h4>
+    <h4>}else{</h4>
+    <h4>console.log("Username must be of type string")</h4>
+    <h4></h4>
+    <h4>}</h4>
+    <h3>
+      Agora o username do myWallet só aceita um valor string, se não for string
+      dá erro!
+    </h3>
+    <h4>myWallet.username = 10</h4>
+    <h4>myWallet.username = True</h4>
+    <h4>myWallet.username = "Claudio Cunha"</h4>
+    <br />
+    <hr />
+    <br />
+    <h1>Atributos e Métodos Estáticos</h1>
+    <br />
+    <h4>
+      São atributos e métodos definidos numa classe que não dependem de uma
+      instância para serem utilizados
+    </h4>
+    <h4>São acedidos diretamente pela classe ao invés de pela instância</h4>
+    <h3>Exemplos:</h3>
+    <h4>
+      Uma classe precisa definir um atributo que seja global, ou seja, que tenha
+      o mesmo valor para todas as instâncias
+    </h4>
+    <h4>
+      Uma classe de modelo para uma tabela no banco de dados onde os métodos
+      devem estar disponíveis mesmo que nenhuma instância tenha sido carregada
+      ainda
+    </h4>
+    <h3>Vamos ver exemplos na pratica:</h3>
+    <h3>
+      Criamos uma pasta chamada "static" com um arquivo chamado "Reservation",
+      dentro dele criamos a sua classe "Reservation"; Criamos um constructor com
+      parâmetros: "guests", "room","days"; Dentro do constructor vamos colocar
+      os seus atributos; E queremos que haja um total que multiplique os dias
+      que o hospede vai ficar no quarto pela taxa diária do hotel
+    </h3>
+    <h4>class Reservation{</h4>
+    <h4>constructor(guests, room, days){</h4>
+    <h4>this.guests = guests</h4>
+    <h4>this.room = room</h4>
+    <h4>this.days = days</h4>
+    <h4>
+      this.total = days * Reservation.baseFee (baseFee é atributoEstático que
+      vamos criar)
+    </h4>
+    <h3>Vamos criar essa taxa(baseFee)</h3>
+    <h3>
+      É para estas coisas que servem os Atributos e Métodos Estáticos: São
+      valores fixos que não se alteram
+    </h3>
+    <h3>
+      Para criar um atributo estático, usamos a palavra reservada do javaScript
+      "static"; então vamos dizer que a taxa estática desta classe de Reservas é
+      de 150
+    </h3>
+    <h4>static baseFee = 150</h4>
+    <h3>
+      Para aceder a um atributo/método estático, indicamos o
+      nomeDaClass.atributoEstático ou nomeDaClass.MétodoEstático:
+      Reservation.baseFee // Reservation.MétodoEstático
+    </h3>
+    <h3>
+      Agora vamos criar um método estático que mostre na consola o valor da Base
+      Fee que criamos
+    </h3>
+    <h3>
+      Para criar um método estático é exatamente como se fosse um método normal
+      mas antes do nome do método, é preciso escrer a palavra reservada do
+      javaScript "static"
+    </h3>
+    <h4>static showBaseFee(){</h4>
+    <h4>return console.log(`Base Fee is: ${Reservation.baseFee}`)</h4>
+    <h3>
+      Agora fora da classe, vamos usar o método que criamos e criar uma reserva:
+    </h3>
+    <h4>Reservation.showBaseFee()</h4>
+    <h4>const res1 = new Reservation(3, "201", 5)</h4>
+    <h4>console.log(res1)</h4>
+    <h3>Executámos o node e vemos o resultado: node Reservation.js</h3>
+    <br />
+    <h3>
+      Aos atributos e métodos estáticos podemos juntar os Getters and Setters
+      (GET and SET)
+    </h3>
+    <h3>Vamos criar uma taxa Premium para hospedes específicos</h3>
+    <h4>static get premiumFee(){</h4>
+    <h4>return (Reservation.baseFee = Reservation.baseFee * 1.5)</h4>
+    <h4>}</h4>
+    <h3>Agora fora da classe, testamos tudo!</h3>
+    <h3>
+      Acrescentamos depois do 1º teste: console.log do Quarto premium; mudar a
+      baseFee para 200 e assim o calculo é feito quando criarmos uma nova
+      reserva; Criar nova reserva; console.log a mostrar o Premium Fee;
+      console.log da segunda reserva;
+    </h3>
+    <h4>console.log("Quarto premium");</h4>
+    <h4>Reservation.baseFee = 200;</h4>
+    <h4>const res2 = new Reservation(2, "504", 5);</h4>
+    <h4>console.log(`Premium fee is: ${Reservation.premiumFee}€`)</h4>
+    <h4>console.log(res2);</h4>
+    <br />
+    <hr />
+    <br />
+    <h1></h1>
   </body>
 </html>

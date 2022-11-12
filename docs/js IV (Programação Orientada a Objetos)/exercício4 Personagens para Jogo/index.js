@@ -1,0 +1,38 @@
+const Mage = require("./Mage");
+const Thief = require("./Thief");
+const Warrior = require("./Warrior");
+
+const cunha = new Thief("Cunha", 140, 22, 2);
+const beatriz = new Mage("Beatriz", 150, 4, 2, 14);
+const bot1 = new Warrior("Bot1", 200, 14, 12, 4);
+
+console.log("STATUS GERAIS:");
+console.table({ cunha, beatriz, bot1 });
+console.log("MUDAR A STANCE DO BOT1 PARA 'DEFENDING'");
+bot1.switchStance();
+console.log("STATUS GERAIS:");
+console.table({ cunha, beatriz, bot1 });
+console.log("BEATRIZ ATACA BOT1");
+console.log("STATUS GERAIS:");
+beatriz.attack(bot1);
+console.table({ cunha, beatriz, bot1 });
+console.log("MUDAR A STANCE DO BOT1 PARA 'ATTACKING'");
+console.log("BOT1 ATACA CUNHA");
+console.log("STATUS GERAIS:");
+bot1.switchStance();
+bot1.attack(cunha);
+console.table({ cunha, beatriz, bot1 });
+console.log("BEATRIZ CURA-SE");
+console.log("BOT1 ATACA CUNHA");
+console.log("STATUS GERAIS:");
+beatriz.heal(beatriz);
+bot1.attack(cunha);
+console.table({ cunha, beatriz, bot1 });
+console.log("BEATRIZ CURA O CUNHA");
+console.log("CUNHA ATACA O BOT1");
+console.log("BEATRIZ ATACA O BOT1");
+beatriz.heal(cunha);
+cunha.attack(bot1);
+beatriz.attack(bot1);
+console.log("STATUS GERAIS:");
+console.table({ cunha, beatriz, bot1 });

@@ -89,7 +89,7 @@
 }
 
 .category-card {
-  width: 280px;
+  max-width: 280px;
   height: 380px;
   border: 1px solid transparent;
   border-radius: 10px;
@@ -172,5 +172,11 @@
   .footer {
     display: flex;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 300px) {
+  .main-content p {
+    font-size: 15px;
   }
 }
