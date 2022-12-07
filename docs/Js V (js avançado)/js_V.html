@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js V (js Avançado)</title>
+  </head>
+  <body>
+    <h1>SetInterval e SetTimeout</h1>
+    <br />
+    <h4>São funções de high order (recebem outra função como parâmetro)</h4>
+    <h4>
+      Executam a função depois de um tempo decorrido (nós escolhemos esse tempo
+      em milliseconds)
+    </h4>
+    <h3>
+      A setTimeout() executa apenas uma vez quando x tempo passa, ou seja, se x
+      for 2000, a função vai ser executada passado 2 segundos
+    </h3>
+    <h3>
+      A setInterval() executa em intervalos de tempo,ou seja de x em x tempo
+      executa, se x for 2000, a função vai ser executada de 2 em 2 segundos
+    </h3>
+    <br />
+    <h3>
+      Vamos criar uma pasta com o nome "SetInterval e SetTimeout", dentro dessa
+      pasta um ficheiro js com o nome "SetInterval_SetTimeout.js", um ficheiro
+      html e css com o mesmo nome
+    </h3>
+    <br />
+    <h3>Ficheiro html:</h3>
+    <h4>h1 id="title">SetTimeout h1></h4>
+    <h4>div class="btns" div</h4>
+    <h4>button id="setTimeout">Activate SetTimeout button</h4>
+    <h4>button id="stopTimeout">STOP SetTimeout button</h4>
+    <h4>div</h4>
+    <h4>hr</h4>
+    <h4>h1 id="title">SetInterval h1></h4>
+    <h4>div class="btns"</h4>
+    <h4>button id="setInterval">Activate SetInterval button</h4>
+    <h4>button id="stopInterval">STOP SetInterval button</h4>
+    <h4>div</h4>
+    <br />
+    <h3>Ficheiro css:</h3>
+    <h4>* {</h4>
+    <h4>margin: 0px;</h4>
+    <h4>padding: 0px;</h4>
+    <h4>background-color: rgb(92, 92, 92);</h4>
+    <h4>}</h4>
+    <h4>#title {</h4>
+    <h4>text-align: center;</h4>
+    <h4>margin: 20px;</h4>
+    <h4>color: white;</h4>
+    <h4>}</h4>
+    <h4>.btns {</h4>
+    <h4>display: flex;</h4>
+    <h4>justify-content: center;</h4>
+    <h4>gap: 20px;</h4>
+    <h4>margin: 0px auto 0px auto;</h4>
+    <h4>margin-bottom: 20px;</h4>
+    <h4>}</h4>
+    <h4>#setTimeout,</h4>
+    <h4>#setInterval {</h4>
+    <h4>font-size: 16px;</h4>
+    <h4>width: 150px;</h4>
+    <h4>height: 100px;</h4>
+    <h4>color: red;</h4>
+    <h4>cursor: pointer;</h4>
+    <h4>background-color: white;</h4>
+    <h4>padding: 5px;</h4>
+    <h4>}</h4>
+    <h4>#setTimeout:hover,</h4>
+    <h4>#setInterval:hover {</h4>
+    <h4>background-color: black;</h4>
+    <h4>font-weight: bold;</h4>
+    <h4>}</h4>
+    <h4>#stopTimeout,</h4>
+    <h4>#stopInterval {</h4>
+    <h4>font-size: 16px;</h4>
+    <h4>width: 150px;</h4>
+    <h4>height: 100px;</h4>
+    <h4>color: red;</h4>
+    <h4>cursor: pointer;</h4>
+    <h4>background-color: white;</h4>
+    <h4>padding: 5px;</h4>
+    <h4>}</h4>
+    <h4>#stopTimeout:hover,</h4>
+    <h4>#stopInterval:hover {</h4>
+    <h4>background-color: black;</h4>
+    <h4>font-weight: bold;</h4>
+    <h4>}</h4>
+    <h3>Ficheiro JavaScript:</h3>
+    <h4>const btnSetTimeout = document.getElementById("setTimeout");</h4>
+    <h4>const btnStopTimeout = document.getElementById("stopTimeout");</h4>
+    <h4>const btnSetInterval = document.getElementById("setInterval");</h4>
+    <h4>const btnStopInterval = document.getElementById("stopInterval");</h4>
+    <h4>//função setTimeout</h4>
+    <h4>btnSetTimeout.addEventListener("click", () => {</h4>
+    <h4>stopSetTimeout = setTimeout(() => {</h4>
+    <h4>alert("2ª Mensagem!");</h4>
+    <h4>}, 3000);</h4>
+    <h4>alert("Daqui a 3 segundos há uma segunda mensagem!");</h4>
+    <h4>});</h4>
+    <h4>//função stop Timeout</h4>
+    <h4>btnStopTimeout.addEventListener("click", () => {</h4>
+    <h4>clearTimeout(stopSetTimeout);</h4>
+    <h4>});</h4>
+    <h4>//função setInterval</h4>
+    <h4>btnSetInterval.addEventListener("click", () => {</h4>
+    <h4>stopSetInterval = setInterval(() => {</h4>
+    <h4>seconds += 3;</h4>
+    <h4>alert(`Passou 3 segundos!</h4>
+    <h4>Total: ${seconds}`);</h4>
+    <h4>if (seconds >= 9) {</h4>
+    <h4>clearInterval(stopSetInterval);</h4>
+    <h4>alert("Acabou a contagem!");</h4>
+    <h4>}</h4>
+    <h4>}, 3000);</h4>
+    <h4>alert("De 3 em 3 segundos vai passar uma mensagem");</h4>
+    <h4>});</h4>
+    <h4>//função stop Interval</h4>
+    <h4>btnStopInterval.addEventListener("click", () => {</h4>
+    <h4>clearInterval(stopSetInterval);</h4>
+    <h4>});</h4>
+    <br />
+    <hr />
+    <br />
+    <h1>Execuções: Síncrona e Assíncrona</h1>
+    <br />
+    <h3>Execução síncrona</h3>
+    <h4>Uma execução síncrona segue um fluxo normal</h4>
+    <h4>Executa passo a passo as linhas do código</h4>
+    <h4>Só executa uma instrução após a anterior ter sido executada</h4>
+    <h3>Exemplo: o fluxo normal do codigo</h3>
+    <h4>console.log("step 01")</h4>
+    <h4>console.log("step 02")</h4>
+    <h4>console.log("step 03")</h4>
+    <h3>isto vai executar: step 01, step 02, step 03</h3>
+    <br />
+    <h3>Execução assíncrona</h3>
+    <h4>
+      A execução Assíncrona não segue o mesmo formato da execução síncrona
+    </h4>
+    <h4>Não aguarda o fim da execução para passar para o proximo passo</h4>
+    <h4>Passa para a instrução seguinte sem aguardar a conclusão da atual</h4>
+    <h3>
+      Exemplo: o setTimeout() e o setInterval() OU uma requisição http (http
+      request)
+    </h3>
+    <h4>console.log("step 01")</h4>
+    <h4>setTimeout(()=>{</h4>
+    <h4>console.log("step 02")</h4>
+    <h4>}</h4>
+    <h4>console.log("step 03")</h4>
+    <h3>Com o setTimeout, isto vai executar: step 01, step 03, step 02</h3>
+    <br />
+    <hr />
+    <br />
+    <h1>Promises / Then() / Catch</h1>
+    <br />
+    <h3>O que são Promises</h3>
+    <h4>Possuem 4 estados:</h4>
+    <h5>1- Pendente: Quando a Promise é criada e ainda não foi executada</h5>
+    <h5>2- Realizada: Quando teve sucesso na operação</h5>
+    <h5>3- Recusada: Quando teve falha na operação</h5>
+    <h5>4- Estabelecida: Quando foi realizada ou recusada</h5>
+    <h4>Pendente é o status inicial</h4>
+    <h4>Promises são como promessas da vida real que esperam algum retorno</h4>
+    <h4>Para criar uma promessa instaciamos a classe Promise: new Promise()</h4>
+    <h4>
+      Leva dois argumentos: resolve(solução) e reject (erro); new
+      Promise(resolve,reject)
+    </h4>
+    <h4>Para encadear mais processos utilizamos o método then;</h4>
+    <br />
+    <h3>Ver na pratica como utilizar:</h3>
+    <h3>
+      Criamos uma pasta com o nome "Promises" e um ficheiro js com o mesmo nome
+    </h3>
+    <h3>Dentro do ficheiro js:</h3>
+    <h4>const myPromise = new Promise((resolve,reject) => {</h4>
+    <h4>const name = "Claudio Cunha"</h4>
+    <h4>if(name === "Claudio Cunha"){</h4>
+    <h4>resolve("Accepted name!")</h4>
+    <p>
+      Dica* resolve é o que queremos chamar quando a promise é encerrada com
+      sucesso. Resolve faz com que o status da promise seja: "realizado"
+    </p>
+    <h4>}else{</h4>
+    <h4>reject("User doesn't exists")</h4>
+    <p>
+      Dica* reject é o que queremos chamar quando a promise é encerrada com
+      falha. Reject faz com que o status da promise seja: "rejeitado"
+    </p>
+    <h4>}</h4>
+    <h4>})</h4>
+    <br />
+    <h3>
+      Para utilizarmos a promise que fizemos, usamos a nossa variável e o método
+      then()
+    </h3>
+    <h3>
+      Dentro do método then usamos uma função com um argumento qualquer, desde
+      que signifique o que estamos à espera de receber da promessa. Neste caso
+      são dados, então vamos usar "data" como argumento
+    </h3>
+    <h4>myPromise.then((data)=>{</h4>
+    <h4>console.log(data)</h4>
+    <h4>})</h4>
+    <h3>Agora se executarmos com o node: node promise.js</h3>
+    <h4>conseguimos ver o resultado que esperavamos</h4>
+    <h3>Isto é o funcionamento do then()</h3>
+    <br />
+    <h3>
+      Podemos dar um melhor uso ao then() e "apanhar" o dado para manipulá-lo
+      com o que quiseremos
+    </h3>
+    <h3>
+      Vamos criar exatamente a mesma coisa que fizemos em cima mas mudar o nome
+      da variavel:
+    </h3>
+    <h4>const myPromise2 = new Promise((resolve,reject) => {</h4>
+    <h4>const name = "Claudio Cunha"</h4>
+    <h4>if(name === "Claudio Cunha"){</h4>
+    <h4>resolve("Accepted name!")</h4>
+    <h4>}else{</h4>
+    <h4>reject("User doesn't exists")</h4>
+    <h4>}</h4>
+    <h4>})</h4>
+    <br />
+    <h3>
+      Para utilizarmos a promise que fizemos, usamos a nossa variável e o método
+      then()
+    </h3>
+    <h3>
+      Dentro do método then usamos uma função com um argumento qualquer, desde
+      que signifique o que estamos à espera de receber da promessa. Neste caso
+      são dados, então vamos usar "data" como argumento
+    </h3>
+    <h4>myPromise2.then((data)=>{</h4>
+    <h4>return data.toLowerCase()</h4>
+    <h4>})</h4>
+    <h4>.then((nameLowerCase) => {</h4>
+    <h4>console.log(nameLowerCase)</h4>
+    <h4>})</h4>
+    <h3>Executamos o node: node promises.js</h3>
+    <h3>
+      Agora conseguimos ver que conseguimos "apanhar" o nosso dado e manipula-lo
+    </h3>
+    <br />
+    <h3>Uso do Catch()</h3>
+    <h3>
+      Normalmente o uso do then() vem com o uso do catch, o catch() faz com que
+      consigamos manipular os nossos erros, neste caso o do else
+    </h3>
+    <h3>
+      Vamos criar exatamente a mesma coisa que fizemos em cima mas mudar o nome
+      da variavel que usamos a promise e o valor da variavel name dentro dela
+      (para ir para o nosso reject):
+    </h3>
+    <h4>const myPromise3 = new Promise((resolve,reject) => {</h4>
+    <h4>const name = "lorem"</h4>
+    <h4>if(name === "Claudio Cunha"){</h4>
+    <h4>resolve("Accepted name!")</h4>
+    <h4>}else{</h4>
+    <h4>reject("User doesn't exists")</h4>
+    <h4>}</h4>
+    <h4>})</h4>
+    <h3>Agora usamos o then com o cath</h3>
+    <h4>myPromise3.then((data) => {</h4>
+    <h4>console.log(data)</h4>
+    <h4>}).cathc((err) => {</h4>
+    <h4>console.log(`Error detected: ${err}`</h4>
+    <br />
+    <h3>Resolver várias promises com o all: Promises.all()</h3>
+    <h3>Vamos criar 3 promises diferentes</h3>
+    <h4>const p1 = new Promise((resolve,reject) => {</h4>
+    <h4>setTimeout(() => {</h4>
+    <h4>resolve("P1 ok! Timeout")</h4>
+    <h4>},2000)</h4>
+    <h4>})</h4>
+    <h4>const p2 = new Promise((resolve,reject) => {</h4>
+    <h4>resolve("P2 ok!")</h4>
+    <h4>})</h4>
+    <h4>const p3 = new Promise((resolve,reject) => {</h4>
+    <h4>resole("P3 ok!")</h4>
+    <h4>})</h4>
+    <br />
+    <h3>
+      Agora criamos uma variavel com o método "promise.all()" que vai dentro vai
+      receber uma lista com as nossas promises todas [p1,p2,p3]
+    </h3>
+    <h3>
+      Depois usamos o then para conseguirmos ver os dados do nosso resolve de
+      cada promise
+    </h3>
+    <h4>const resolveAll = Promise.all([p1,p2,p3]).then((data)=>{</h4>
+    <h4>console.log(data)</h4>
+    <h4>})</h4>
+    <br />
+    <h3>Resolver várias promises com o race: Promises.race()</h3>
+    <h3>
+      Basicamente recebe a mesma coisa que o all (um array de promises), só que
+      a primeira que for resolvida vai ser a enviada como retorno. Como se fosse
+      uma race (corrida)
+    </h3>
+    <h3>Vamos criar 3 promises diferentes</h3>
+    <h4>const p4 = new Promise((resolve,reject)=>{</h4>
+    <h4>setTimeout(()=>{</h4>
+    <h4>resolve("P4 ok!")</h4>
+    <h4>},2000)</h4>
+    <h4>})</h4>
+    <h4>const p5 = new Promise((resolve,reject)=>{</h4>
+    <h4>resolve("P5 ok!")</h4>
+    <h4>})</h4>
+    <h4>const p6 = new Promise((resolve,reject)=>{</h4>
+    <h4>resolve("P6 ok!")</h4>
+    <h4>})</h4>
+    <h3>
+      Agora criamos uma variavel com o método "promise.race()" que vai dentro
+      vai receber uma lista com as nossas promises todas [p4,p5,p6]
+    </h3>
+    <h3>
+      Depois usamos o then para conseguirmos ver o dado que chega primeiro à
+      promise
+    </h3>
+    <h4>const resolveAllRace = Promise.all([p4,p5,p6]).then((data)=>{</h4>
+    <h4>console.log(data)</h4>
+    <h4>})</h4>
+    <br />
+    <hr />
+    <br />
+    <h1>API</h1>
+    <br />
+    <h3>O que é uma API</h3>
+    <h4>
+      É uma sigla para Application Programming Interface (interface de
+      Programação de Aplicações)
+    </h4>
+    <h4>É um termo antigo, surgiu antes da própria web</h4>
+    <h4>Um meio pelo qual dois sistemas se comunicam</h4>
+    <p>Um consegue utilizar funcionalidades de outro</p>
+    <p>Permite a um sistema enviar e receber dados</p>
+    <h3>Exemplo de API:</h3>
+    <h4>Caixa de multibanco -> API -> Banco</h4>
+    <br />
+    <h3>APIs modernas</h3>
+    <h4>Com a internet, surgiram novos tipos de APIs</h4>
+    <h4>A mais utilizada hoje é a REST API</h4>
+    <h4>É feita sobre o protocolo HTTP</h4>
+    <p>Envole requisições web</p>
+    <h4>
+      Da mesma forma que requisitamos páginas web pelo browser, podemos também
+      solicitar recursos através de APIs RESTful
+    </h4>
+    <br />
+    <h3>API REST</h3>
+    <h4>
+      REST significa Representational State Transfer ou Transferência de Estado
+      Representacional
+    </h4>
+    <h4>É um modelo</h4>
+    <h4>
+      Consistem em regras e padrões e permitem a criação de APIs bem definidas
+    </h4>
+    <h4>
+      Como funciona sobre o HTTP, utiliza os seus verbos de acesso:
+      <strong>GET, POST, PATCH/PUT e DELETE </strong>
+    </h4>
+    <br />
+    <h3>requisições para APIs</h3>
+    <h4>
+      Quando digitamos uma URL no navegador, estamos a fazer uma requisição
+    </h4>
+    <p>Retorna-nos uma página web</p>
+    <p>É uma requisição HTTP</p>
+    <h4>Para APIs também fazemos uma requisição para uma URL</h4>
+    <p>Mas não nos retorna uma página</p>
+    <p>Retorna-nos dados: JSON, XML, etc..</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Fetch</h1>
+    <br />
+    <h3>Para que serve o Fetch</h3>
+    <h4>
+      O fetch é uma função que serve para fazer uma requisição a uma API e
+      trazer de volta uma resposta.
+    </h4>
+    <h4>Essa resposta é uma Promise</h4>
+    <h4>
+      Por ser uma Promise, conseguimos obter essa resposta através do then() e
+      do catch()
+    </h4>
+    <h4>Temos que transformar a resposta em JSON: resposta.json()</h4>
+    <br />
+    <h3>
+      Vamos ver na pratica: criamos uma pasta com o nome "Fetch", dentro dessa
+      pasta 1 ficheiro html e 1 ficheiro JavaScript com o nome "fetch.html" e
+      "fetch.js"
+    </h3>
+    <h3>Ficheiro HTML</h3>
+    <h4>h1 Fetch h1</h4>
+    <h4>
+      h4 Vamos consultar esta api de pokemons: a
+      href="https://pokeapi.co/api/v2/ " >https://pokeapi.co/api/v2/ a h4
+    </h4>
+    <h4>label for="pokeInput">Pokemon: label></h4>
+    <h4>input placeholder="pokemon..." id="pokeInput" type="text"</h4>
+    <h4>br br</h4>
+    <h4>button id="btn">Click Here to search your pokemon type button</h4>
+    <h4>div class="info"> div</h4>
+    <h4>script src="fetch.js" script</h4>
+    <br />
+    <h3>Ficheiro JavaScript</h3>
+    <h4>const btn = document.getElementById("btn");</h4>
+    <h4>btn.addEventListener("click", () => {</h4>
+    <h4>const poke = document.getElementById("pokeInput");</h4>
+    <h4>const key = poke.value.toLowerCase();</h4>
+    <h4>poke.value = "";</h4>
+    <h4>fetch(`https://pokeapi.co/api/v2/pokemon/${key}`)</h4>
+    <h4>.then((resp) => {</h4>
+    <h4>return resp.json().then((respJson) => {</h4>
+    <h4>const div = document.querySelector(".info");</h4>
+    <h4>const h4 = document.createElement("h4");</h4>
+    <h4>console.log(respJson.types[0]["type"]["name"]);</h4>
+    <h4>
+      h4.innerText = `${key.toUpperCase()} Type: ${
+      respJson.types[0]["type"]["name"]}`;
+    </h4>
+    <h4>div.append(h4);</h4>
+    <h4>});</h4>
+    <h4>})</h4>
+    <h4>.catch((err) => {</h4>
+    <h4>const div = document.querySelector(".info");</h4>
+    <h4>const h4 = document.createElement("h4");</h4>
+    <h4>console.log("Error: " + err);</h4>
+    <h4>h4.innerText = "Error: " + err;</h4>
+    <h4>div.append(h4);</h4>
+    <h4>});</h4>
+    <h4>});</h4>
+    <br />
+    <hr />
+    <br />
+    <h1>Async e Await</h1>
+    <br />
+    <h3>
+      As funções assíncronas funcionam como Promises, porém com uma sintaxe mais
+      simples
+    </h3>
+    <h3>Precisamos de declarar a função com a palavra: async</h3>
+    <h3>
+      E quando precisarmos de esperar por algo a instrução precisa de: await
+    </h3>
+    <h3>Podemos aplicar o recurso em funções anônimas e métodos de classe</h3>
+    <h3>Tentar usar o await sem o async gera um erro</h3>
+    <h3>Exemplo de uso: colocar dados numa base de dados</h3>
+    <br />
+    <h3>Ver na prática:</h3>
+    <h3>
+      Criamos uma pasta com o nome: async e await, um ficheiro js com o nome
+      "asyncEawait.js " e um ficheiro html com o nome "index.html"
+    </h3>
+    <br />
+    <h3>Ficheiro HTML</h3>
+    <h4>label for="input">ID: label</h4>
+    <h4>input id="input" type="text" /></h4>
+    <h4>button id="btn">Magic button</h4>
+    <h4>div id="div" div</h4>
+    <h4>hr</h4>
+    <h4>label for="input2">ID: label</h4>
+    <h4>input id="input2" type="text" /></h4>
+    <h4>button id="btn2">Magic button</h4>
+    <h4>div id="div2" div</h4>
+    <h4>script src="asyncEawait.js"> script</h4>
+    <br />
+    <h3>Ficheiro Javascript</h3>
+    <h4>const input = document.getElementById("input");</h4>
+    <h4>const div = document.getElementById("div");</h4>
+    <h4>const btn = document.getElementById("btn");</h4>
+    <h4>btn.addEventListener("click", () => {</h4>
+    <h4>const inputValue = input.value;</h4>
+    <h4>input.value = "";</h4>
+    <h4>
+      fetch(`https://jsonplaceholder.typicode.com/users/${inputValue}`).then(
+    </h4>
+    <h4>(response) =></h4>
+    <h4>response.json().then((responseJson) => {</h4>
+    <h4>const h4 = document.createElement("h4");</h4>
+    <h4>
+      h4.innerText = `id: ${responseJson.id}\nName:
+      ${responseJson.username}\nEmail: ${responseJson.email}`;
+    </h4>
+    <h4>div.append(h4);</h4>
+    <h4>})</h4>
+    <h4>);</h4>
+    <h4>});</h4>
+    <br />
+    <h4>Exatamente o mesmo codigo mas com async e await</h4>
+    <br />
+    <h4>const input2 = document.getElementById("input2");</h4>
+    <h4>const div2 = document.getElementById("div2");</h4>
+    <h4>const btn2 = document.getElementById("btn2");</h4>
+    <h4>btn2.addEventListener("click", async () => {</h4>
+    <h4>const inputValue2 = input2.value;</h4>
+    <h4>input2.value = "";</h4>
+    <h4>
+      const response = await
+      fetch(`https://jsonplaceholder.typicode.com/users/${inputValue2}`);
+    </h4>
+    <h4>const data = await response.json();</h4>
+    <h4>const h4 = document.createElement("h4");</h4>
+    <h4>
+      h4.innerText = `id: ${data.id}\nName: ${data.username}\nEmail:
+      ${data.email}`;
+    </h4>
+    <h4>div2.append(h4);</h4>
+    <h4>});</h4>
+    <br />
+    <br />
+    <h3>
+      Isto serve para trabalharmos com o resolve() da Promise, mas para
+      trabalharmos com o catch, precisamos de fazer:
+    </h3>
+    <h4>Usamos o try antes da função e o catch no fim do nosso try:</h4>
+    <h4>btn2.addEventListener("click", try {</h4>
+    <h4>async () => {</h4>
+    <h4>const inputValue2 = input2.value;</h4>
+    <h4>input2.value = "";</h4>
+    <h4>
+      const response = await
+      fetch(`https://jsonplaceholder.typicode.com/users/${inputValue2}`);
+    </h4>
+    <h4>const data = await response.json();</h4>
+    <h4>const h4 = document.createElement("h4");</h4>
+    <h4>
+      h4.innerText = `id: ${data.id}\nName: ${data.username}\nEmail:
+      ${data.email}`;
+    </h4>
+    <h4>div2.append(h4);</h4>
+    <h4>});</h4>
+    <h4>}catch(error){</h4>
+    <h4>console.error(`Error: ${error}`)</h4>
+    <h4>};</h4>
+    <br />
+    <hr />
+    <br />
+    <h1>Requisições Get</h1>
+    <br />
+    <h3></h3>
+    <h4></h4>
+  </body>
+</html>

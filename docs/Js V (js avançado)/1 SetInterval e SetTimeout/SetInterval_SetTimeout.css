@@ -1,0 +1,53 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  background-color: rgb(92, 92, 92);
+}
+
+#title {
+  text-align: center;
+  margin: 20px;
+  color: white;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 0px auto 0px auto;
+  margin-bottom: 20px;
+}
+
+#setTimeout,
+#setInterval {
+  font-size: 16px;
+  width: 150px;
+  height: 100px;
+  color: red;
+  cursor: pointer;
+  background-color: white;
+  padding: 5px;
+}
+
+#setTimeout:hover,
+#setInterval:hover {
+  background-color: black;
+  font-weight: bold;
+}
+
+#stopTimeout,
+#stopInterval {
+  font-size: 16px;
+  width: 150px;
+  height: 100px;
+  color: red;
+  cursor: pointer;
+  background-color: white;
+  padding: 5px;
+}
+
+#stopTimeout:hover,
+#stopInterval:hover {
+  background-color: black;
+  font-weight: bold;
+}

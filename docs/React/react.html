@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React</title>
+  </head>
+  <body>
+    <h1>SetInterval e SetTimeout</h1>
+    <br />
+    <h3>O que é o react?</h3>
+    <h4>
+      React é "uma biblioteca JavaScript declarativa, eficiente e flexível para
+      a criação de interfaces de utilizador (UI)
+    </h4>
+    <h4>Surgiu em 2011 no Facebook</h4>
+    <h4>Caracteristicas:</h4>
+    <p>É uma Biblioteca, não um framework</p>
+    <p>É baseado em Components</p>
+    <p>É usado para criar SPAs</p>
+    <h4>
+      React é feito com JavaScript, então podemos reaproveitar os nossos
+      conhecimentos
+    </h4>
+    <h4>O React é eficiente (Virtual DOM)</h4>
+    <h4>
+      O React pode ser utilizado para criar APPs mobile com o React Native
+    </h4>
+    <h4>
+      React é a biblioteca de criação de interfaces mais popular e é utilizado
+      em grandes empresas:
+    </h4>
+    <p>Facebook</p>
+    <p>Instagram</p>
+    <p>WhatsApp</p>
+    <p>Netflix</p>
+    <p>Dropbox</p>
+    <br />
+    <hr />
+    <br />
+    <h1>Components</h1>
+    <br />
+    <h3>O que são Components e a sua importância</h3>
+    <h4>O react é uma biblioteca baseada no conceito de components</h4>
+    <h4>
+      Os components permitem dividir a Interface do Utilizador em partes
+      Independentes e reutilizáveis
+    </h4>
+    <h4>São como funções JavaScript:</h4>
+    <p>Aceitam entradas arbitrárias(chamadas **props**)</p>
+    <p>Retornam Elementos React</p>
+    <h3>Tipos de componentes:</h3>
+    <h4>Função</h4>
+    <p>
+      A função é o mais utilizado, o react cada vez está a atualizar-se mais
+      para que nós nos foquemos cada vez mais nesse tipo de componente de Função
+    </p>
+    <h4>Classe (features extras)</h4>
+    <p>
+      Este Component tem algumas ferramentas extras que podem extender o
+      comportamento daquele componente para que ele consiga fazer mais coisas.
+      No entanto, como referido em cima, cada vez mais se usa o componente de
+      função.
+    </p>
+    <h3>Como é definido um Componente de função:</h3>
+    <h4>function Welcome(props){</h4>
+    <h4>return h1 hello {props.name} h1</h4>
+    <h4>}</h4>
+    <br />
+    <hr />
+    <br />
+    <h1>Jsx</h1>
+    <br />
+    <h3>O que é JSX</h3>
+    <h4>Um exemplo de código JSX é:</h4>
+    <p>const element = h1 className = "title" hello World! h1</p>
+    <h4>Não é apenas HTML nem JS</h4>
+    <h4>JSX serve para descrever como a nossa User Interface (UI) deve ser</h4>
+    <h4>
+      JSX não é interpretado pelo browser, por este motivo devemos utilizar um
+      transpiler (em geral babel) para realizar essa transpilação.
+    </h4>
+    <h4>
+      Ao contrário do passado, em vez de colocar JavaScript em HTML, o JSX
+      permite-nos colocar HTML em JavaScript.
+    </h4>
+    <h3>Este codigo Jsx que vimos, após o transpiler fica:</h3>
+    <h4>const element = React.createElement(</h4>
+    <h4>"h1",</h4>
+    <h4>{className: "title"},</h4>
+    <h4>"Hello World"</h4>
+    <h4>)</h4>
+    <br />
+    <h4>Com esse codigo preparamos o nosso elemento para ser exibido no DOM</h4>
+    <h3>Vantagens od JSX</h3>
+    <h4>Similaridade com o HTML</h4>
+    <h4>Melhor integração entre o HTML e o JavaScript</h4>
+    <h3>Quem utiliza JSX</h3>
+    <h4>Preact (parecido com react)</h4>
+    <h4>Inferno (parecido com react)</h4>
+    <h4>React-Native</h4>
+    <h4>Vuejs (Opcional)</h4>
+    <br />
+    <hr />
+    <br />
+    <h1>HelloWorld React</h1>
+    <h3>Há duas maneiras de usarmos o react:</h3>
+    <h4>
+      SPA (Single Page Application), ou seja, para construir toda a interface de
+      utilizador
+    </h4>
+    <p>SPA é o mais usado</p>
+    <h4>Adicionar só em algumas partes do nosso Projeto</h4>
+    <br />
+    <h3>Vamos usar o que é usado mais vezes: SPA</h3>
+    <h3>Primeiro, criamos uma pasta chamada "HelloWorld"</h3>
+    <h3>
+      Dentro dessa pasta criamos um arquivo chamado "hello-world.html" com a
+      estrutura basica html e uma div com id="root"
+    </h3>
+    <h3>
+      Adicionamos o script do react:
+      <a href="https://reactjs.org/docs/cdn-links.html"
+        >https://reactjs.org/docs/cdn-links.html</a
+      >
+    </h3>
+    <h3>
+      Dentro da pasta HelloWorld, criamos um arquivo js "hello-world.js"; Dentro
+      desse arquivo chamamos o metodo "ReactDOM.render()"; Dentro desse método
+      vamos ter 2 parametros
+    </h3>
+    <h3>
+      Primeiro parâmetro: Criamos um elemento react com o
+      "React.createElement()"; Dentro desse método criamos o elemento que
+      queremos (h1,h2,p, qualquer coisa), as propriedades que queremos tipo um
+      ID classe ou outra coisa do genero ou null, depois o conteúdo que queremos
+      (Hello REACT!); neste caso vamos criar um h1 sem propriedades (null),
+      React.createElemente("h1", null, "Hello REACT!")
+    </h3>
+    <h3>
+      Segundo parâmetro: Dizer onde queremos "injetar" este elemento react que
+      criamos e isso faz-se com o "document.getElementById("root")"
+    </h3>
+    <br />
+    <h3>O ficheiro js fica:</h3>
+    <h4>ReactDOM.render(</h4>
+    <h4>React.createElement("h1", null, "Hello REACT!"),</h4>
+    <h4>document.getElementById("root")</h4>
+    <h4>);</h4>
+    <br />
+    <h3>O ficheiro html fica:</h3>
+    <h4>div id="root" div</h4>
+    <h4>
+      script crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js" script
+    </h4>
+    <h4>
+      script crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" script>
+    </h4>
+    <h4>script src="./hello-world.js" script></h4>
+    <br />
+    <hr />
+    <br />
+    <h1>views</h1>
+    <br />
+    <h3>Como é que o react atualiza as views</h3>
+    <h4>No JavaScript nós usamos o DOM:</h4>
+    <h5>let myBtn = document.getElementById("btn")</h5>
+    <h5>
+      myBtn.addEventListener("click", function(event) { return alert ("Botão
+      clicado!")})
+    </h5>
+    <h4>No react, usamos o Virtual DOM ou tambem chamado como React DOM</h4>
+    <h4>O virtual DOM é uma reprensentação em JavaScript do DOM original!</h4>
+    <h4>
+      Quando as alterações/eventos acontecem, primeiro o react atualiza o
+      virtual DOM, depois, ele analisa as mudanças que são precisas acontecer no
+      DOM real e no fim é realizado a atualização conciliando o virtual DOM com
+      o DOM original
+    </h4>
+    <h3>Porquê que o REACT usa o virtual DOM e não o DOM diretamente?</h3>
+    <h4>Aceder ao DOM é mais lento do que as operações em JavaScript</h4>
+    <h4>
+      O Virtual DOM automaticamente encontra a maneira mais economica de
+      atualizar o DOM (atualizando unicamente os elementos necessários)
+    </h4>
+    <h3>Entender os elementos</h3>
+    <h4>
+      Os menores blocos do React são os elements, através deles é que
+      descrevemos o que vai aparecer no nosso ecra
+    </h4>
+    <h4>const element = h1 Hello, World h1</h4>
+    <h4>
+      Diferente dos elementos do DOM, os elementos do React são objetos simples
+      e "baratos" de criar
+    </h4>
+    <h4>
+      O virtual DOM é o responsavel por atualizar o DOM e exibir esses elementos
+      no ecra
+    </h4>
+    <h4>Para renderizar um elemento, primeiro escolhemos um nó do DOM, ex:</h4>
+    <h5>div id="root" div</h5>
+    <h4>Tudo dentro desse nó será atualizado pelo Virtual DOM</h4>
+    <h4>Agora para inserirmos o nosso elemento no ecra, podemos rodar:</h4>
+    <h5>const element = h1 Hello, World h1</h5>
+    <h5>ReactDOM.render(element, document.getElementById("root"))</h5>
+    <br />
+    <hr />
+    <br />
+    <h1>Create React App: Nosso primeiro Projeto</h1>
+    <br />
+    <h3>
+      Para usarmos o create react app, precisamos de ter instalado o node e
+      versão do npm > 5.2
+    </h3>
+    <h4>
+      Para ver se está tudo instalado, no terminal escrevemos: node -v; npm -v
+    </h4>
+    <h3>
+      Tendo tudo instalado, agora criamos uma pasta com o nome "CreateReactApp"
+    </h3>
+    <h3>No terminal da nossa pasta usamos o create react app:</h3>
+    <h4>npx create-react-app my-first-app</h4>
+    <h3>Feito isto vamos para o nosso projeto:</h3>
+    <h4>cd my-first-app</h4>
+    <h3>Agora podemos ver tudo o que foi criado</h3>
+    <h3>Pasta node_modules:</h3>
+    <h4>
+      É onde vão ficar as nossas bibliotecas do node, qualquer coisa que
+      coloquemos aqui como Axios, Reduxe,etc...
+    </h4>
+    <h3>pasta public:</h3>
+    <h4>É onde se encontram os arquivos publicos do nosso site.</h4>
+    <h3>ficheiro index.html:</h3>
+    <h4>
+      tem a nossa div com o id="root" é a principal, todas as outras coisas vão
+      ser injetadas dentro deste ficheiro;
+    </h4>
+    <h3>favicon do React:</h3>
+    <h4>Podemos escolher um nosso;</h4>
+    <h3>logos do React:</h3>
+    <h4>
+      logos utilizados pelo react mas que podemos retirar porque não precisamos
+      deles.
+    </h4>
+    <h3>pasta src:</h3>
+    <h4>É aqui que se encontra a magia toda e os principais ficheiros</h4>
+    <h3>ficheiro App.js</h3>
+    <h4>
+      É o component principal do nosso projeto, podemos ver que dentro desse
+      component temos o jsx (mistura de Javascript com HTML) e aqui é onde vamos
+      fazer tudo; Claro que vamos também criar outros arquivos que vamos
+      importar neste component App.js para ser exibido naquele "root"
+    </h4>
+    <h3>ficheiro index.js</h3>
+    <h4>
+      É onde é importado o componente App.js que foi criado em cima, e roda o
+      ReactDOM.render() com o "nó" "root" (com o
+      document.getElementById("root")) como fizemos no exemplo do HelloWorld
+    </h4>
+    <h3>package.json: Serve para controlar as bibliotecas e os scripts</h3>
+    <h4>
+      script start: Se escrevermos <strong>npm start</strong> na consola,
+      conseguimos ver que vai rodar o "react-scripts.start" e faz com que o
+      nosso servidor fique disponivel no localhost para vermos o nosso projeto
+      no browser (tudo o que está dentro do component App.js)
+    </h4>
+    <h4>
+      script build: se escrevermos <strong>npm build</strong> na consola, isto
+      compila o nosso codigo JSX para html, css e Javascript
+    </h4>
+    <h4>
+      script test: se escrevemos <strong>npm test</strong> na consola, isto
+      serve só para testarmos a nossa aplicação
+    </h4>
+    <h4>
+      script eject: se escrevermos <strong>npm eject</strong> na consola, isto
+      serve para saírmos deste modelo do "create-react-app" para podermos
+      trabalhar mais livremente, mas geralmente podemos trabalhar no
+      create-react-app sem nos preocuparmos!
+    </h4>
+    <h3>
+      Para voltarmos a usar o terminal, carregamos CTRL + C e podemos fechar o
+      react-app
+    </h3>
+    <br />
+    <hr />
+    <br />
+    <h1>Criar o primeiro component</h1>
+    <br />
+    <h3>
+      Vamos criar outra pasta com o nome "PrimeiroComponent", vamos iniciar o
+      react lá (como fizemos em cima)
+    </h3>
+    <h4>npx create-react-app first-component</h4>
+    <h4>cd first-component</h4>
+    <h4>npm start</h4>
+    <h3>Depois, vamos criar um novo component</h3>
+    <h4>
+      Na pasta "src", ficheiro "App.js", criamos o component "HelloWorld" que
+      tem que nos mostrar a frase "Hello World!"
+    </h4>
+    <h4>function HelloWorld(){</h4>
+    <h4>return h1 Hello World! h1</h4>
+    <h4>}</h4>
+    <h3>
+      Agora vamos limpar o nosso App.js: Eliminar o import do logo do react e o
+      do css; Eliminar tudo do return da function App(), deixamos só uma div
+      vazia
+    </h3>
+    <h3>Agora a nossa página no browser vai ficar totalmente em branco</h3>
+    <h3>
+      Vamos "injetar" o nosso HelloWorld nessa div vazia, fazemos isso como se
+      fosse uma TAG HTML: < functionCriada/>
+    </h3>
+    <h4>< HelloWorld /></h4>
+    <h3>
+      Agora vamos criar um novo arquivo chamado "Teste.js", vamos escrever la
+      uma função que imprima "Teste 123" e exportá-la
+    </h3>
+    <h4>function Teste() {</h4>
+    <h4>return h1 Teste 123 h1;</h4>
+    <h4>}</h4>
+    <h4>export default Teste;</h4>
+    <h3>
+      Depois vamos ao App.js, importamos esse arquivo e usamos esse arquivo
+      depois do nosso HelloWorld
+    </h3>
+    <h4>import Teste from "./Teste";</h4>
+    <h4>function App() {</h4>
+    <h4>return (</h4>
+    <h4>div</h4>
+    <h4>< HelloWorld/></h4>
+    <h4>< Teste/></h4>
+    <h4>div</h4>
+    <h4>);</h4>
+    <h4>}</h4>
+    <h3>Vamos só mudar a nossa função teste para arrowFunction</h3>
+    <h4>const Teste = () => {</h4>
+    <h4>return h1 Teste 123 h1;</h4>
+    <h4>}</h4>
+    <h4>export default Teste;</h4>
+    <h3>
+      Tambem podemos ter componentes como Classes, vamos fazer isto num
+      comentário
+    </h3>
+    <h4>/*</h4>
+    <h4>class Teste extends React.Component {</h4>
+    <h4>render() {</h4>
+    <h4>return h1 Teste 123 h1</h4>
+    <h4>}</h4>
+    <h4>}</h4>
+    <h4>export default HelloWorld</h4>
+    <h4>*/</h4>
+    <br />
+    <hr />
+    <br />
+    <h1>Agrupar Components</h1>
+    <br />
+    <h3>
+      Vamos criar uma nova pasta "Agrupar Components" e iniciar la o react.
+      Depois disso, na pasta "src" vamos criar a pasta "Components". Dentro
+      dessa pasta "Components" criamos outra com o nome "planets".
+    </h3>
+    <h3>
+      Dentro da pasta "planets" criamos um arquivo chamado "index.js". Dentro
+      desse ficheiro criamos a sua função com o retorno de uma div com um h3
+      "Planet List"
+    </h3>
+    <h3>No App.js, importamos Planets from Components/planets</h3>
+    <h3>
+      No return da função App, retornamos uma div com o componente < Planets />
+    </h3>
+    <h3>
+      No index.js, onde temos a função do planets, vamos substituir a div do
+      return, por "fragments" <>
+    </h3>
+    <h3>
+      Vamos criar outra pasta, dentro da pasta "Planets" com o nome "planet" com
+      um arquivo index.js
+    </h3>
+    <h3>
+      Nesse arquivo vamos criar um novo componente (função) que retorne uma div
+      com um h4 "Marte", um p "descrição...lorem ipsum..." e uma imagem desse
+      planeta (podemos ir ao wikipedia)
+    </h3>
+    <h3>
+      Agora no ficheiro "index.js" da pasta planets, importamos o component
+      "Planet", criamos um hr por baixo do h3 "Planet List" e usamos o component
+      < Planet />
+    </h3>
+    <h3>Basicamente criamos um componente que usa outro componente</h3>
+    <h3>
+      Podemos repetir o component < Planet /> 2x, para ver que conseguimos
+      repetir as vezes que quisermos! (ver o resultado no browser)
+    </h3>
+    <h3>
+      Depois na pasta "planet" podemos criar um ficheiro css com o nome
+      "style.css", adicionar uma classe à img className="img" e usar essa classe
+      no css para mudar a largura para 300px e usar o filter: grayscale(40%)
+      (serve para usar 40% de uma escala com as cores preto e branco)
+    </h3>
+    <h3>Agora podemos importar o css com: import "./style.css"</h3>
+    <br />
+    <h3>O ficheiro App.js fica:</h3>
+    <h4>import Planets from "./Components/planets";</h4>
+    <h4>function App() {</h4>
+    <h4>return (</h4>
+    <h4>div</h4>
+    <h4>< Planets /></h4>
+    <h4>div</h4>
+    <h4>);</h4>
+    <h4>}</h4>
+    <h4>export default App;</h4>
+    <h3>O ficheiro index.js da pasta "planets" fica:</h3>
+    <h4>import Marte from "./planet";</h4>
+    <h4>const Planets = () => {</h4>
+    <h4>return (</h4>
+    <h4><></h4>
+    <h4>h3 Planet List h3</h4>
+    <h4>hr</h4>
+    <h4>< Marte /></h4>
+    <h4>< Marte /></h4>
+    <h4>< Marte /></h4>
+    <h4>< /></h4>
+    <h4>);</h4>
+    <h4>};</h4>
+    <h4>export default Planets;</h4>
+    <h3>O ficheiro index.js da pasta "planet" fica:</h3>
+    <h4>import "./style.css";</h4>
+    <h4>const Marte = () => {</h4>
+    <h4>return (</h4>
+    <h4>div</h4>
+    <h4>h4 Marte h4</h4>
+    <h4>
+      p descrição...lorem ipsum...descrição...lorem ipsum...descrição...lorem
+      ipsum...descrição...lorem ipsum...descrição...lorem
+      ipsum...descrição...lorem ipsum... p
+    </h4>
+    <h4>
+      img className="img"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/OSIRIS_Mars_true_color.jpg/420px-OSIRIS_Mars_true_color.jpg"
+      img
+    </h4>
+    <h4>div</h4>
+    <h4>);</h4>
+    <h4>};</h4>
+    <h4>export default Marte;</h4>
+    <h3>O ficheiro "style.css" fica:</h3>
+    <h4>.img {</h4>
+    <h4>width: 200px;</h4>
+    <h4>filter: grayscale(40%);</h4>
+    <h4>}</h4>
+    <br />
+    <hr />
+    <br />
+    <h1></h1>
+    <br />
+    <h3></h3>
+    <h4></h4>
+    <br />
+    <hr />
+    <br />
+    <h1></h1>
+    <br />
+    <h3></h3>
+    <h4></h4>
+  </body>
+</html>

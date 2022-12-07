@@ -5,7 +5,7 @@ function Book(title, pages, tags, author) {
   this.author = author;
   this.published = false;
   this.inStock = 0;
-  this.addOnStock = function (quantity) {
+    this.addOnStock = function (quantity) {
     this.inStock += quantity;
   };
   this.save = function () {

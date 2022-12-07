@@ -1,7 +1,7 @@
 document.getElementById("sessionBtn").addEventListener("click", function () {
   const userDataSession = document.getElementById("session");
   window.sessionStorage.setItem("info", userDataSession.value);
-  userDataSession.value = "";
+  userDataSession.value = ""; 
 });
 
 document.getElementById("readSesssion").addEventListener("click", function () {
