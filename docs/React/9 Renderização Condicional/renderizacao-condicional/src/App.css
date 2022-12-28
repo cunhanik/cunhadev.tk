@@ -1,0 +1,9 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.content {
+  height: 100vh;
+  background-color: grey;
+}

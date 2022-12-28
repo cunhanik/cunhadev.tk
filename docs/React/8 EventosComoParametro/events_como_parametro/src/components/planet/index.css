@@ -1,0 +1,9 @@
+.mainContent {
+  margin-top: 1rem;
+}
+
+.planet {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}

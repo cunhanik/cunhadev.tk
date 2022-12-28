@@ -1,1 +1,4 @@
-
+.img {
+  width: 200px;
+  filter: grayscale(40%);
+}
