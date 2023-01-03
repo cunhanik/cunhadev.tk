@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>React</title>
   </head>
+
   <body>
     <h1>SetInterval e SetTimeout</h1>
     <br />
@@ -313,7 +314,7 @@
     <h3>Agora a nossa página no browser vai ficar totalmente em branco</h3>
     <h3>
       Vamos "injetar" o nosso HelloWorld nessa div vazia, fazemos isso como se
-      fosse uma TAG HTML: < functionCriada/>
+      fosse uma TAG HTML: < functionCriada />
     </h3>
     <h4>< HelloWorld /></h4>
     <h3>
@@ -332,8 +333,8 @@
     <h4>function App() {</h4>
     <h4>return (</h4>
     <h4>div</h4>
-    <h4>< HelloWorld/></h4>
-    <h4>< Teste/></h4>
+    <h4>< HelloWorld /></h4>
+    <h4>< Teste /></h4>
     <h4>div</h4>
     <h4>);</h4>
     <h4>}</h4>
@@ -494,7 +495,7 @@
     <h3>
       Dentro do ficheiro index.js da pasta "components", Importamos a
       Description do component "./planet/index.js"; Criamos a sua função, com o
-      retorno de fragments (< > < />); um h3 "Planet List", um hr e o component
+      retorno de fragments (<> < />); um h3 "Planet List", um hr e o component
       Description
     </h3>
     <h3>
@@ -507,7 +508,7 @@
     <h4>import Description from "./planet/index.js";</h4>
     <h4>const Planets = () => {</h4>
     <h4>return (</h4>
-    <h4>< ></h4>
+    <h4><></h4>
     <h4>h3 Planet List h3</h4>
     <h4>hr</h4>
     <h4>< Description /></h4>
@@ -520,8 +521,7 @@
     <h4>return (</h4>
     <h4>
       < img className="marte"
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/OSIRIS_Mars_true_color.jpg/420px-OSIRIS_Mars_true_color.jpg"
-      >
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/OSIRIS_Mars_true_color.jpg/420px-OSIRIS_Mars_true_color.jpg">
     </h4>
     <h4>< img /></h4>
     <h4>);</h4>
@@ -537,7 +537,7 @@
     <h4>import Planet from "./components/index";</h4>
     <h4>function App() {</h4>
     <h4>return (</h4>
-    <h4>< div ></h4>
+    <h4>< div></h4>
     <h4>< Planet /></h4>
     <h4>< Planet /></h4>
     <h4>< div /></h4>
@@ -776,8 +776,8 @@
       propriedade via props, dentro do método clickOnPlanet
     </h3>
     <h4>
-      < div className="planet"  (onClick sem parentisis)= { () => props.clickOnPlanet(props.name)}
-      >
+      < div className="planet" (onClick sem parentisis)={ ()=>
+      props.clickOnPlanet(props.name)} >
     </h4>
     <br />
     <hr />
@@ -851,39 +851,139 @@
     <hr />
     <br />
     <h1>Renderizar múltiplos components</h1>
-    <br>
-    <h3>Vamos criar uma pasta com o nome "RenderizarMultiplosComponents", iniciamos o react, eliminámos o src e copiamos o src da pasta "Renderização Condicional"</h3>
+    <br />
+    <h3>
+      Vamos criar uma pasta com o nome "RenderizarMultiplosComponents",
+      iniciamos o react, eliminámos o src e copiamos o src da pasta
+      "Renderização Condicional"
+    </h3>
     <h4>npx create-react-app renderizar-multiplos-components</h4>
-    <h3>No ficheir index.js da pasta "planet", criamos uma lista com o nome "names", dentro dessa lista vamos colocar 1 component (Button) e letras para ser mais facil de visualizar </h3>
-    <h4>const names = [< Button />,"Component: B","Component: C", "Component: D"]</h4>
-    <h3>Agora vamos criar outra variavel (satellitesNames) e usar o map nesta lista que criamos</h3>
-    <h4>const satellitesNames = names.map((n) => { return (li Satélite: {n} li)</h4>
-    <h3>Agora no return que contém um h1 com nome {props.name}, adicionamos uma div com uma tag ul, dentro dessa ul usamos a variavel que recebe os nossos li, escrevemos a variavel entre chavetas porque estamos a usar JavaScript {}</h3>
+    <h3>
+      No ficheir index.js da pasta "planet", criamos uma lista com o nome
+      "names", dentro dessa lista vamos colocar 1 component (Button) e letras
+      para ser mais facil de visualizar
+    </h3>
+    <h4>
+      const names = [ < Button />,"Component: B","Component: C", "Component: D"]
+    </h4>
+    <h3>
+      Agora vamos criar outra variavel (satellitesNames) e usar o map nesta
+      lista que criamos
+    </h3>
+    <h4>
+      const satellitesNames = names.map((n) => { return (li Satélite: {n} li)
+    </h4>
+    <h3>
+      Agora no return que contém um h1 com nome {props.name}, adicionamos uma
+      div com uma tag ul, dentro dessa ul usamos a variavel que recebe os nossos
+      li, escrevemos a variavel entre chavetas porque estamos a usar JavaScript
+      {}
+    </h3>
     <h4>div</h4>
     <h4>ul</h4>
     <h4>{satellitesNames}</h4>
     <h4>ul</h4>
     <h4>div</h4>
     <h4></h4>
-    <h3>Agora se virmos no browser, quando for um planeta que tenha nome, vamos ter os nossos satelites em forma de lista (no nosso exemplo tem um componente(button) mas podiam ser os que quisessemos...)</h3>
+    <h3>
+      Agora se virmos no browser, quando for um planeta que tenha nome, vamos
+      ter os nossos satelites em forma de lista (no nosso exemplo tem um
+      componente(button) mas podiam ser os que quisessemos...)
+    </h3>
     <br />
     <hr />
     <br />
     <h1>Renderizar múltiplos elementos no JSX</h1>
-    <br>
-    <h3>Na mesma pasta "RenderizarMultiplosComponents", no ficheiro index.js da pasta "planet", ao invés de fazermos o que fizemos no topico anterior:</h3>
-    <h4>const names = [< Button />,"Component: B","Component: C", "Component: D"]</h4>
-    <h4>const satellitesNames = names.map((n) => { return (li Satélite: {n} li)</h4>
-    <h4>{satellitesNames}</h4>
-    <h3>Vamos eliminar o const satellitesNames e tudo o que está à frente. No return, onde temos a div com o "{ satellitesNames }, vamos fazer aí o nosso map"</h3>
+    <br />
+    <h3>
+      Na mesma pasta "RenderizarMultiplosComponents", no ficheiro index.js da
+      pasta "planet", ao invés de fazermos o que fizemos no topico anterior:
+    </h3>
+    <h4>const names = [</h4>
+    <h4>Button / >,"Component: B","Component: C", "Component: D"</h4>
+    <h4>]</h4>
+    <h4>
+      const satellitesNames = names.map((n) => { return (li Satélite: {n} li)
+    </h4>
+    <h4>{ satellitesNames }</h4>
+    <h3>
+      Vamos eliminar o const satellitesNames e tudo o que está à frente. No
+      return, onde temos a div com o "{ satellitesNames }, vamos fazer aí o
+      nosso map"
+    </h3>
     <h4>{</h4>
-      <h4>names.map((n) => li {n} li )</h4>
+    <h4>names.map((n) => li {n} li )</h4>
     <h4>}</h4>
     <h3>Continua tudo a funcionar mas o nosso codigo está no JSX</h3>
-    <h3>Também podiamos fazer: Eliminar a lista "names" e colocar a lista no JSX antes do map, substituindo o "names.map" pela [propriaLista].map: </h3>
+    <h3>
+      Também podiamos fazer: Eliminar a lista "names" e colocar a lista no JSX
+      antes do map, substituindo o "names.map" pela [propriaLista].map:
+    </h3>
     <h4>{</h4>
-    <h4>[< Button />,"Component: B","Component: C", "Component: D"].map((n) => li {n} li<h4>
-      <h4>}</h4>
-    <br>
+    <h4>[</h4>
+    <h4>
+      Button / >,"Component: B","Component: C", "Component: D"].map((n) = > li
+      {n} li
+    </h4>
+    <h4>}</h4>
+    <br />
+    <hr />
+    <br />
+    <h1>O que são estados (STATES)</h1>
+    <br />
+    <h3>
+      State é um objeto javascript que guarda os dados de um component e
+      determina o seu comportamento
+    </h3>
+    <h3>Quando um estado é atualizado o component é re-renderizado</h3>
+    <br />
+    <h3>Diferença entre props e state:</h3>
+    <h4>
+      As props são passadas por outros components (component pai passa as suas
+      props para um component filho)
+    </h4>
+    <h4>
+      O state pertence a cada component e tambem quando as props são
+      atualizadas, o component vai re-renderizar novamente e o estado (state)
+      quando atualizado também vai re-renderizar
+    </h4>
+    <br />
+    <h3>Component de class vs Component functional:</h3>
+    <h4>
+      Antes so era permitido usar state em components de class, por isso é que
+      esses components eram tão mais importantes
+    </h4>
+    <h4>
+      Agora, podemos usar states em components functional, graças aos hooks
+    </h4>
+    <br />
+    <h3>declarar um state num component de classe</h3>
+    <h4>constructor(props){</h4>
+    <h4>super(props)</h4>
+    <h4>this.state = {</h4>
+    <h4>count: 0</h4>
+    <h4>}</h4>
+    <h4>}</h4>
+    <br />
+    <h3>
+      Para manipular um component num component de classe, usamos um metodo
+      chamado "setState()"
+    </h3>
+    <h4>incrementCount(){</h4>
+    <h4>this.setState((state) => {</h4>
+    <h4>return {count: state.count + 1}</h4>
+    <h4>})</h4>
+    <h4>}</h4>
+    <br />
+    <h3>declarar um state num component functional</h3>
+    <h4>import React, { useState } from "react"</h4>
+    <h4>const [count, setCount] = useState(0)</h4>
+    <br />
+    <h3>Para manipular um component num component</h3>
+    <h4>setCount(count + 1)</h4>
+    <br />
+    <hr />
+    <br />
+    <h1></h1>
   </body>
 </html>
