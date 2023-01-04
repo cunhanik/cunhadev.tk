@@ -984,6 +984,211 @@
     <br />
     <hr />
     <br />
-    <h1></h1>
+    <h1>Criar uma class com state</h1>
+    <br />
+    <h3>
+      Vamos criar uma pasta chamada "Class com State", dentro dessa pasta
+      iniciamos o react:
+    </h3>
+    <h4>npx create-react-app class-with-state</h4>
+    <h3>Agora, para relembrar tudo, vamos fazer tudo do inicio até aqui:</h3>
+    <br />
+    <h3>- Abrimos o projeto no browser</h3>
+    <h4>cd class-with-state</h4>
+    <h4>npm start</h4>
+    <h3>- Limpar o arquivo App.js da pasta "src"</h3>
+    <h4>Remover o "import logo from './logo.svg'";</h4>
+    <h4>Remover o "import './App.css'"</h4>
+    <h4>Remover tudo o que está no return da função App() menos a div</h4>
+    <h3>- importar o React</h3>
+    <h4>import React from "react"</h4>
+    <h3>
+      - Dentro do ficheiro "app.js" da pasta "src", criar um component HelloWord
+      que retorne um h1 com a frase "Hello World!"
+    </h3>
+    <h4>const HelloWorld = () => {</h4>
+    <h4>return < h1 >Hello World!! < />;</h4>
+    <h4>};</h4>
+    <h3>- injetar essa função no App</h3>
+    <h4>< HelloWorld /></h4>
+    <h3>
+      - Separar a função HelloWorld criada no app.js para outro ficheiro.
+      Criamos um ficheiro chamado "HelloWorld" e dentro colamos a função do
+      HelloWorld. Importamos o react dentro desse ficheiro e exportamos o
+      component
+    </h3>
+    <h4>import React from "react";</h4>
+    <h4>const HelloWorld = () => {</h4>
+    <h4>return < h1 >Hello World!! < />;</h4>
+    <h4>};</h4>
+    <h4>export default HelloWorld;</h4>
+    <h3>
+      Injetar este component no App.js. Importamos o component HelloWord e
+      adicionámos no return como se fosse uma tag HTML
+    </h3>
+    <h4>import React from "react";</h4>
+    <h4>import HelloWorld from "./HelloWorld";</h4>
+    <h4>function App() {</h4>
+    <h4>return (</h4>
+    <h4>< div className="App"></h4>
+    <h4>< HelloWorld /></h4>
+    <h4>< /div></h4>
+    <h4>);</h4>
+    <h4>}</h4>
+    <h4>export default App;</h4>
+    <h3>
+      - Transformar o component functional HelloWorld em component de class.
+      Usamos class, extends, React.Component, render(), return com o h1 com a
+      frase
+    </h3>
+    <h4>import React from "react";</h4>
+    <h4>class HelloWorld extends React.Component {</h4>
+    <h4>render() {</h4>
+    <h4>return < h1 >Hello World!!< />;</h4>
+    <h4>}</h4>
+    <h4>}</h4>
+    <h4>export default HelloWorld;</h4>
+    <h3>- Voltamos a pôr o component como ArrowFunction</h3>
+    <h4>import React from "react";</h4>
+    <h4>const HelloWorld = () => {</h4>
+    <h4>return < h1 >Hello World!!< h1 />;</h4>
+    <h4>};</h4>
+    <h4>export default HelloWorld;</h4>
+    <h3>
+      - Na pasta "src" criar uma pasta "components", dentro da pasta components
+      criamos uma pasta "planets", dentro dessa pasta criamos um ficheiro
+      "index.js". Dentro desse ficheiro importamos o react, exportamos o
+      component e criamos a sua função com o return de fragments com um h3
+      "Planet List:" e um hr;
+    </h3>
+    <h3>
+      - No App.js apagamos o import do HelloWorld e adicionamos o import do
+      index.js da pasta "planets"
+    </h3>
+    <h3>
+      - Na pasta "planets", criamos uma pasta chamada "planet" com um ficheiro
+      index.js. Dentro desse ficheiro importamos o react, exportamos o component
+      e criamos a sua função com o retorno de uma div com: h4 "Mercurio", p
+      "descrição do wikipedia", img com src de uma imagem do wikipedia
+    </h3>
+    <h3>
+      - No ficheiro "index.js" do "planets", importamos o ficheiro index.js da
+      pasta "planet", injetamos 3x esse component no fragments por baixo do hr.
+    </h3>
+    <h3>
+      - Dentro de "planet" criamos um arquivo css "style.css", criamos uma
+      classe na nossa tag img (className=""). Dentro do ficheiro css, utilizamos
+      essa classe, definimos a width para 200px e usamos o filter para filtrar o
+      preto e branco, usamos o grayscale(100%) para definirmos o preto branco
+      100%. Depois importamos o css no ficheiro index.js da pasta planet: import
+      "./style.css"
+    </h3>
+    <h4>Ficheiro index.js da pasta planets:</h4>
+    <h4>import React from "react";</h4>
+    <h4>import Planet from "./planet";</h4>
+    <h4>const Planets = () => {</h4>
+    <h4>return (</h4>
+    <h4>< ></h4>
+    <h4>< h3>Planet List: < /h3></h4>
+    <h4>< hr /></h4>
+    <h4>< Planet /></h4>
+    <h4>< Planet /></h4>
+    <h4>< Planet /></h4>
+    <h4>< /></h4>
+    <h4>);</h4>
+    <h4>};</h4>
+    <h4>export default Planets;</h4>
+    <br />
+    <h4>Ficheiro index.js da pasta planet:</h4>
+    <h4>import React from "react";</h4>
+    <h4>import "./style.css";</h4>
+    <h4>const Planet = () => {</h4>
+    <h4>return (</h4>
+    <h4>< div></h4>
+    <h4>< h4>Mercúrio< /h4></h4>
+    <h4>
+      < p> Mercúrio é o menor[nota 1][nota 2] e mais interno planeta do Sistema
+      Solar, orbitando o Sol a cada 87,969 dias terrestres. A sua órbita tem a
+      maior excentricidade e o seu eixo apresenta a menor inclinação em relação
+      ao plano da órbita dentre todos os planetas do Sistema Solar. Mercúrio
+      completa três rotações em torno de seu eixo a cada duas órbitas. < /p>
+    </h4>
+    <h4>
+      < img className="gray-img"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg/420px-Mercury_in_color_-_Prockter07-edit1.jpg"
+      />
+    </h4>
+    <h4>< /div></h4>
+    <h4>);</h4>
+    <h4>};</h4>
+    <h4>export default Planet;</h4>
+    <br />
+    <h4>Ficheiro style.css da pasta planet</h4>
+    <h4>.gray-img {</h4>
+    <h4>width: 200px;</h4>
+    <h4>filter: grayscale(100%);</h4>
+    <h4>}</h4>
+    <br />
+    <h4>Ficheiro App.js</h4>
+    <h4>import React from "react";</h4>
+    <h4>import Planets from "./components/planets";</h4>
+    <h4>function App() {</h4>
+    <h4>return (</h4>
+    <h4>< div className="App"></h4>
+    <h4>< Planets /></h4>
+    <h4>< /div></h4>
+    <h4>);</h4>
+    <h4>}</h4>
+    <h4>export default App;</h4>
+    <h3>
+      - Dentro dos components, vamos criar uma pasta chamada "shared", dentro
+      dessa pasta, criamos uma pasta chamada gray_img, dentro dessa pasta
+      movemos o style.css que tinhamos criado criamos na pasta "planet", criamos
+      um ficheiro chamado "index.js". Nesse ficheiro, importamos o react,
+      importamos o css (style.css), exportamos o component e criamos a sua
+      função com a img do ficheiro "index.js" da pasta "planet" (cortamos a img
+      de lá para cá).
+    </h3>
+    <h3>
+      - No ficheiro "index.js" da pasta "planet" importamos o component GrayImg
+      da pasta gray_img e utilizamos esse component onde tinhamos a tag img (por
+      baixo) do p
+    </h3>
+    <h4>Ficheiro index.js da pasta "planet"</h4>
+    <h4>import React from "react";</h4>
+    <h4>import GrayImg from "../../shared/gray_img";</h4>
+    <h4>const Planet = () => {</h4>
+    <h4>return (</h4>
+    <h4>< div></h4>
+    <h4>< h4>Mercúrio< /h4></h4>
+    <h4>
+      < p> Mercúrio é o menor[nota 1][nota 2] e mais interno planeta do Sistema
+      Solar, orbitando o Sol a cada 87,969 dias terrestres. A sua órbita tem a
+      maior excentricidade e o seu eixo apresenta a menor inclinação em relação
+      ao plano da órbita dentre todos os planetas do Sistema Solar. Mercúrio
+      completa três rotações em torno de seu eixo a cada duas órbitas. < /p>
+    </h4>
+    <h4>< GrayImg /></h4>
+    <h4>< /div></h4>
+    <h4>);</h4>
+    <h4>};</h4>
+    <h4>export default Planet;</h4>
+    <h4>Ficheiro index.js da pasta "gray_img"</h4>
+    <h4>import React from "react";</h4>
+    <h4>import "./style.css";</h4>
+    <h4>const GrayImg = () => {</h4>
+    <h4>return (</h4>
+    <h4>
+      < img className="gray-img"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg/420px-Mercury_in_color_-_Prockter07-edit1.jpg"
+      />
+    </h4>
+    <h4>);</h4>
+    <h4>};</h4>
+    <h4>export default GrayImg;</h4>
+    <h3>- conhecendo props</h3>
+    <h3>-</h3>
+    <h3>-</h3>
+    <h3>-</h3>
   </body>
 </html>
